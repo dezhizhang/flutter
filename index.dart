@@ -48,3 +48,27 @@
 //   print(list);
 // }
 
+// mian() {
+//   var person = {
+//     "key":'123',
+//     "value":123
+//   };
+//   print(person["value"]);
+
+// }
+
+// main() {
+//   var person = {
+//     'key':'123',
+//     'value':'456'
+//   };
+
+//   print(person['key']);
+
+// }
+
+// main() {
+//   var str = '123';
+//   print(str is String);
+// }
+
