@@ -64,20 +64,54 @@
 //   p1.printInfo();
 // }
 
+// class Person{
+//   String name;
+//   int age;
+//   Person(String name,int age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+//   void printInfo() {
+//     print('${this.name} ----${this.age}');
+//   }
+// }
+
+// main() {
+//   var p1 = new Person('哈哈', 123);
+//   p1.printInfo();
+
+// }
+
+// class Person{
+//   Person.now() {
+//     print('我是一个命名构造函数');
+
+//   }
+// }
+
+// main() {
+//   var p1 = new Person.now();
+
+// }
+
+// class Person{
+//   Person.now() {
+//     print('我是一个命名构造函数');
+//   }
+// }
+
+// main() {
+//   var p1 = new Person.now();
+
+// }
+
 class Person{
-  String name;
-  int age;
-  Person(String name,int age) {
-    this.name = name;
-    this.age = age;
-  }
-  void printInfo() {
-    print('${this.name} ----${this.age}');
+  Person.now() {
+    print('命名构造函数');
+
   }
 }
-
 main() {
-  var p1 = new Person('哈哈', 123);
-  p1.printInfo();
+  var p1 = new Person.now();
   
 }
