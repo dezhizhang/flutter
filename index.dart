@@ -29,6 +29,41 @@
   
 // }
 
+// class Person{
+//   String name;
+//   int age;
+//   Person(String name,int age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+//   void printInfo() {
+//     print('${this.name}-----${this.age}');
+//   }
+// }
+
+// main() {
+//   var p1 = new Person('张三', 20);
+//   p1.printInfo();
+// }
+
+// class Person{
+//   String name;
+//   int age;
+//   Person(String name,int age) {
+//     this.name = name;
+//     this.age = age;
+//   }
+//   void printInfo() {
+//     print('${this.name} --- ${this.age}');
+
+//   }
+// }
+
+// main() {
+//   var p1 = new Person('哈哈',123);
+//   p1.printInfo();
+// }
+
 class Person{
   String name;
   int age;
@@ -37,11 +72,12 @@ class Person{
     this.age = age;
   }
   void printInfo() {
-    print('${this.name}-----${this.age}');
+    print('${this.name} ----${this.age}');
   }
 }
 
 main() {
-  var p1 = new Person('张三', 20);
+  var p1 = new Person('哈哈', 123);
   p1.printInfo();
+  
 }
