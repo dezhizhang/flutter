@@ -15,16 +15,33 @@
 // }
 
 
+// class Person{
+//   var name = '123';
+//   void getInfo() {
+//     print('${this.name}');
+//   }
+// }
+
+// main() {
+//   var p1 = new Person();
+//   print(p1.name);
+//   p1.getInfo();
+  
+// }
+
 class Person{
-  var name = '123';
-  void getInfo() {
-    print('${this.name}');
+  String name;
+  int age;
+  Person(String name,int age) {
+    this.name = name;
+    this.age = age;
+  }
+  void printInfo() {
+    print('${this.name}-----${this.age}');
   }
 }
 
 main() {
-  var p1 = new Person();
-  print(p1.name);
-  p1.getInfo();
-  
+  var p1 = new Person('张三', 20);
+  p1.printInfo();
 }
