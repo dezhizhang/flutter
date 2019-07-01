@@ -2,11 +2,28 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
-  @override
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     // TODO: implement build
+//     return  MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: Text('我是一个App'),
+//         ),
+//         body: HomeContent(),
+//       ),
+//       theme: ThemeData(
+//         primarySwatch: Colors.yellow 
+//       ),
+//     );
+//   }
+
+// }
+
+class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return  MaterialApp(
+    return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: Text('我是一个App'),
@@ -14,11 +31,10 @@ class MyApp extends StatelessWidget {
         body: HomeContent(),
       ),
       theme: ThemeData(
-        primarySwatch: Colors.yellow 
+        primarySwatch: Colors.yellow
       ),
     );
   }
-
 }
 
 class HomeContent extends StatelessWidget{
@@ -31,7 +47,14 @@ class HomeContent extends StatelessWidget{
       //   textDirection: TextDirection.ltr,
       // ),
       child: Container(
-        child: Text('我是一个文本'),
+        child: Text(
+          '我是一个文本',
+          textAlign: TextAlign.right,
+          style: TextStyle(
+            fontSize: 16.0,
+            color: Colors.red
+          ),
+          ),
         height: 300.0,
         width: 300.0,
         decoration: BoxDecoration(
