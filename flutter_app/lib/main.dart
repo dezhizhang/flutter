@@ -109,11 +109,15 @@ class MyApp extends StatelessWidget{
 
 class HomeContent extends StatelessWidget{
   List<Widget> _getData() {
-    return [
-      ListTile(
-        title: Text('我是一个标题'),
-      )
-    ];
+     List<Widget> list = new List();
+     for(var i=0;i<20;i++) {
+       list.add(
+         ListTile(
+           title: Text("我是$i列表"),
+         )
+       );
+     }
+     return list;
   }
   Widget build(BuildContext context) {
     // TODO: implement build
