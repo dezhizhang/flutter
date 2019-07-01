@@ -1,3 +1,5 @@
+import 'dart:core' as prefix0;
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -71,20 +73,52 @@ class MyApp extends StatelessWidget{
   
 // }
 
+// class HomeContent extends StatelessWidget{
+//   @override
+//   Widget build(BuildContext context) {
+//     // TODO: implement build
+//     return ListView(
+//       children: <Widget>[
+//         Image.network('https://www.itying.com/images/201905/thumb_img/1101_thumb_G_1557845381862.jpg'),
+//         Image.network('https://www.itying.com/images/201905/thumb_img/1101_thumb_G_1557845381862.jpg'),
+//         Image.network('https://www.itying.com/images/201905/thumb_img/1101_thumb_G_1557845381862.jpg'),
+//         Image.network('https://www.itying.com/images/201905/thumb_img/1101_thumb_G_1557845381862.jpg'),
+
+//       ],
+//     );
+//   } 
+// }
+
+// class HomeContent extends StatelessWidget{
+//   List<Widget> getData() {
+//     return [
+//        ListTile(
+//          title: Text('我是一个列表'),
+//        )
+//     ];
+//   }
+//   @override
+//   Widget build(BuildContext context) {
+//     // TODO: implement build
+//     return ListView(
+//       children: this.getData(),
+//     );
+  
+  
+// };
+
 class HomeContent extends StatelessWidget{
-  @override
+  List<Widget> _getData() {
+    return [
+      ListTile(
+        title: Text('我是一个标题'),
+      )
+    ];
+  }
   Widget build(BuildContext context) {
     // TODO: implement build
     return ListView(
-      children: <Widget>[
-        Image.network('https://www.itying.com/images/201905/thumb_img/1101_thumb_G_1557845381862.jpg'),
-        Image.network('https://www.itying.com/images/201905/thumb_img/1101_thumb_G_1557845381862.jpg'),
-        Image.network('https://www.itying.com/images/201905/thumb_img/1101_thumb_G_1557845381862.jpg'),
-        Image.network('https://www.itying.com/images/201905/thumb_img/1101_thumb_G_1557845381862.jpg'),
-
-      ],
+      children: this._getData(),
     );
   } 
 }
-
-
