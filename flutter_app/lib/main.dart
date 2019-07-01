@@ -77,11 +77,11 @@ class HomeContent extends StatelessWidget{
     // TODO: implement build
     return ListView(
       children: <Widget>[
-        ListTile(
-          leading: Icon(Icons.home),
-          title: Text('我是新闻标题'),
-          subtitle: Text('我是新闻内容'),
-        )
+        Image.network('https://www.itying.com/images/201905/thumb_img/1101_thumb_G_1557845381862.jpg'),
+        Image.network('https://www.itying.com/images/201905/thumb_img/1101_thumb_G_1557845381862.jpg'),
+        Image.network('https://www.itying.com/images/201905/thumb_img/1101_thumb_G_1557845381862.jpg'),
+        Image.network('https://www.itying.com/images/201905/thumb_img/1101_thumb_G_1557845381862.jpg'),
+
       ],
     );
   } 
