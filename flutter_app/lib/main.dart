@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
     return  MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Flutter Demo'),
+          title: Text('我是一个App'),
         ),
         body: HomeContent(),
       ),
@@ -26,9 +26,21 @@ class HomeContent extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
     return Center(
-      child: Text(
-        '张德志你好',
-        textDirection: TextDirection.ltr,
+      // child: Text(
+      //   '张德志你好',
+      //   textDirection: TextDirection.ltr,
+      // ),
+      child: Container(
+        child: Text('我是一个文本'),
+        height: 300.0,
+        width: 300.0,
+        decoration: BoxDecoration(
+          color: Colors.yellow,
+          border: Border.all(
+            color: Colors.blue,
+            width: 2.0
+          )
+        ),
       ),
     );
   }
