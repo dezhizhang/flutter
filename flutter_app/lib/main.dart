@@ -71,4 +71,20 @@ class MyApp extends StatelessWidget{
   
 // }
 
+class HomeContent extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return ListView(
+      children: <Widget>[
+        ListTile(
+          leading: Icon(Icons.home),
+          title: Text('我是新闻标题'),
+          subtitle: Text('我是新闻内容'),
+        )
+      ],
+    );
+  } 
+}
+
 
