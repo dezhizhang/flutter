@@ -25,6 +25,23 @@ class HomeContent extends StatelessWidget{
  
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Text('hello');
+    return Center(
+      child:Stack(
+      alignment: Alignment.center,
+      children: <Widget>[
+        Container(
+          width: 400,
+          height: 400,
+          color: Colors.red,
+        ),
+        Text('我是一个文本')
+
+      ],
+    ) ,
+    );
   } 
 }
+
+
+
+
