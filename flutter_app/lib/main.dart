@@ -52,22 +52,42 @@ class MyApp extends StatelessWidget{
 //   } 
 // }
 
-class HomeContent extends StatelessWidget{
+// class HomeContent extends StatelessWidget{
  
+//   Widget build(BuildContext context) {
+//     // TODO: implement build
+//     return Center(
+//       child: Container(
+//         width: 400,
+//         height: 300,
+//         color: Colors.red,
+//         child: Stack(
+//           children: <Widget>[
+//             Positioned(
+//               left:60,
+//               child: Icon(Icons.home,size: 40,color:Colors.yellow),
+//             )
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+  
+// }
+
+class HomeContent extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
     return Center(
       child: Container(
         width: 400,
-        height: 300,
+        height: 200,
         color: Colors.red,
-        child: Stack(
-          children: <Widget>[
-            Positioned(
-              left:60,
-              child: Icon(Icons.home,size: 40,color:Colors.yellow),
-            )
-          ],
+        child: AspectRatio(
+          aspectRatio: 0.2,
+          child: Container(
+            color: Colors.yellow,
+          ),
         ),
       ),
     );
