@@ -75,25 +75,50 @@ class MyApp extends StatelessWidget{
   
 // }
 
+// class HomeContent extends StatelessWidget{
+//   Widget build(BuildContext context) {
+//     // TODO: implement build
+//     return Center(
+//       child: Container(
+//         width: 400,
+//         height: 200,
+//         color: Colors.red,
+//         child: AspectRatio(
+//           aspectRatio: 0.2,
+//           child: Container(
+//             color: Colors.yellow,
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+  
+// }
+
 class HomeContent extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Center(
-      child: Container(
-        width: 400,
-        height: 200,
-        color: Colors.red,
-        child: AspectRatio(
-          aspectRatio: 0.2,
-          child: Container(
-            color: Colors.yellow,
+    return ListView(
+      children: <Widget>[
+        Card(
+          margin: EdgeInsets.all(10),
+          child: Column(
+            children: <Widget>[
+              ListTile(
+                title: Text('张三',style: TextStyle(fontSize: 20)),
+                subtitle: Text('软件工程师'),
+              )
+            ],
           ),
-        ),
-      ),
+        )
+      ],
     );
   }
   
 }
+
+
+
 
 
 
