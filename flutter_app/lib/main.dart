@@ -117,31 +117,48 @@ class MyApp extends StatelessWidget{
   
 // }
 
+// class HomeContent extends StatelessWidget{
+//   Widget build(BuildContext context) {
+//     // TODO: implement build
+//     return ListView(
+//       children: <Widget>[
+//         Card(
+//           margin: EdgeInsets.all(10),
+//           child: Column(
+//             children: <Widget>[
+//               AspectRatio(
+//                 aspectRatio: 16/9,
+//                 child: Image.network('https://www.itying.com/images/201905/thumb_img/1101_thumb_G_1557845381862.jpg',fit: BoxFit.cover),
+//               ),
+//               ListTile(
+//                 title: Text('哈哈呢'),
+//                 subtitle: Text('周华建你是我大哥呀'),
+//               )
+//             ],
+//           ),
+//         )
+//       ],
+//     );
+//   }
+  
+// }
+
 class HomeContent extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
-    return ListView(
-      children: <Widget>[
-        Card(
-          margin: EdgeInsets.all(10),
-          child: Column(
-            children: <Widget>[
-              AspectRatio(
-                aspectRatio: 16/9,
-                child: Image.network('https://www.itying.com/images/201905/thumb_img/1101_thumb_G_1557845381862.jpg',fit: BoxFit.cover),
-              ),
-              ListTile(
-                title: Text('哈哈呢'),
-                subtitle: Text('周华建你是我大哥呀'),
-              )
-            ],
-          ),
-        )
-      ],
+    return RaisedButton(
+      child: Text('第一季'),
+      textColor: Theme.of(context).accentColor,
+      onPressed: (){
+        
+      },
     );
   }
   
 }
+
+
+
 
 
 
