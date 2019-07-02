@@ -33,9 +33,19 @@ class HomeContent extends StatelessWidget{
           width: 400,
           height: 400,
           color: Colors.red,
+          child: Stack(
+            children: <Widget>[
+              Align(
+                alignment: Alignment.topLeft,
+                child: Icon(Icons.home,size: 40,color: Colors.white),
+              ),
+              Align(
+                alignment: Alignment.center,
+                  child: Icon(Icons.search,size: 40,color: Colors.yellow),
+              )
+            ],
+          ),
         ),
-        Text('我是一个文本')
-
       ],
     ) ,
     );
