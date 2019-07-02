@@ -21,36 +21,61 @@ class MyApp extends StatelessWidget{
   }
 }
 
+// class HomeContent extends StatelessWidget{
+ 
+//   Widget build(BuildContext context) {
+//     // TODO: implement build
+//     return Center(
+//       child:Stack(
+//       alignment: Alignment.center,
+//       children: <Widget>[
+//         Container(
+//           width: 400,
+//           height: 400,
+//           color: Colors.red,
+//           child: Stack(
+//             children: <Widget>[
+//               Align(
+//                 alignment: Alignment.topLeft,
+//                 child: Icon(Icons.home,size: 40,color: Colors.white),
+//               ),
+//               Align(
+//                 alignment: Alignment.center,
+//                   child: Icon(Icons.search,size: 40,color: Colors.yellow),
+//               )
+//             ],
+//           ),
+//         ),
+//       ],
+//     ) ,
+//     );
+//   } 
+// }
+
 class HomeContent extends StatelessWidget{
  
   Widget build(BuildContext context) {
     // TODO: implement build
     return Center(
-      child:Stack(
-      alignment: Alignment.center,
-      children: <Widget>[
-        Container(
-          width: 400,
-          height: 400,
-          color: Colors.red,
-          child: Stack(
-            children: <Widget>[
-              Align(
-                alignment: Alignment.topLeft,
-                child: Icon(Icons.home,size: 40,color: Colors.white),
-              ),
-              Align(
-                alignment: Alignment.center,
-                  child: Icon(Icons.search,size: 40,color: Colors.yellow),
-              )
-            ],
-          ),
+      child: Container(
+        width: 400,
+        height: 300,
+        color: Colors.red,
+        child: Stack(
+          children: <Widget>[
+            Positioned(
+              left:60,
+              child: Icon(Icons.home,size: 40,color:Colors.yellow),
+            )
+          ],
         ),
-      ],
-    ) ,
+      ),
     );
-  } 
+  }
+  
 }
+
+
 
 
 
