@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget{
         appBar: AppBar(
           title: Text('我是一个App'),
         ),
-        body: HomePage(),
+        body: HomePate(),
       ),
       theme: ThemeData(
         primarySwatch: Colors.yellow
@@ -22,32 +22,32 @@ class MyApp extends StatelessWidget{
 }
 
 
+class HomePate extends StatefulWidget {
+  HomePate({Key key}) : super(key: key);
 
-class HomePage extends StatefulWidget {
-  HomePage({Key key}) : super(key: key);
-
-  _HomePageState createState() => _HomePageState();
+  _HomePateState createState() => _HomePateState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePateState extends State<HomePate> {
   var countNum = 0;
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        SizedBox(height: 200),
-        Chip(
-          label: Text('${this.countNum}'),
-        ),
-        SizedBox(height: 20),
-        RaisedButton(
-          child: Text('按钮'),
-          onPressed: (){
-             setState(() {
-              this.countNum++;
-             });
-          },
-        )
-      ],
+    return Container(
+       child: Column(
+         children: <Widget>[
+           SizedBox(height: 200),
+           Chip(
+             label: Text('${this.countNum}'),
+           ),
+           RaisedButton(
+             child: Text('按钮'),
+             onPressed: () {
+               setState(() {
+                 this.countNum++; 
+               });
+             },
+           )
+         ],
+       )
     );
   }
 }
