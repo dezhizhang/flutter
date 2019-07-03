@@ -1,6 +1,5 @@
-import 'dart:core' as prefix0;
-
 import 'package:flutter/material.dart';
+import './pages/Search.dart';
 
 void main() => runApp(MyApp());
 
@@ -76,11 +75,13 @@ class _HomePateState extends State<HomePate> {
              label: Text('${this.countNum}'),
            ),
            RaisedButton(
-             child: Text('按钮'),
+             child: Text('搜索'),
              onPressed: () {
-               setState(() {
-                 this.countNum++; 
-               });
+               Navigator.of(context).push(
+                 MaterialPageRoute(
+                   builder:(context) => SearchPage()
+                 )
+               );
              },
            )
          ],
