@@ -13,6 +13,22 @@ class MyApp extends StatelessWidget{
           title: Text('我是一个App'),
         ),
         body: HomePate(),
+        bottomNavigationBar: BottomNavigationBar(
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              title: Text('首页')
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              title: Text('搜索')
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.send),
+              title: Text('产品')
+            )
+          ],
+        ),
       ),
       theme: ThemeData(
         primarySwatch: Colors.yellow
@@ -20,7 +36,6 @@ class MyApp extends StatelessWidget{
     );
   }
 }
-
 
 class HomePate extends StatefulWidget {
   HomePate({Key key}) : super(key: key);
