@@ -8,12 +8,37 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
+      home: Tabs(),
+      theme: ThemeData(
+        primarySwatch: Colors.yellow
+      ),
+    );
+  }
+}
+
+
+class Tabs extends StatefulWidget {
+  Tabs({Key key}) : super(key: key);
+
+  _TabsState createState() => _TabsState();
+}
+
+class _TabsState extends State<Tabs> {
+  var currentIndex = 0;
+  Widget build(BuildContext context) {
+    return Container(
+       child: Scaffold(
         appBar: AppBar(
           title: Text('我是一个App'),
         ),
         body: HomePate(),
         bottomNavigationBar: BottomNavigationBar(
+          currentIndex: this.currentIndex,
+          onTap: (var index) {
+            setState(() {
+              this.currentIndex=index;
+            });
+          },
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
@@ -29,9 +54,6 @@ class MyApp extends StatelessWidget{
             )
           ],
         ),
-      ),
-      theme: ThemeData(
-        primarySwatch: Colors.yellow
       ),
     );
   }
