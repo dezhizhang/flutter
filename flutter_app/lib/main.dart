@@ -79,7 +79,7 @@ class _HomePateState extends State<HomePate> {
              onPressed: () {
                Navigator.of(context).push(
                  MaterialPageRoute(
-                   builder:(context) => SearchPage()
+                   builder:(context) => SearchPage(title:"我是表单传值")
                  )
                );
              },
