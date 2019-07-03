@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import './pages/Search.dart';
+import './pages/Form.dart';
 
 void main() => runApp(MyApp());
-
-
 class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Tabs(),
+      routes: {
+        '/form':(context) => FormPage(),
+        '/serch':(context) => SearchPage(),
+      },
       theme: ThemeData(
-        primarySwatch: Colors.yellow
+        primarySwatch: Colors.pink
       ),
     );
   }
@@ -77,11 +80,13 @@ class _HomePateState extends State<HomePate> {
            RaisedButton(
              child: Text('搜索'),
              onPressed: () {
-               Navigator.of(context).push(
-                 MaterialPageRoute(
-                   builder:(context) => SearchPage(title:"我是表单传值")
-                 )
-               );
+               Navigator.pushNamed(context, '/serch');
+             },
+           ),
+           RaisedButton(
+             child: Text('表单'),
+             onPressed: () {
+               Navigator.pushNamed(context, '/form');
              },
            )
          ],
