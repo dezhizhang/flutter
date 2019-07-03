@@ -6,7 +6,11 @@ class SearchPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Text(this.title);
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(this.title),
+      ),
+    );
   }
   
 }
