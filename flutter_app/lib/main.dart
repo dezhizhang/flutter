@@ -58,6 +58,25 @@ class _TabsState extends State<Tabs> {
           title: Text('我是一个表单')
         ),
         body: HomePate(),
+        drawer: Drawer(
+          child: Column(
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  Expanded(
+                    child: DrawerHeader(
+                      child: Text('你好Flutter'),
+                    ),
+                  )
+                ],
+              )
+            ],
+          )
+          
+        ),
+        endDrawer: Drawer(
+          child: Text('我是右边'),
+        ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: this.currentIndex,
           onTap: (var index) {
