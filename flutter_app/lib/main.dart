@@ -159,10 +159,19 @@ class _HomePateState extends State<HomePate> {
               value: this.countNum,
               onChanged: (value) {
                 setState(() {
-                  this.countNum = value; 
+                  // this.countNum = value; 
                 });
               },
-             
+            ),
+            CheckboxListTile(
+              title: Text('标题'),
+              value: this.countNum,
+              secondary: Icon(Icons.home),
+              onChanged: (value) {
+                setState(() {
+                 this.countNum = value; 
+                });
+              },
             )
 
          ],
