@@ -64,9 +64,11 @@ class _TabsState extends State<Tabs> {
               Row(
                 children: <Widget>[
                   Expanded(
-                    child: DrawerHeader(
-                      child: Text('你好Flutter'),
-                    ),
+                    child: UserAccountsDrawerHeader(
+                      accountName: Text('张德志'),
+                      accountEmail: Text('1541609448@qq.com'),
+                      currentAccountPicture: Icon(Icons.home)
+                    )
                   )
                 ],
               )
@@ -120,18 +122,33 @@ class _HomePateState extends State<HomePate> {
            Chip(
              label: Text('${this.countNum}'),
            ),
-           RaisedButton(
-             child: Text('搜索'),
-             onPressed: () {
-               Navigator.pushNamed(context, '/serch',arguments: {'id':123});
-             },
-           ),
-           RaisedButton(
-             child: Text('表单'),
-             onPressed: () {
-               Navigator.pushNamed(context, '/form');
-             },
-           )
+            RaisedButton(
+              child: Text('普通按钮'),
+              color: Colors.pink,
+              textColor: Colors.white,
+              elevation: 20,
+              onPressed: () {
+                print('我是普通按钮');
+              },
+            ),
+            RaisedButton(
+              child: Text('我是阴影的按钮'),
+              color: Colors.blue,
+              textColor: Colors.white,
+              elevation: 20,
+              onPressed: () {
+
+              },
+            ),
+            RaisedButton.icon(
+              icon: Icon(Icons.search),
+              label: Text('图标按钮'),
+              color: Colors.cyan,
+              textColor: Colors.white,
+              onPressed: () {
+                print('图标按钮');
+              },
+            )
          ],
        )
     );
