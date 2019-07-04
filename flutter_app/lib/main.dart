@@ -93,12 +93,11 @@ class HomePate extends StatefulWidget {
 }
 
 class _HomePateState extends State<HomePate> {
-  var countNum = 0;
+  var countNum = false;
   Widget build(BuildContext context) {
     return Container(
        child: Column(
          children: <Widget>[
-           SizedBox(height: 200),
            Chip(
              label: Text('${this.countNum}'),
            ),
@@ -155,6 +154,15 @@ class _HomePateState extends State<HomePate> {
                 icon: Icon(Icons.usb)
 
               ),
+            ),
+            Checkbox(
+              value: this.countNum,
+              onChanged: (value) {
+                setState(() {
+                  this.countNum = value; 
+                });
+              },
+             
             )
 
          ],
