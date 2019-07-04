@@ -58,27 +58,7 @@ class _TabsState extends State<Tabs> {
           title: Text('我是一个表单')
         ),
         body: HomePate(),
-        drawer: Drawer(
-          child: Column(
-            children: <Widget>[
-              Row(
-                children: <Widget>[
-                  Expanded(
-                    child: UserAccountsDrawerHeader(
-                      accountName: Text('张德志'),
-                      accountEmail: Text('1541609448@qq.com'),
-                      currentAccountPicture: Icon(Icons.home)
-                    )
-                  )
-                ],
-              )
-            ],
-          )
-          
-        ),
-        endDrawer: Drawer(
-          child: Text('我是右边'),
-        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: this.currentIndex,
           onTap: (var index) {
@@ -149,41 +129,33 @@ class _HomePateState extends State<HomePate> {
                 print('图标按钮');
               },
             ),
-            RaisedButton(
-              child: Text('圆角按钮'),
-              color: Colors.pink,
-              textColor: Colors.white,
-              elevation: 10,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(4)
-              ),
-              onPressed: () {
-                print('圆角按钮');
-              },
-            ),
-            FlatButton(
-              child: Text('我是按钮'),
-              color: Colors.blue,
-              textColor: Colors.white,
-              onPressed: () {
-
-              },
-            ),
-            OutlineButton(
-              child: Text('按钮'),
-              color: Colors.pink,
-              textColor: Colors.yellow,
-              onPressed: () {
-
-              },
-            ),
             IconButton(
               icon: Icon(Icons.search),
               onPressed: () {
 
               },
             ),
-            
+            TextField(
+              maxLines: 2,
+              decoration: InputDecoration(
+                hintText: '请输入要搜索的内容',
+                border: OutlineInputBorder(),
+              ),
+            ),
+            TextField(
+              obscureText: true,
+              decoration: InputDecoration(
+                hintText: '密码框',
+                border: OutlineInputBorder()
+              ),
+            ),
+            TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                icon: Icon(Icons.usb)
+
+              ),
+            )
 
          ],
        )
