@@ -55,7 +55,7 @@ class _TabsState extends State<Tabs> {
     return Container(
        child: Scaffold(
         appBar: AppBar(
-          title: Text('我是一个App'),
+          title: Text('我是一个表单')
         ),
         body: HomePate(),
         bottomNavigationBar: BottomNavigationBar(

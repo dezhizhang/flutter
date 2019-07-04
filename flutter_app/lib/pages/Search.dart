@@ -10,14 +10,20 @@ class SearchPage extends StatelessWidget{
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('我是搜索页'),
-          centerTitle: true,
-          bottom: TabBar(
-            tabs: <Widget>[
-              Tab(text: '热门'),
-              Tab(text: '我的')
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Expanded(
+                child: TabBar(
+                  tabs: <Widget>[
+                    Tab(text: '执门'),
+                    Tab(text: '首页')
+                  ],
+                ),
+              )
             ],
           ),
+          centerTitle: true,
         ),
         body: TabBarView(
           children: <Widget>[
