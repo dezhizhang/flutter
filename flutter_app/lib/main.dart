@@ -148,7 +148,20 @@ class _HomePateState extends State<HomePate> {
               onPressed: () {
                 print('图标按钮');
               },
+            ),
+            RaisedButton(
+              child: Text('圆角按钮'),
+              color: Colors.pink,
+              textColor: Colors.white,
+              elevation: 10,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(4)
+              ),
+              onPressed: () {
+                print('圆角按钮');
+              },
             )
+
          ],
        )
     );
