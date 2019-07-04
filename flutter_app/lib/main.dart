@@ -160,7 +160,30 @@ class _HomePateState extends State<HomePate> {
               onPressed: () {
                 print('圆角按钮');
               },
-            )
+            ),
+            FlatButton(
+              child: Text('我是按钮'),
+              color: Colors.blue,
+              textColor: Colors.white,
+              onPressed: () {
+
+              },
+            ),
+            OutlineButton(
+              child: Text('按钮'),
+              color: Colors.pink,
+              textColor: Colors.yellow,
+              onPressed: () {
+
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.search),
+              onPressed: () {
+
+              },
+            ),
+            
 
          ],
        )
