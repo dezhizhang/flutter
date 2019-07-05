@@ -31,7 +31,7 @@ class _SwiperPageState extends State<SwiperPage> {
         },
         itemCount: imgList.length,
         pagination: new SwiperPagination(),
-        control: new SwiperControl(),
+        // control: new SwiperControl(),
       ),
     );
   }
