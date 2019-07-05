@@ -8,6 +8,17 @@ class SwiperPage extends StatefulWidget {
 }
 
 class _SwiperPageState extends State<SwiperPage> {
+  List<Map> imgList = [
+    {
+      "url":"https://www.itying.com/images/flutter/1.png"
+    },
+    {
+     "url":"https://www.itying.com/images/flutter/2.png"
+    },
+    {
+      "url":"https://www.itying.com/images/flutter/3.png"
+    }
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,11 +27,11 @@ class _SwiperPageState extends State<SwiperPage> {
       ),
       body: Swiper(
         itemBuilder: (BuildContext context,int index) {
-         return new Image.network("http://via.placeholder.com/350x150",fit: BoxFit.fill,);
+         return new Image.network(imgList[index]['url'],fit: BoxFit.fill,);
         },
         itemCount: 3,
-        // pagination: new SwiperPagination(),
-        // control: new SwiperControl(),
+        pagination: new SwiperPagination(),
+        control: new SwiperControl(),
       ),
     );
   }
