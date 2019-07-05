@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 
-class FormPage extends StatelessWidget{
+class FormPage extends StatefulWidget {
+  FormPage({Key key}) : super(key: key);
+
+  _FormPageState createState() => _FormPageState();
+}
+
+class _FormPageState extends State<FormPage> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('我是表单页'),
-      ),
+    return Container(
+       child: Scaffold(
+         
+       ) ,
     );
   }
-  
 }
