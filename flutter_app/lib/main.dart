@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import './pages/Search.dart';
 import './pages/Form.dart';
 import './pages/Date.dart';
@@ -14,6 +15,14 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('zh','CH'),
+        const Locale('en','US')
+      ],
       home: Tabs(),
       // routes: {
       //   '/form':(context) => FormPage(),

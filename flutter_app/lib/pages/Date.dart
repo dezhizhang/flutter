@@ -33,6 +33,7 @@ class _DatePickerPageState extends State<DatePickerPage> {
                 initialDate: DateTime.now(),
                 firstDate: DateTime(1980),
                 lastDate: DateTime(2420),
+                locale: Locale('zh'),
               ).then((res) => {
                   setState(() {
                     this.dateTime = formatDate(res,[yyyy,'年',mm,'月',dd,'日']);
