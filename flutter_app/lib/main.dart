@@ -106,7 +106,7 @@ class _HomePateState extends State<HomePate> {
               textColor: Colors.white,
               elevation: 20,
               onPressed: () {
-                print('我是普通按钮');
+                Navigator.of(context).pushNamed('/form');
               },
             ),
             RaisedButton(
