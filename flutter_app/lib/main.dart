@@ -2,12 +2,14 @@
 import 'package:flutter/material.dart';
 import './pages/Search.dart';
 import './pages/Form.dart';
+import './pages/Date.dart';
 
 void main() => runApp(MyApp());
 class MyApp extends StatelessWidget{
   final routes =  {
       '/form':(context) => FormPage(),
       '/serch':(context,{arguments}) => SearchPage(arguments:arguments),
+      '/date':(context) => DatePickerPage(),
   };
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -97,9 +99,6 @@ class _HomePateState extends State<HomePate> {
     return Container(
        child: Column(
          children: <Widget>[
-           Chip(
-             label: Text('${this.countNum}'),
-           ),
             RaisedButton(
               child: Text('普通按钮'),
               color: Colors.pink,
@@ -110,69 +109,14 @@ class _HomePateState extends State<HomePate> {
               },
             ),
             RaisedButton(
-              child: Text('我是阴影的按钮'),
+              child: Text('日期组件'),
               color: Colors.blue,
               textColor: Colors.white,
               elevation: 20,
               onPressed: () {
-
+                Navigator.of(context).pushNamed('/date');
               },
             ),
-            RaisedButton.icon(
-              icon: Icon(Icons.search),
-              label: Text('图标按钮'),
-              color: Colors.cyan,
-              textColor: Colors.white,
-              onPressed: () {
-                print('图标按钮');
-              },
-            ),
-            IconButton(
-              icon: Icon(Icons.search),
-              onPressed: () {
-
-              },
-            ),
-            TextField(
-              maxLines: 2,
-              decoration: InputDecoration(
-                hintText: '请输入要搜索的内容',
-                border: OutlineInputBorder(),
-              ),
-            ),
-            TextField(
-              obscureText: true,
-              decoration: InputDecoration(
-                hintText: '密码框',
-                border: OutlineInputBorder()
-              ),
-            ),
-            TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                icon: Icon(Icons.usb)
-
-              ),
-            ),
-            Checkbox(
-              value: this.countNum,
-              onChanged: (value) {
-                setState(() {
-                  // this.countNum = value; 
-                });
-              },
-            ),
-            CheckboxListTile(
-              title: Text('标题'),
-              value: this.countNum,
-              secondary: Icon(Icons.home),
-              onChanged: (value) {
-                setState(() {
-                 this.countNum = value; 
-                });
-              },
-            )
-
          ],
        )
     );
