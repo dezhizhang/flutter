@@ -9,6 +9,7 @@ class DatePickerPage extends StatefulWidget {
 }
 
 class _DatePickerPageState extends State<DatePickerPage> {
+  String dateTime = '2019-10-12';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +23,7 @@ class _DatePickerPageState extends State<DatePickerPage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text('2019-12-14'),
+                Text(this.dateTime),
                 Icon(Icons.arrow_drop_down)
               ],
             ),
@@ -33,7 +34,9 @@ class _DatePickerPageState extends State<DatePickerPage> {
                 firstDate: DateTime(1980),
                 lastDate: DateTime(2420),
               ).then((res) => {
-                print(res)
+                  setState(() {
+                    this.dateTime = formatDate(res,[yyyy,'年',mm,'月',dd,'日']);
+                  })
               });
             },
           )
