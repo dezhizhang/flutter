@@ -4,6 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import './pages/Search.dart';
 import './pages/Form.dart';
 import './pages/Date.dart';
+import './pages/Swiper.dart';
 
 void main() => runApp(MyApp());
 class MyApp extends StatelessWidget{
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget{
       '/form':(context) => FormPage(),
       '/serch':(context,{arguments}) => SearchPage(arguments:arguments),
       '/date':(context) => DatePickerPage(),
+      '/swiper':(context) => SwiperPage()
   };
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -124,6 +126,15 @@ class _HomePateState extends State<HomePate> {
               elevation: 20,
               onPressed: () {
                 Navigator.of(context).pushNamed('/date');
+              },
+            ),
+            RaisedButton(
+              child: Text('轮播图'),
+              color: Colors.pink,
+              textColor: Colors.white,
+              elevation: 20,
+              onPressed: () {
+                Navigator.of(context).pushNamed('/swiper');
               },
             ),
          ],
