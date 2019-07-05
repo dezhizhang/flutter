@@ -9,7 +9,8 @@ class FormPage extends StatefulWidget {
 class _FormPageState extends State<FormPage> {
   String userName;
   int sex=1;
-
+  var checkbox = false;
+  String tags;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -55,8 +56,57 @@ class _FormPageState extends State<FormPage> {
                     groupValue: this.sex,
                   ) 
                 ],
-              )
-                
+              ),
+              Row(
+                children: <Widget>[
+                  Text('吃饭'),
+                  Checkbox(
+                    value: this.checkbox,
+                    onChanged: (value) {
+                      setState(() {
+                        this.checkbox = value;
+                      });
+                    },
+                  ),
+                 Text('睡觉'),
+                 Checkbox(
+                   value: this.checkbox,
+                   onChanged: (value) {
+                     setState(() {
+                       this.checkbox = value; 
+                     });
+                   },
+                 )
+                ],
+              ),
+              TextField(
+                    maxLength: 3,
+                    decoration: InputDecoration(
+                      hintText: "描述信息",
+                      border: OutlineInputBorder(),
+                    ),
+                    onChanged: (value){
+                      setState(() {
+                        this.tags = value;
+                      });
+                  },
+              ),
+              SizedBox(height: 40),
+              Container(
+                width: double.infinity,
+                height: 40,
+                child: RaisedButton(
+                  child: Text('确定'),
+                  onPressed: () {
+                    print(this.sex);
+                    print(this.userName);
+                    print(this.checkbox);
+                    print(this.tags);
+                  },
+                  color: Colors.pink,
+                  textColor: Colors.white,
+                ),
+              )  
               ],
             ),
          )
