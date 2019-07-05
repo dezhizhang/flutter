@@ -29,7 +29,7 @@ class _SwiperPageState extends State<SwiperPage> {
         itemBuilder: (BuildContext context,int index) {
          return new Image.network(imgList[index]['url'],fit: BoxFit.fill,);
         },
-        itemCount: 3,
+        itemCount: imgList.length,
         pagination: new SwiperPagination(),
         control: new SwiperControl(),
       ),
