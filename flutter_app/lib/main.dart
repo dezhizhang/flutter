@@ -8,6 +8,7 @@ import './pages/Swiper.dart';
 import './pages/GET.dart';
 import './pages/Http.dart';
 import './pages/Dio.dart';
+import './pages/Nwes.dart';
 
 
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget{
       '/getpage':(context) => GetPage(),
       '/http':(context) => HttpPage(),
       '/dio':(context) => DioPage(),
+      '/news':(context) => NewsPage(),
   };
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -171,7 +173,16 @@ class _HomePateState extends State<HomePate> {
               onPressed: () {
                 Navigator.of(context).pushNamed('/dio');
               },
-            )
+            ),
+            RaisedButton(
+              child: Text('获取新闻列表'),
+              color: Colors.blue,
+              textColor: Colors.white,
+              elevation: 10,
+              onPressed: () {
+                Navigator.of(context).pushNamed('/news');
+              },
+            ),
             
          ],
        )
