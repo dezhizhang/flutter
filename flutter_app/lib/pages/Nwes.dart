@@ -24,6 +24,12 @@ class _NewsPageState extends State<NewsPage> {
       });
     }
   }
+  Future<void> refresh() async{
+     await Future.delayed(Duration(milliseconds:2000),(){
+       print('重新加载数据');
+       getData();
+     });
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,13 +37,16 @@ class _NewsPageState extends State<NewsPage> {
           appBar: AppBar(
             title: Text('新闻列表'),
           ),
-          body: this.list.length > 0 ? ListView(
-            children: this.list.map((value) {
-              return ListTile(
-                 title: Text(value['author_id']),
-              );
-            }).toList()
-          ):Text('加载更多'),
+          body: this.list.length > 0 ? RefreshIndicator(
+            onRefresh: this.refresh,
+            child: ListView(
+              children: this.list.map((value) {
+                return ListTile(
+                  title: Text(value['author_id']),
+                );
+              }).toList(),
+            ),
+          ) : Text('加载更多...'),
         )
     );
   }
