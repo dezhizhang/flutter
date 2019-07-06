@@ -18,15 +18,11 @@ class _DioPageState extends State<DioPage> {
   getData() async{
     var dio = new Dio();
     Response  result = await dio.get('https://cnodejs.org/api/v1/topics');
-    this.list = json.decode(result.data)['data'];
+   
+    setState(() {
+       this.list = json.decode(result.data)['data'];
+    });
     print(result);
-    // if(result.statusCode == 200) {
-     
-    //   //  setState(() {
-    //   //    this.list = json.decode(result.data)['data'];
-    //   //  });
-    // }
-  
   }
   @override
   Widget build(BuildContext context) {
