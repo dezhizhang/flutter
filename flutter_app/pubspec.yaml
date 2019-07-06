@@ -23,6 +23,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_swiper: ^1.1.6
+  http: ^0.12.0+2
 
 
 
