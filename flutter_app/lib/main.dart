@@ -7,6 +7,8 @@ import './pages/Date.dart';
 import './pages/Swiper.dart';
 import './pages/GET.dart';
 import './pages/Http.dart';
+import './pages/Dio.dart';
+
 
 
 void main() => runApp(MyApp());
@@ -18,6 +20,7 @@ class MyApp extends StatelessWidget{
       '/swiper':(context) => SwiperPage(),
       '/getpage':(context) => GetPage(),
       '/http':(context) => HttpPage(),
+      '/dio':(context) => DioPage(),
   };
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -158,6 +161,15 @@ class _HomePateState extends State<HomePate> {
               elevation: 20,
               onPressed: () {
                 Navigator.of(context).pushNamed('/http');
+              },
+            ),
+            RaisedButton(
+              child: Text('Dio请求'),
+              color: Colors.pink,
+              textColor: Colors.white,
+              elevation: 10,
+              onPressed: () {
+                Navigator.of(context).pushNamed('/dio');
               },
             )
             
