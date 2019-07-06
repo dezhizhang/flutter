@@ -137,6 +137,7 @@ class _HomePateState extends State<HomePate> {
                 Navigator.of(context).pushNamed('/swiper');
               },
             ),
+            
          ],
        )
     );

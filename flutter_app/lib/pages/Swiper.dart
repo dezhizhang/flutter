@@ -25,13 +25,29 @@ class _SwiperPageState extends State<SwiperPage> {
       appBar: AppBar(
         title: Text('轮播图组件'),
       ),
-      body: Swiper(
-        itemBuilder: (BuildContext context,int index) {
-         return new Image.network(imgList[index]['url'],fit: BoxFit.fill,);
-        },
-        itemCount: imgList.length,
-        pagination: new SwiperPagination(),
-        // control: new SwiperControl(),
+      // body: Swiper(
+      //   itemBuilder: (BuildContext context,int index) {
+      //    return new Image.network(imgList[index]['url'],fit: BoxFit.fill,);
+      //   },
+      //   itemCount: imgList.length,
+      //   pagination: new SwiperPagination(),
+      //   // control: new SwiperControl(),
+      // ),
+      body: Column(
+        children: <Widget>[
+          Container(
+            height: 150,
+            child:Swiper(
+              itemBuilder: (BuildContext context,int index) {
+                return  new Image.network(imgList[index]['url'],fit: BoxFit.fill);
+                
+              },
+              itemCount:imgList.length,
+              pagination: new SwiperPagination(),
+              control: new SwiperControl(),
+            ),
+          )
+        ],
       ),
     );
   }
