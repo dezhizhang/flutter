@@ -5,6 +5,8 @@ import './pages/Search.dart';
 import './pages/Form.dart';
 import './pages/Date.dart';
 import './pages/Swiper.dart';
+import './pages/GET.dart';
+
 
 void main() => runApp(MyApp());
 class MyApp extends StatelessWidget{
@@ -12,7 +14,8 @@ class MyApp extends StatelessWidget{
       '/form':(context) => FormPage(),
       '/serch':(context,{arguments}) => SearchPage(arguments:arguments),
       '/date':(context) => DatePickerPage(),
-      '/swiper':(context) => SwiperPage()
+      '/swiper':(context) => SwiperPage(),
+      '/getpage':(context) => GetPage()
   };
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -135,6 +138,15 @@ class _HomePateState extends State<HomePate> {
               elevation: 20,
               onPressed: () {
                 Navigator.of(context).pushNamed('/swiper');
+              },
+            ),
+            RaisedButton(
+              child: Text('GET请求'),
+              color: Colors.yellow,
+              textColor: Colors.white,
+              elevation: 20,
+              onPressed: () {
+                Navigator.of(context).pushNamed('/getpage');
               },
             ),
             
