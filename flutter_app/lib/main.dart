@@ -6,6 +6,7 @@ import './pages/Form.dart';
 import './pages/Date.dart';
 import './pages/Swiper.dart';
 import './pages/GET.dart';
+import './pages/Http.dart';
 
 
 void main() => runApp(MyApp());
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget{
       '/serch':(context,{arguments}) => SearchPage(arguments:arguments),
       '/date':(context) => DatePickerPage(),
       '/swiper':(context) => SwiperPage(),
-      '/getpage':(context) => GetPage()
+      '/getpage':(context) => GetPage(),
+      '/http':(context) => HttpPage(),
   };
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -149,6 +151,15 @@ class _HomePateState extends State<HomePate> {
                 Navigator.of(context).pushNamed('/getpage');
               },
             ),
+            RaisedButton(
+              child: Text('Http请求'),
+              color: Colors.pink,
+              textColor: Colors.white,
+              elevation: 20,
+              onPressed: () {
+                Navigator.of(context).pushNamed('/http');
+              },
+            )
             
          ],
        )
