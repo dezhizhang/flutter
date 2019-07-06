@@ -10,17 +10,29 @@ class NewsPage extends StatefulWidget {
 }
 
 class _NewsPageState extends State<NewsPage> {
+  int page = 0;
   List list = [];
+  ScrollController _scrollController = new ScrollController();
   void initState() {
     super.initState();
     this.getData();
+    _scrollController.addListener(() {
+        var pixels = _scrollController.position.pixels;
+        var maxScrollExtent =   _scrollController.position.maxScrollExtent;
+        if(pixels == maxScrollExtent) {
+          getData();
+        }
+    });
   }
+
   getData() async{
-    var response = await http.get('https://cnodejs.org/api/v1/topics');
+    print(this.page);
+    var response = await http.get('https://cnodejs.org/api/v1/topics?page=${this.page}');
     if(response.statusCode == 200) {
       var data = json.decode(response.body)['data'];
       setState(() {
-       this.list = data;  
+       this.list.addAll(data);
+       this.page++;
       });
     }
   }
@@ -39,12 +51,19 @@ class _NewsPageState extends State<NewsPage> {
           ),
           body: this.list.length > 0 ? RefreshIndicator(
             onRefresh: this.refresh,
-            child: ListView(
-              children: this.list.map((value) {
-                return ListTile(
-                  title: Text(value['author_id']),
+            child: ListView.builder(
+              controller: _scrollController,
+              itemCount: this.list.length,
+              itemBuilder: (context,index) {
+                return Column(
+                  children: <Widget>[
+                    ListTile(
+                      title: Text('${this.list[index]['author_id']}',maxLines: 1,),
+                    ),
+                    Divider()
+                  ],
                 );
-              }).toList(),
+              },
             ),
           ) : Text('加载更多...'),
         )
