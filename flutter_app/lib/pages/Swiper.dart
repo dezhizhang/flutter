@@ -35,9 +35,12 @@ class _SwiperPageState extends State<SwiperPage> {
       // ),
       body: Column(
         children: <Widget>[
+
           Container(
             height: 150,
-            child:Swiper(
+            child: AspectRatio(
+              aspectRatio: 10,
+              child:  Swiper(
               itemBuilder: (BuildContext context,int index) {
                 return  new Image.network(imgList[index]['url'],fit: BoxFit.fill);
                 
@@ -45,7 +48,9 @@ class _SwiperPageState extends State<SwiperPage> {
               itemCount:imgList.length,
               pagination: new SwiperPagination(),
               control: new SwiperControl(),
+              autoplay: true,
             ),
+            )
           )
         ],
       ),
