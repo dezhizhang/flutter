@@ -40,7 +40,6 @@ class _GetPageState extends State<GetPage> {
                     if(result.statusCode == 200) {
                        print(json.decode(result.body));
                     }
-
                   },
                )
              ],
