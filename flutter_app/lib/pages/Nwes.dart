@@ -63,7 +63,8 @@ class _NewsPageState extends State<NewsPage> {
                     ListTile(
                       title: Text('${this.list[index]['author_id']}',maxLines: 1,),
                       onTap: () {
-                        Navigator.of(context).pushNamed('/newsdetail',arguments: {'aid':'123'});
+                       
+                        Navigator.of(context).pushNamed('/newsdetail',arguments: {'id':this.list[index]['id']});
                       },
                     ),
                     Divider()

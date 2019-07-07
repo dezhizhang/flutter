@@ -25,6 +25,7 @@ dependencies:
   flutter_swiper: ^1.1.6
   http: ^0.12.0+2
   dio: ^2.1.10
+  flutter_html: ^0.10.4
 
 
 
