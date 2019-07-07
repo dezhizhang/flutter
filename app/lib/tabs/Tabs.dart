@@ -22,7 +22,7 @@ class _TabsState extends State<Tabs> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('京东商城'),
+        title: Text('建兰商城'),
       ),
       body: this.pageList[this.currentIndex],
       bottomNavigationBar: BottomNavigationBar(
