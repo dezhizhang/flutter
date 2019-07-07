@@ -12,6 +12,7 @@ import './pages/Nwes.dart';
 import './pages/Detail.dart';
 import './pages/Device.dart';
 import './pages/Image.dart';
+import './pages/Video.dart';
 
 
 
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget{
       '/news':(context) => NewsPage(),
       '/newsdetail':(context,{arguments}) => NewsDetail(arguments:arguments),
       '/device':(context) => DevicePage(),
-      '/imglist':(context) => ImagePage()
+      '/imglist':(context) => ImagePage(),
+      '/video':(context) => VideoPage(),
   };
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -207,7 +209,15 @@ class _HomePateState extends State<HomePate> {
               onPressed: () {
                 Navigator.of(context).pushNamed('/imglist');
               },
-
+            ),
+            RaisedButton(
+              child: Text('视频播放'),
+              color: Colors.blue,
+              textColor: Colors.white,
+              elevation: 10,
+              onPressed: () {
+                Navigator.of(context).pushNamed('/video');
+              },
             )
           
          ],
