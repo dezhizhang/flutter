@@ -31,6 +31,10 @@ class _NetPageState extends State<NetPage> {
         }
       });
   }
+  dispose() {
+    super.dispose();
+    subscription.cancel();
+  }
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -14,6 +14,7 @@ import './pages/Device.dart';
 import './pages/Image.dart';
 import './pages/Video.dart';
 import './pages/Net.dart';
+import './pages/Storage.dart';
 
 
 
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget{
       '/imglist':(context) => ImagePage(),
       '/video':(context) => VideoPage(),
       '/network':(context) => NetPage(),
+      '/storage':(context) => StoragePage()
   };
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -228,6 +230,15 @@ class _HomePateState extends State<HomePate> {
               elevation: 10,
               onPressed: () {
                 Navigator.of(context).pushNamed('/network');
+              },
+            ),
+            RaisedButton(
+              child: Text('本地存诸'),
+              color: Colors.yellow,
+              textColor: Colors.white,
+              elevation: 10,
+              onPressed: () {
+                Navigator.of(context).pushNamed('/storage');
               },
             )
           
