@@ -25,7 +25,6 @@ class _NewsPageState extends State<NewsPage> {
         }
     });
   }
-
   getData() async{
     if(this.flag) {
         var response = await http.get('https://cnodejs.org/api/v1/topics?page=${this.page}');
@@ -37,7 +36,6 @@ class _NewsPageState extends State<NewsPage> {
           });
         }
     }
-   
   }
   Future<void> refresh() async{
      await Future.delayed(Duration(milliseconds:2000),(){

@@ -11,6 +11,7 @@ import './pages/Dio.dart';
 import './pages/Nwes.dart';
 import './pages/Detail.dart';
 import './pages/Device.dart';
+import './pages/Image.dart';
 
 
 
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget{
       '/dio':(context) => DioPage(),
       '/news':(context) => NewsPage(),
       '/newsdetail':(context,{arguments}) => NewsDetail(arguments:arguments),
-      '/device':(context) => DevicePage()
+      '/device':(context) => DevicePage(),
+      '/imglist':(context) => ImagePage()
   };
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -196,6 +198,16 @@ class _HomePateState extends State<HomePate> {
               onPressed: () {
                 Navigator.of(context).pushNamed('/device');
               },
+            ),
+            RaisedButton(
+              child: Text('相册选择'),
+              color: Colors.pink,
+              textColor: Colors.white,
+              elevation: 10,
+              onPressed: () {
+                Navigator.of(context).pushNamed('/imglist');
+              },
+
             )
           
          ],
