@@ -15,6 +15,7 @@ import './pages/Image.dart';
 import './pages/Video.dart';
 import './pages/Net.dart';
 import './pages/Storage.dart';
+import './pages/Code.dart';
 
 
 
@@ -35,7 +36,8 @@ class MyApp extends StatelessWidget{
       '/imglist':(context) => ImagePage(),
       '/video':(context) => VideoPage(),
       '/network':(context) => NetPage(),
-      '/storage':(context) => StoragePage()
+      '/storage':(context) => StoragePage(),
+      '/code':(context) => CodePage()
   };
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -239,6 +241,15 @@ class _HomePateState extends State<HomePate> {
               elevation: 10,
               onPressed: () {
                 Navigator.of(context).pushNamed('/storage');
+              },
+            ),
+            RaisedButton(
+              child: Text('扫码'),
+              color: Colors.pink,
+              textColor: Colors.white,
+              elevation: 10,
+              onPressed: () {
+                Navigator.of(context).pushNamed('/code');
               },
             )
           
