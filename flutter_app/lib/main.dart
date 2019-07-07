@@ -13,6 +13,7 @@ import './pages/Detail.dart';
 import './pages/Device.dart';
 import './pages/Image.dart';
 import './pages/Video.dart';
+import './pages/Net.dart';
 
 
 
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget{
       '/device':(context) => DevicePage(),
       '/imglist':(context) => ImagePage(),
       '/video':(context) => VideoPage(),
+      '/network':(context) => NetPage(),
   };
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -217,6 +219,15 @@ class _HomePateState extends State<HomePate> {
               elevation: 10,
               onPressed: () {
                 Navigator.of(context).pushNamed('/video');
+              },
+            ),
+            RaisedButton(
+              child: Text('检测网络清况'),
+              color: Colors.pink,
+              textColor: Colors.white,
+              elevation: 10,
+              onPressed: () {
+                Navigator.of(context).pushNamed('/network');
               },
             )
           
