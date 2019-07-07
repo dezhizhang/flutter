@@ -11,6 +11,7 @@ class NewsPage extends StatefulWidget {
 
 class _NewsPageState extends State<NewsPage> {
   int page = 0;
+  bool flag = true;
   List list = [];
   ScrollController _scrollController = new ScrollController();
   void initState() {
@@ -19,22 +20,24 @@ class _NewsPageState extends State<NewsPage> {
     _scrollController.addListener(() {
         var pixels = _scrollController.position.pixels;
         var maxScrollExtent =   _scrollController.position.maxScrollExtent;
-        if(pixels == maxScrollExtent) {
+        if(pixels >= maxScrollExtent-40) {
           getData();
         }
     });
   }
 
   getData() async{
-    print(this.page);
-    var response = await http.get('https://cnodejs.org/api/v1/topics?page=${this.page}');
-    if(response.statusCode == 200) {
-      var data = json.decode(response.body)['data'];
-      setState(() {
-       this.list.addAll(data);
-       this.page++;
-      });
+    if(this.flag) {
+        var response = await http.get('https://cnodejs.org/api/v1/topics?page=${this.page}');
+        if(response.statusCode == 200) {
+          var data = json.decode(response.body)['data'];
+          setState(() {
+          this.list.addAll(data);
+          this.page++;
+          });
+        }
     }
+   
   }
   Future<void> refresh() async{
      await Future.delayed(Duration(milliseconds:2000),(){
