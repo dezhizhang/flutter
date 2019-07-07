@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import 'dart:convert';
+import 'package:dio/dio.dart';
 import '../utils/ScreenAdaper.dart';
 import '../model/FocusModel.dart';
+
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -10,25 +13,37 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List focusData = [];
+  void initState() {
+    super.initState();
+    this.getFocusData();
+  }
+  getFocusData() async{
+     var result  = await Dio().get('http://jd.itying.com/api/focus');
+     var focusList = FocusModel.fromJson(result.data);
+     setState(() {
+      this.focusData = focusList.result; 
+     });
+  }
   Widget swiperWidget() {
-    List<Map> imageList = [
-      {"url": "https://www.itying.com/images/flutter/slide01.jpg"},
-      {"url": "https://www.itying.com/images/flutter/slide02.jpg"},
-      {"url": "https://www.itying.com/images/flutter/slide03.jpg"},
-    ];
-    return Container(
-      child: AspectRatio(
-        aspectRatio: 2/1,
-        child: Swiper(
-          itemBuilder: (BuildContext context,int index) {
-            return new Image.network(imageList[index]['url'],fit: BoxFit.fill);
-          },
-          itemCount: imageList.length,
-          pagination: new SwiperPagination(),
-          autoplay: true,
-        )
-      ),
-    );
+    if(this.focusData.length > 0) {
+       return Container(
+        child: AspectRatio(
+          aspectRatio: 2/1,
+          child: Swiper(
+            itemBuilder: (BuildContext context,int index) {
+              String pic = this.focusData[index].pic;
+              return new Image.network('http://jd.itying.com/${pic.replaceAll('\\', '/')}',fit: BoxFit.fill);
+            },
+            itemCount: this.focusData.length,
+            pagination: new SwiperPagination(),
+            autoplay: true,
+          )
+        ),
+      );
+    } else {
+      return Text('加载中...');
+    }
   }
 
   Widget titleWidget(value) {
