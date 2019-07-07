@@ -9,6 +9,8 @@ import './pages/GET.dart';
 import './pages/Http.dart';
 import './pages/Dio.dart';
 import './pages/Nwes.dart';
+import './pages/Detail.dart';
+
 
 
 
@@ -23,6 +25,7 @@ class MyApp extends StatelessWidget{
       '/http':(context) => HttpPage(),
       '/dio':(context) => DioPage(),
       '/news':(context) => NewsPage(),
+      '/newsdetail':(context,{arguments}) => NewsDetail(arguments:arguments),
   };
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -183,7 +186,7 @@ class _HomePateState extends State<HomePate> {
                 Navigator.of(context).pushNamed('/news');
               },
             ),
-            
+          
          ],
        )
     );
