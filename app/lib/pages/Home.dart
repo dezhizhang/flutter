@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import '../utils/ScreenAdaper.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -33,20 +32,58 @@ class _HomePageState extends State<HomePage> {
 
   Widget titleWidget(value) {
     return Container(
-      height: ScreenUtil.getInstance().setHeight(46),
-      padding: EdgeInsets.all(20),
+      height: ScreenAdaper.height(32),
+      margin: EdgeInsets.only(left: ScreenAdaper.width(20)),
+      padding: EdgeInsets.only(left:ScreenAdaper.width(20)),
+      decoration: BoxDecoration(
+        border: Border(
+          left: BorderSide(
+            color: Colors.pink,
+            width: ScreenAdaper.width(5)
+          )
+        )
+      ),
       child: Text(value,style: TextStyle(
         color: Colors.black54
       )),
     );
   }
+  Widget productListWidget() {
+    return Container(
+        height: ScreenAdaper.height(200),
+        padding: EdgeInsets.all(ScreenAdaper.width(10)),
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (context,index) {
+            return Column(
+               children: <Widget>[
+                 Container(
+                   width: ScreenAdaper.width(140),
+                   height: ScreenAdaper.height(140),
+                   margin: EdgeInsets.only(right: ScreenAdaper.width(10)),
+                   child: Image.network('https://www.itying.com/images/flutter/hot${index+1}.jpg',fit: BoxFit.cover),
+                 ),
+                 Text('第${index}条')
+               ],
+            );
+          },
+          itemCount: 10,
+          ),
+        );
+  }
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
+    ScreenAdaper.init(context);
     return ListView(
       children: <Widget>[
         swiperWidget(),
-        titleWidget('猜你喜欢')
+        SizedBox(height: ScreenAdaper.height(20)),
+        titleWidget('猜你喜欢'),
+        SizedBox(height: ScreenAdaper.height(20)),
+        productListWidget(),
+        SizedBox(height: ScreenAdaper.height(20)),
+        titleWidget('热门推荐'),
+
       ],
     );
   }
