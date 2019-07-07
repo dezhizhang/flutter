@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../Home.dart';
-import '../Category.dart';
-import '../Cart.dart';
-import '../People.dart';
+import '../pages/Home.dart';
+import '../pages/Category.dart';
+import '../pages/Cart.dart';
+import '../pages/People.dart';
 
 class Tabs extends StatefulWidget {
   Tabs({Key key}) : super(key: key);
