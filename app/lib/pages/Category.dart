@@ -15,6 +15,9 @@ class _CategoryPageState extends State<CategoryPage> {
     ScreenAdaper.init(context);
     var leftWidth = ScreenAdaper.getScreenWidth()/4;
     var rightItemWidth = (ScreenAdaper.getScreenWidth() -leftWidth-40)/3;
+    rightItemWidth = ScreenAdaper.width(rightItemWidth);
+    var rightItemHeight = rightItemWidth + ScreenAdaper.height(28);
+
     return Row(
       children: <Widget>[
         Container(
@@ -47,22 +50,21 @@ class _CategoryPageState extends State<CategoryPage> {
         Expanded(
           flex: 1,
           child: Container(
+            // padding: EdgeInsets.all(10),
             height: double.infinity,
-            color: Colors.blue,
             child: Container(
               height: double.infinity,
               color: Color.fromRGBO(240, 246, 246, 0.9),
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3,
-                  childAspectRatio: 1/1.2,
+                  childAspectRatio: rightItemWidth / rightItemHeight,
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 10
                 ),
                 itemCount: 10,
                 itemBuilder: (context,index) {
                   return Container(
-                    padding: EdgeInsets.all(10),
                     child: Column(
                       children: <Widget>[
                         AspectRatio(
