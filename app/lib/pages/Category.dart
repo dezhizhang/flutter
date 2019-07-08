@@ -15,19 +15,28 @@ class CategoryPage extends StatefulWidget {
 class _CategoryPageState extends State<CategoryPage> {
   int selectIndex = 0;
   List cateData = [];
+  List cateProductData = [];
   void initState() {
     super.initState();
     this.getCateList();
-  
   }
 
   getCateList() async{
-     var result  = await Dio().get('${Config.baseURL}/api/pcate');
-     var cateList = CateModel.fromJson(result.data);
-     setState(() {
-      this.cateData = cateList.result; 
-     });
-     print(cateList);
+      var result  = await Dio().get('${Config.baseURL}/api/pcate');
+      var cateList = CateModel.fromJson(result.data);
+      setState(() {
+        this.cateData = cateList.result; 
+      });
+      getCateProduct(cateList.result[0].sId);
+     
+  }
+
+  getCateProduct(pid) async{
+      var result  = await Dio().get('${Config.baseURL}/api/pcate?pid=${pid}');
+      var cateProductList = CateModel.fromJson(result.data);
+      setState(() {
+        this.cateProductData = cateProductList.result; 
+      });
   }
 
 
@@ -87,20 +96,28 @@ class _CategoryPageState extends State<CategoryPage> {
                 ),
                 itemCount: 10,
                 itemBuilder: (context,index) {
-                  return Container(
-                    child: Column(
-                      children: <Widget>[
-                        AspectRatio(
-                          aspectRatio: 1/1,
-                          // child: Image.network('src'),
-                        ),
-                        Container(
-                          height: ScreenAdaper.height(28),
-                          child: Text('女装'),
-                        )
-                      ],
-                    ),
-                  );
+                 
+                  if(this.cateProductData.length > 0) {
+                     var pic = this.cateProductData[index].pic;
+                     return Container(
+                      child: Column(
+                        children: <Widget>[
+                          AspectRatio(
+                            aspectRatio: 1/1,
+                            child: Image.network('${Config.baseURL}/${pic.replaceAll('\\', '/')}',fit: BoxFit.fill),
+                          ),
+                          Container(
+                            height: ScreenAdaper.height(28),
+                            child: Text('${this.cateProductData[index].title}'),
+                          )
+                        ],
+                      ),
+                    );
+                  } else {
+                    return Container(
+                      child: Text('暂无数据'),
+                    );
+                  }
                 },
               ),
             )
