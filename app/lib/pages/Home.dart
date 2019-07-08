@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'dart:convert';
 import 'package:dio/dio.dart';
 import '../utils/ScreenAdaper.dart';
 import '../model/FocusModel.dart';
+import '../model/ProductModel.dart';
+import '../config/Config.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -14,17 +15,28 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List focusData = [];
+  List likeData = [];
   void initState() {
     super.initState();
     this.getFocusData();
+    this.getLikeData();
   }
   getFocusData() async{
-     var result  = await Dio().get('http://jd.itying.com/api/focus');
+     var result  = await Dio().get('${Config.baseURL}/api/focus');
      var focusList = FocusModel.fromJson(result.data);
      setState(() {
       this.focusData = focusList.result; 
      });
   }
+
+  getLikeData() async{
+    var result = await Dio().get('${Config.baseURL}/api/plist?is_hot=1');
+    var likeList = ProductModel.fromJson(result.data);
+    setState(() {
+     this.likeData = likeList.result;
+    });
+  }
+
   Widget swiperWidget() {
     if(this.focusData.length > 0) {
        return Container(
@@ -33,7 +45,7 @@ class _HomePageState extends State<HomePage> {
           child: Swiper(
             itemBuilder: (BuildContext context,int index) {
               String pic = this.focusData[index].pic;
-              return new Image.network('http://jd.itying.com/${pic.replaceAll('\\', '/')}',fit: BoxFit.fill);
+              return new Image.network('${Config.baseURL}/${pic.replaceAll('\\', '/')}',fit: BoxFit.fill);
             },
             itemCount: this.focusData.length,
             pagination: new SwiperPagination(),
@@ -65,27 +77,35 @@ class _HomePageState extends State<HomePage> {
     );
   }
   Widget productListWidget() {
-    return Container(
-        height: ScreenAdaper.height(200),
-        padding: EdgeInsets.all(ScreenAdaper.width(10)),
-        child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context,index) {
-            return Column(
-               children: <Widget>[
-                 Container(
-                   width: ScreenAdaper.width(140),
-                   height: ScreenAdaper.height(140),
-                   margin: EdgeInsets.only(right: ScreenAdaper.width(10)),
-                   child: Image.network('https://www.itying.com/images/flutter/hot${index+1}.jpg',fit: BoxFit.cover),
-                 ),
-                 Text('第${index}条')
-               ],
-            );
-          },
-          itemCount: 10,
-          ),
-        );
+    if(this.likeData.length > 0) {
+        return Container(
+          height: ScreenAdaper.height(200),
+          padding: EdgeInsets.all(ScreenAdaper.width(10)),
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context,index) {
+              String sPic = this.likeData[index].sPic;
+              return Column(
+                children: <Widget>[
+                  Container(
+                    width: ScreenAdaper.width(140),
+                    height: ScreenAdaper.height(140),
+                    margin: EdgeInsets.only(right: ScreenAdaper.width(10)),
+                    child: Image.network('${Config.baseURL}/${sPic.replaceAll('\\','/')}',fit: BoxFit.cover),
+                  ),
+                  Text('￥${this.likeData[index].price}',style: TextStyle(
+                    color: Colors.pink
+                  ))
+                ],
+              );
+            },
+            itemCount: this.likeData.length,
+            ),
+          );
+    } else {
+      return Text('加载中...');
+    }
+   
   }
   Widget hotListWidget () {
     var width = (ScreenAdaper.getScreenWidth() - 30) / 2;
@@ -104,7 +124,7 @@ class _HomePageState extends State<HomePage> {
             width: double.infinity,
             child: AspectRatio(
               aspectRatio: 1/1,
-              child: Image.network('https://www.itying.com/images/flutter/list1.jpg',fit: BoxFit.cover),
+              child: Image.network('${Config.baseURL}/images/flutter/list1.jpg',fit: BoxFit.cover),
             ),
           ),
           Padding(
