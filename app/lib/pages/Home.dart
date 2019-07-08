@@ -16,10 +16,12 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List focusData = [];
   List likeData = [];
+  List hotData = [];
   void initState() {
     super.initState();
     this.getFocusData();
     this.getLikeData();
+    this.getHostData();
   }
   getFocusData() async{
      var result  = await Dio().get('${Config.baseURL}/api/focus');
@@ -34,6 +36,14 @@ class _HomePageState extends State<HomePage> {
     var likeList = ProductModel.fromJson(result.data);
     setState(() {
      this.likeData = likeList.result;
+    });
+  }
+
+  getHostData() async{
+    var result = await Dio().get('${Config.baseURL}/api/plist?is_best=1');
+    var hotList = ProductModel.fromJson(result.data);
+    setState(() {
+     this.hotData = hotList.result;
     });
   }
 
@@ -108,61 +118,71 @@ class _HomePageState extends State<HomePage> {
    
   }
   Widget hotListWidget () {
-    var width = (ScreenAdaper.getScreenWidth() - 30) / 2;
-    return Container(
-      width: width,
-      padding: EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.black12,
-          width: 1
-        )
-      ),
-      child: Column(
-        children: <Widget>[
-          Container(
-            width: double.infinity,
-            child: AspectRatio(
-              aspectRatio: 1/1,
-              child: Image.network('${Config.baseURL}/images/flutter/list1.jpg',fit: BoxFit.cover),
-            ),
+     var width = (ScreenAdaper.getScreenWidth() - 30) / 2;
+     return Container(
+          padding: EdgeInsets.all(10),
+          child: Wrap(
+            runSpacing: 10,
+            spacing: 10,
+            children: this.hotData.map((value) {
+                var sImage = value.sPic;
+                return Container(
+                  width: width,
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.black12,
+                      width: 1
+                    )
+                  ),
+                  child: Column(
+                    children: <Widget>[
+                      Container(
+                        width: double.infinity,
+                        child: AspectRatio(
+                          aspectRatio: 1/1,
+                          child: Image.network('${Config.baseURL}/${sImage.replaceAll('\\','/')}',fit: BoxFit.cover),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: ScreenAdaper.height(20)),
+                        child: Text('${value.title}',
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                            color: Colors.black54
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: ScreenAdaper.height(20)),
+                        child: Stack(
+                          children: <Widget>[
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text('￥${value.price}',
+                              style: TextStyle(
+                                color: Colors.pink
+                              )),
+                            ),
+                            Align(
+                              alignment: Alignment.centerRight,
+                              child: Text('￥${value.oldPrice}',
+                              style: TextStyle(
+                                color: Colors.black54,
+                                decoration: TextDecoration.lineThrough
+                              )),
+                            )
+                          ],
+                        ),
+                      )
+                      
+                    ],
+                  ),
+                );
+            }).toList()
           ),
-          Padding(
-            padding: EdgeInsets.only(top: ScreenAdaper.height(20)),
-            child: Text('我们常常需要调用原生Android的代码，因此我们需要通过一种方式来传递调用',
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(
-                color: Colors.black54
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: ScreenAdaper.height(20)),
-            child: Stack(
-              children: <Widget>[
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text('￥188.00',
-                  style: TextStyle(
-                    color: Colors.pink
-                  )),
-                ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Text('￥198.00',
-                  style: TextStyle(
-                    color: Colors.black54,
-                    decoration: TextDecoration.lineThrough
-                  )),
-                )
-              ],
-            ),
-          )
-          
-        ],
-      ),
-    );
+        );
   }
   @override
   Widget build(BuildContext context) {
@@ -175,19 +195,7 @@ class _HomePageState extends State<HomePage> {
         SizedBox(height: ScreenAdaper.height(20)),
         productListWidget(),
         titleWidget('热门推荐'),
-        Container(
-          padding: EdgeInsets.all(10),
-          child: Wrap(
-            runSpacing: 10,
-            spacing: 10,
-            children: <Widget>[
-              hotListWidget(),
-              hotListWidget(),
-              hotListWidget(),
-            ],
-          ),
-        )
-
+        hotListWidget(),
       ],
     );
   }
