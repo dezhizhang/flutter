@@ -6,7 +6,6 @@ import '../model/FocusModel.dart';
 import '../model/ProductModel.dart';
 import '../config/Config.dart';
 
-
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
 
