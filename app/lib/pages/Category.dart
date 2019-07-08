@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:dio/dio.dart';
 import '../utils/ScreenAdaper.dart';
+import '../model/CateModel.dart';
+import '../config/Config.dart';
+
+
 
 class CategoryPage extends StatefulWidget {
   CategoryPage({Key key}) : super(key: key);
@@ -9,6 +14,23 @@ class CategoryPage extends StatefulWidget {
 
 class _CategoryPageState extends State<CategoryPage> {
   int selectIndex = 0;
+  List cateData = [];
+  void initState() {
+    super.initState();
+    this.getCateList();
+  
+  }
+
+  getCateList() async{
+     var result  = await Dio().get('${Config.baseURL}/api/pcate');
+     var cateList = CateModel.fromJson(result.data);
+     setState(() {
+      this.cateData = cateList.result; 
+     });
+     print(cateList);
+  }
+
+
  
   @override
   Widget build(BuildContext context) {
@@ -24,7 +46,7 @@ class _CategoryPageState extends State<CategoryPage> {
           width: leftWidth,
           height: double.infinity,
           child: ListView.builder(
-            itemCount: 18,
+            itemCount: this.cateData.length,
             itemBuilder: (context,index) {
               return Column(
                 children: <Widget>[
@@ -35,13 +57,14 @@ class _CategoryPageState extends State<CategoryPage> {
                       });
                     },
                     child: Container(
-                      height: ScreenAdaper.height(46),
-                      child: Text('${index}',textAlign: TextAlign.center),
-                      color: this.selectIndex == index ? Colors.pink:Colors.white,
+                      height: ScreenAdaper.height(84),
+                      padding: EdgeInsets.only(top: ScreenAdaper.height(30)),
+                      child: Text('${this.cateData[index].title}',textAlign: TextAlign.center),
+                      color: this.selectIndex == index ? Color.fromRGBO(240, 246, 246, 0.9):Colors.white,
                       width: double.infinity,
                     ),
                   ),
-                  Divider()
+                  Divider(height: 1)
                 ],
               );
             },
@@ -69,7 +92,7 @@ class _CategoryPageState extends State<CategoryPage> {
                       children: <Widget>[
                         AspectRatio(
                           aspectRatio: 1/1,
-                          child: Image.network('src'),
+                          // child: Image.network('src'),
                         ),
                         Container(
                           height: ScreenAdaper.height(28),
