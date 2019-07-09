@@ -12,7 +12,7 @@ class DetailPage extends StatefulWidget {
 }
 
 class _DetailPageState extends State<DetailPage> {
-
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   Widget detailListWidget() {
     return  Container(
         // padding: EdgeInsets.only(l10),
@@ -103,6 +103,7 @@ class _DetailPageState extends State<DetailPage> {
 
                       },
                       child: Container(
+                        padding: EdgeInsets.fromLTRB(0, ScreenAdaper.height(18), 0, ScreenAdaper.height(18)),
                         child: Text('综合',textAlign: TextAlign.center,style: TextStyle(color: Colors.pink)),
                       ),
                     ),
@@ -114,6 +115,7 @@ class _DetailPageState extends State<DetailPage> {
 
                       },
                       child: Container(
+                        padding: EdgeInsets.fromLTRB(0, ScreenAdaper.height(18), 0, ScreenAdaper.height(18)),
                         child: Text('销量',textAlign: TextAlign.center),
                       ),
                     ),
@@ -125,6 +127,7 @@ class _DetailPageState extends State<DetailPage> {
 
                       },
                       child: Container(
+                        padding: EdgeInsets.fromLTRB(0, ScreenAdaper.height(18), 0, ScreenAdaper.height(18)),
                         child: Text('价格',textAlign: TextAlign.center),
                       ),
                     ),
@@ -133,9 +136,10 @@ class _DetailPageState extends State<DetailPage> {
                     flex: 1,
                     child: InkWell(
                       onTap: () {
-                        
+                        _scaffoldKey.currentState.openEndDrawer();
                       },
                       child: Container(
+                        padding: EdgeInsets.fromLTRB(0, ScreenAdaper.height(18), 0, ScreenAdaper.height(18)),
                         child: Text('筛选',textAlign: TextAlign.center),
                       ),
                     ),
@@ -149,10 +153,18 @@ class _DetailPageState extends State<DetailPage> {
   Widget build(BuildContext context) {
     ScreenAdaper.init(context);
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         title: Text('商品列表'),
+        actions: <Widget>[
+          Text(' ')
+        ],
       ),
-      // body: Text('${widget.arguments}'),
+      endDrawer: Drawer(
+        child: Container(
+          child: Text('我是筛选功能'),
+        ),
+      ),
       body:Stack(
         children: <Widget>[
           detailListWidget(),
