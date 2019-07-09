@@ -77,18 +77,8 @@ class _DetailPageState extends State<DetailPage> {
         ),
       );
   }
-  @override
-  Widget build(BuildContext context) {
-    ScreenAdaper.init(context);
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('商品列表'),
-      ),
-      // body: Text('${widget.arguments}'),
-      body:Stack(
-        children: <Widget>[
-          detailListWidget(),
-          Positioned(
+  Widget subHeaderWidget() {
+    return  Positioned(
             top: 0,
             height: ScreenAdaper.height(80),
             width: ScreenAdaper.width(750),
@@ -132,17 +122,41 @@ class _DetailPageState extends State<DetailPage> {
                     flex: 1,
                     child: InkWell(
                       onTap: () {
-                        
+
                       },
                       child: Container(
                         child: Text('价格',textAlign: TextAlign.center),
+                      ),
+                    ),
+                  ),
+                   Expanded(
+                    flex: 1,
+                    child: InkWell(
+                      onTap: () {
+                        
+                      },
+                      child: Container(
+                        child: Text('筛选',textAlign: TextAlign.center),
                       ),
                     ),
                   )
                 ],
               )
             ),
-          ),
+        );
+  }
+  @override
+  Widget build(BuildContext context) {
+    ScreenAdaper.init(context);
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('商品列表'),
+      ),
+      // body: Text('${widget.arguments}'),
+      body:Stack(
+        children: <Widget>[
+          detailListWidget(),
+          subHeaderWidget(),
         ],
       )
     );
