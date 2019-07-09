@@ -4,8 +4,6 @@ import 'package:dio/dio.dart';
 import '../config/Config.dart';
 import '../model/ProductModel.dart';
 
-
-
 class DetailPage extends StatefulWidget {
   Map arguments;
   DetailPage({Key key,this.arguments}) : super(key: key);
@@ -25,15 +23,14 @@ class _DetailPageState extends State<DetailPage> {
   getDetailList() async{
      var result  = await Dio().get('${Config.baseURL}/api/plist?cid=${widget.arguments['cid']}&page=${this.page}');
      var detailList = ProductModel.fromJson(result.data);
-     print(detailList.result);
-
      setState(() {
         this.detailData.addAll(detailList.result);
      });
   }
   Widget detailListWidget() {
     return  Container(
-        // padding: EdgeInsets.only(l10),
+        // padding: EdgeInsets.only(l0),
+        padding: EdgeInsets.all(10),
         margin: EdgeInsets.only(top: ScreenAdaper.height(80)),
         child: ListView.builder(
           itemBuilder: (context,index) {
