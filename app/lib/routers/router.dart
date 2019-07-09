@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import '../tabs/Tabs.dart';
+import '../pages/Detail.dart';
 
 //配置路由
 final routes = {
   '/':(context) => Tabs(),
+  '/detail':(context,{arguments}) => DetailPage(arguments:arguments)
 };
 
 var onGenerateRoute = (RouteSettings settings) {

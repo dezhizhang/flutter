@@ -16,7 +16,7 @@ class _CategoryPageState extends State<CategoryPage> with AutomaticKeepAliveClie
   int selectIndex = 0;
   List cateData = [];
   List cateProductData = [];
-  
+
   //保持页面装态
   bool get wantKeepAlive => true;
   void initState() {
@@ -98,20 +98,27 @@ class _CategoryPageState extends State<CategoryPage> with AutomaticKeepAliveClie
                  
                   if(this.cateProductData.length > 0) {
                      var pic = this.cateProductData[index].pic;
-                     return Container(
-                      child: Column(
-                        children: <Widget>[
-                          AspectRatio(
-                            aspectRatio: 1/1,
-                            child: Image.network('${Config.baseURL}/${pic.replaceAll('\\', '/')}',fit: BoxFit.fill),
+                     return InkWell(
+                       onTap: () {
+                          Navigator.of(context).pushNamed('/detail',arguments: {
+                             'cid':this.cateProductData[index].sId
+                          });
+                       },
+                       child:Container(
+                          child: Column(
+                            children: <Widget>[
+                              AspectRatio(
+                                aspectRatio: 1/1,
+                                child: Image.network('${Config.baseURL}/${pic.replaceAll('\\', '/')}',fit: BoxFit.fill),
+                              ),
+                              Container(
+                                height: ScreenAdaper.height(28),
+                                child: Text('${this.cateProductData[index].title}'),
+                              )
+                            ],
                           ),
-                          Container(
-                            height: ScreenAdaper.height(28),
-                            child: Text('${this.cateProductData[index].title}'),
-                          )
-                        ],
-                      ),
-                    );
+                        )
+                     );
                   } else {
                     return Container(
                       child: Text('暂无数据'),
