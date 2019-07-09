@@ -12,16 +12,11 @@ class DetailPage extends StatefulWidget {
 }
 
 class _DetailPageState extends State<DetailPage> {
-  @override
-  Widget build(BuildContext context) {
-    ScreenAdaper.init(context);
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('商品列表'),
-      ),
-      // body: Text('${widget.arguments}'),
-      body: Padding(
-        padding: EdgeInsets.all(10),
+
+  Widget detailListWidget() {
+    return  Container(
+        // padding: EdgeInsets.only(l10),
+        margin: EdgeInsets.only(top: ScreenAdaper.height(80)),
         child: ListView.builder(
           itemBuilder: (context,index) {
             return Column(
@@ -80,7 +75,76 @@ class _DetailPageState extends State<DetailPage> {
           },
           itemCount: 10,
         ),
+      );
+  }
+  @override
+  Widget build(BuildContext context) {
+    ScreenAdaper.init(context);
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('商品列表'),
       ),
+      // body: Text('${widget.arguments}'),
+      body:Stack(
+        children: <Widget>[
+          detailListWidget(),
+          Positioned(
+            top: 0,
+            height: ScreenAdaper.height(80),
+            width: ScreenAdaper.width(750),
+            child: Container(
+              width: ScreenAdaper.height(80),
+              height: ScreenAdaper.width(750),
+              // color: Colors.white,
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    width: 1,
+                    color: Colors.pink
+                  )
+                )
+              ),
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    flex: 1,
+                    child: InkWell(
+                      onTap: () {
+
+                      },
+                      child: Container(
+                        child: Text('综合',textAlign: TextAlign.center,style: TextStyle(color: Colors.pink)),
+                      ),
+                    ),
+                  ),
+                   Expanded(
+                    flex: 1,
+                    child: InkWell(
+                      onTap: () {
+
+                      },
+                      child: Container(
+                        child: Text('销量',textAlign: TextAlign.center),
+                      ),
+                    ),
+                  ),
+                   Expanded(
+                    flex: 1,
+                    child: InkWell(
+                      onTap: () {
+                        
+                      },
+                      child: Container(
+                        child: Text('价格',textAlign: TextAlign.center),
+                      ),
+                    ),
+                  )
+                ],
+              )
+            ),
+          ),
+        ],
+      )
     );
   }
 }
