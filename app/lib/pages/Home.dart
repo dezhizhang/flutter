@@ -12,10 +12,13 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin {
   List focusData = [];
   List likeData = [];
   List hotData = [];
+
+  //保持页面装态
+  bool get wantKeepAlive => true;
   void initState() {
     super.initState();
     this.getFocusData();

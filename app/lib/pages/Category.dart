@@ -12,10 +12,13 @@ class CategoryPage extends StatefulWidget {
   _CategoryPageState createState() => _CategoryPageState();
 }
 
-class _CategoryPageState extends State<CategoryPage> {
+class _CategoryPageState extends State<CategoryPage> with AutomaticKeepAliveClientMixin {
   int selectIndex = 0;
   List cateData = [];
   List cateProductData = [];
+  
+  //保持页面装态
+  bool get wantKeepAlive => true;
   void initState() {
     super.initState();
     this.getCateList();
