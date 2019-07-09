@@ -28,9 +28,7 @@ class _CategoryPageState extends State<CategoryPage> {
         this.cateData = cateList.result; 
       });
       getCateProduct(cateList.result[0].sId);
-     
   }
-
   getCateProduct(pid) async{
       var result  = await Dio().get('${Config.baseURL}/api/pcate?pid=${pid}');
       var cateProductList = CateModel.fromJson(result.data);
@@ -38,9 +36,6 @@ class _CategoryPageState extends State<CategoryPage> {
         this.cateProductData = cateProductList.result; 
       });
   }
-
-
- 
   @override
   Widget build(BuildContext context) {
     ScreenAdaper.init(context);
@@ -63,6 +58,7 @@ class _CategoryPageState extends State<CategoryPage> {
                     onTap: () {
                       setState(() {
                         this.selectIndex = index; 
+                        this.getCateProduct(this.cateData[index].sId);
                       });
                     },
                     child: Container(
@@ -94,7 +90,7 @@ class _CategoryPageState extends State<CategoryPage> {
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 10
                 ),
-                itemCount: 10,
+                itemCount: this.cateProductData.length,
                 itemBuilder: (context,index) {
                  
                   if(this.cateProductData.length > 0) {
