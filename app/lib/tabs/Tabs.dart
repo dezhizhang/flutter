@@ -11,7 +11,7 @@ class Tabs extends StatefulWidget {
 }
 
 class _TabsState extends State<Tabs> {
-  int currentIndex = 1;
+  int currentIndex = 0;
   PageController pageController;
 
   void initState() {
@@ -29,11 +29,30 @@ class _TabsState extends State<Tabs> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.center_focus_weak,size: 28, color: Colors.white),
+          onPressed: () {
+
+          },
+        ),
         title: Text('建兰商城'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.message,size: 28,color: Colors.white),
+            onPressed: () {
+
+            },
+          )
+        ],
       ),
       body: PageView(
         controller: this.pageController,
         children: this.pageList,
+        onPageChanged: (index) {
+          setState(() {
+            this.currentIndex = index;
+          });
+        },
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: this.currentIndex,

@@ -170,6 +170,8 @@ class _DetailPageState extends State<DetailPage> {
                         } else {
                           setState(() {
                             this.selectCurrent = value['id'];
+                            this.sort = value['fileds'];
+                            // this.getDetailList();
                           }); 
                         }
                       },
