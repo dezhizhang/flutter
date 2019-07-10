@@ -29,6 +29,10 @@
 在flutter/app运行命令:flutter run 
 注:flutter/flutter_app是平时写的一些demo
 ```
+![Image text](https://github.com/dezhizhang/flutter/blob/master/app/lib/asstes/1.png)
+![Image text](https://github.com/dezhizhang/flutter/blob/master/app/lib/asstes/2.png)
+![Image text](https://github.com/dezhizhang/flutter/blob/master/app/lib/asstes/3.png)
+![Image text](https://github.com/dezhizhang/flutter/blob/master/app/lib/asstes/4.png)
 
 
 
