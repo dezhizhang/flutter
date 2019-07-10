@@ -3,6 +3,7 @@ import '../pages/Home.dart';
 import '../pages/Category.dart';
 import '../pages/Cart.dart';
 import '../pages/People.dart';
+import '../utils/ScreenAdaper.dart';
 
 class Tabs extends StatefulWidget {
   Tabs({Key key}) : super(key: key);
@@ -27,6 +28,7 @@ class _TabsState extends State<Tabs> {
   ];
   @override
   Widget build(BuildContext context) {
+    ScreenAdaper.init(context);
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -35,7 +37,27 @@ class _TabsState extends State<Tabs> {
 
           },
         ),
-        title: Text('建兰商城'),
+        title: InkWell(
+          child: Container(
+            height: ScreenAdaper.height(68),
+            decoration: BoxDecoration(
+              color: Color.fromRGBO(233, 233, 233, 0.8),
+              borderRadius: BorderRadius.circular(30)
+            ),
+            padding: EdgeInsets.only(left:10),
+            child: Row(
+              children: <Widget>[
+                Icon(Icons.search),
+                Text('笔记本',style: TextStyle(
+                  fontSize: ScreenAdaper.fontSize(28)
+                ))
+              ],
+            ),
+          ),
+          onTap: () {
+            Navigator.of(context).pushNamed('/search');
+          },
+        ),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.message,size: 28,color: Colors.white),
