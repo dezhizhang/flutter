@@ -24,20 +24,20 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget{
   final routes =  {
       '/form':(context) => FormPage(),
-      '/serch':(context,{arguments}) => SearchPage(arguments:arguments),
-      '/date':(context) => DatePickerPage(),
-      '/swiper':(context) => SwiperPage(),
-      '/getpage':(context) => GetPage(),
-      '/http':(context) => HttpPage(),
-      '/dio':(context) => DioPage(),
-      '/news':(context) => NewsPage(),
-      '/newsdetail':(context,{arguments}) => NewsDetail(arguments:arguments),
-      '/device':(context) => DevicePage(),
-      '/imglist':(context) => ImagePage(),
-      '/video':(context) => VideoPage(),
-      '/network':(context) => NetPage(),
-      '/storage':(context) => StoragePage(),
-      '/code':(context) => CodePage()
+      // '/serch':(context,{arguments}) => SearchPage(arguments:arguments),
+      // '/date':(context) => DatePickerPage(),
+      // '/swiper':(context) => SwiperPage(),
+      // '/getpage':(context) => GetPage(),
+      // '/http':(context) => HttpPage(),
+      // '/dio':(context) => DioPage(),
+      // '/news':(context) => NewsPage(),
+      // '/newsdetail':(context,{arguments}) => NewsDetail(arguments:arguments),
+      // '/device':(context) => DevicePage(),
+      // '/imglist':(context) => ImagePage(),
+      // '/video':(context) => VideoPage(),
+      // '/network':(context) => NetPage(),
+      // '/storage':(context) => StoragePage(),
+      // '/code':(context) => CodePage()
   };
   Widget build(BuildContext context) {
     return MaterialApp(
