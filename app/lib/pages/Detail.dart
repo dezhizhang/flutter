@@ -13,19 +13,33 @@ class DetailPage extends StatefulWidget {
 
 class _DetailPageState extends State<DetailPage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  ScrollController _scrollController = ScrollController();
+
   List detailData = [];
   int page = 1;
+  String sort = '';
  
   void initState() {
     super.initState();
     this.getDetailList();
+
+    _scrollController.addListener((){
+        var pixels = _scrollController.position.pixels;
+        var maxScrollExtent = _scrollController.position.maxScrollExtent;
+        if(pixels >= (maxScrollExtent - 20)) {
+          getDetailList();
+        }
+    });
   }
   getDetailList() async{
-     var result  = await Dio().get('${Config.baseURL}/api/plist?cid=${widget.arguments['cid']}&page=${this.page}');
+  
+     var result  = await Dio().get('${Config.baseURL}/api/plist?cid=${widget.arguments['cid']}&page=${this.page}&sort=${this.sort}');
      var detailList = ProductModel.fromJson(result.data);
      setState(() {
         this.detailData.addAll(detailList.result);
+        this.page  = this.page+1;
      });
+    
   }
   Widget detailListWidget() {
     return  Container(
@@ -33,6 +47,7 @@ class _DetailPageState extends State<DetailPage> {
         padding: EdgeInsets.all(10),
         margin: EdgeInsets.only(top: ScreenAdaper.height(80)),
         child: ListView.builder(
+          controller: _scrollController,
           itemBuilder: (context,index) {
             if(this.detailData.length > 0) {
               String pic = this.detailData[index].pic;

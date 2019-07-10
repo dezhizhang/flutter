@@ -5,7 +5,6 @@ import '../model/CateModel.dart';
 import '../config/Config.dart';
 
 
-
 class CategoryPage extends StatefulWidget {
   CategoryPage({Key key}) : super(key: key);
 

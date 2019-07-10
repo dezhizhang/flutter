@@ -1,4 +1,4 @@
-#建兰购物APP此APP兼容Android和ISO平台
+#APP开发此APP兼容Android和ISO平台
 ```
 +---android                  ----android配置相关文件
 +---build                    ----打包后生成的文件
