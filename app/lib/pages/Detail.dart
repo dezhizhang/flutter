@@ -18,6 +18,31 @@ class _DetailPageState extends State<DetailPage> {
   List detailData = [];
   int page = 1;
   String sort = '';
+  int selectCurrent=1;
+  List subHeaderList = [
+    {
+      "id":1,
+      "title":"综合",
+      "fileds":"all",
+      "sort":-1
+    },
+    {
+      "id":2,
+      "title":"销量",
+      "fileds":"salecount",
+      "sort":-1
+    },
+    {
+      "id":3,
+      "title":"价格",
+      "fileds":"price",
+      "sort":-1
+    },
+    {
+      "id":4,
+      "title":"筛选",
+    },
+  ];
  
   void initState() {
     super.initState();
@@ -132,56 +157,30 @@ class _DetailPageState extends State<DetailPage> {
                 )
               ),
               child: Row(
-                children: <Widget>[
-                  Expanded(
+                children: this.subHeaderList.map((value) {
+                  return Expanded(
                     flex: 1,
                     child: InkWell(
                       onTap: () {
-
+                        if(value['id'] == 4) {
+                          _scaffoldKey.currentState.openEndDrawer();
+                          setState(() {
+                            this.selectCurrent = value['id'];
+                          }); 
+                        } else {
+                          setState(() {
+                            this.selectCurrent = value['id'];
+                          }); 
+                        }
                       },
                       child: Container(
                         padding: EdgeInsets.fromLTRB(0, ScreenAdaper.height(18), 0, ScreenAdaper.height(18)),
-                        child: Text('综合',textAlign: TextAlign.center,style: TextStyle(color: Colors.pink)),
+                        child: Text('${value['title']}',textAlign: TextAlign.center,style: TextStyle(color: this.selectCurrent==value['id'] ? Colors.pink:Colors.black54)),
                       ),
                     ),
-                  ),
-                   Expanded(
-                    flex: 1,
-                    child: InkWell(
-                      onTap: () {
-
-                      },
-                      child: Container(
-                        padding: EdgeInsets.fromLTRB(0, ScreenAdaper.height(18), 0, ScreenAdaper.height(18)),
-                        child: Text('销量',textAlign: TextAlign.center),
-                      ),
-                    ),
-                  ),
-                   Expanded(
-                    flex: 1,
-                    child: InkWell(
-                      onTap: () {
-
-                      },
-                      child: Container(
-                        padding: EdgeInsets.fromLTRB(0, ScreenAdaper.height(18), 0, ScreenAdaper.height(18)),
-                        child: Text('价格',textAlign: TextAlign.center),
-                      ),
-                    ),
-                  ),
-                   Expanded(
-                    flex: 1,
-                    child: InkWell(
-                      onTap: () {
-                        _scaffoldKey.currentState.openEndDrawer();
-                      },
-                      child: Container(
-                        padding: EdgeInsets.fromLTRB(0, ScreenAdaper.height(18), 0, ScreenAdaper.height(18)),
-                        child: Text('筛选',textAlign: TextAlign.center),
-                      ),
-                    ),
-                  )
-                ],
+                  );
+                  
+                }).toList(),
               )
             ),
         );
