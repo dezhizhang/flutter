@@ -17,10 +17,148 @@ class _TabProductState extends State<TabProduct> {
           onTap: () {
             return false;
           },
-          child:Container(
-          height: ScreenAdaper.height(400),
-          child: Text('底部弹出框'),
-        ),
+          child:Stack(
+            children: <Widget>[
+              ListView(
+                children: <Widget>[
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Wrap(
+                        children: <Widget>[
+                          Container(
+                            margin: EdgeInsets.only(top: 26),
+                            child: Text('颜色：',style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.pink
+                          )),
+                          ),
+                          Wrap(
+                            children: <Widget>[
+                              Container(
+                                  margin: EdgeInsets.all(10),
+                                  child: Chip(
+                                    label: Text('粉色',style: TextStyle(color: Colors.white)),
+                                    padding: EdgeInsets.all(10),
+                                    backgroundColor: Colors.pink,
+                                ),
+                              ),
+                              Container(
+                                  margin: EdgeInsets.all(10),
+                                  child: Chip(
+                                    label: Text('红色',style: TextStyle(color: Colors.white)),
+                                    padding: EdgeInsets.all(10),
+                                    backgroundColor: Colors.red,
+                                ),
+                              ),
+                                Container(
+                                  margin: EdgeInsets.all(10),
+                                  child: Chip(
+                                    label: Text('黄色',style: TextStyle(color: Colors.white)),
+                                    padding: EdgeInsets.all(10),
+                                    backgroundColor: Colors.yellow,
+                                ),
+                              ),
+                                Container(
+                                  margin: EdgeInsets.all(10),
+                                  child: Chip(
+                                    label: Text('绿色',style: TextStyle(color: Colors.white)),
+                                    padding: EdgeInsets.all(10),
+                                    backgroundColor: Colors.green,
+                                ),
+                              ),
+                                Container(
+                                  margin: EdgeInsets.all(10),
+                                  child: Chip(
+                                    label: Text('紫色',style: TextStyle(color: Colors.white)),
+                                    padding: EdgeInsets.all(10),
+                                    backgroundColor: Colors.purple,
+                                ),
+                              ),
+                              
+                            ],
+                            
+                          )
+                        ],
+                      ),
+                       Wrap(
+                        children: <Widget>[
+                          Container(
+                            margin: EdgeInsets.only(top: 26),
+                            child: Text('尺寸：',style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.pink
+                          )),
+                          ),
+                          Wrap(
+                            children: <Widget>[
+                              Container(
+                                  margin: EdgeInsets.all(10),
+                                  child: Chip(
+                                    label: Text('XS',style: TextStyle(color: Colors.white)),
+                                    padding: EdgeInsets.all(10),
+                                    backgroundColor: Colors.black54,
+                                ),
+                              ),
+                              Container(
+                                  margin: EdgeInsets.all(10),
+                                  child: Chip(
+                                    label: Text('SL',style: TextStyle(color: Colors.white)),
+                                    padding: EdgeInsets.all(10),
+                                    backgroundColor: Colors.black54,
+                                ),
+                              ),
+                               Container(
+                                  margin: EdgeInsets.all(10),
+                                  child: Chip(
+                                    label: Text('SM',style: TextStyle(color: Colors.white)),
+                                    padding: EdgeInsets.all(10),
+                                    backgroundColor: Colors.black54,
+                                ),
+                              ),
+                               Container(
+                                  margin: EdgeInsets.all(10),
+                                  child: Chip(
+                                    label: Text('LS',style: TextStyle(color: Colors.white)),
+                                    padding: EdgeInsets.all(10),
+                                    backgroundColor: Colors.black54,
+                                ),
+                              ),
+                               Container(
+                                  margin: EdgeInsets.all(10),
+                                  child: Chip(
+                                    label: Text('LL',style: TextStyle(color: Colors.white)),
+                                    padding: EdgeInsets.all(10),
+                                    backgroundColor: Colors.black54,
+                                ),
+                              ),
+                          
+                            ],
+                          )
+                        ],
+                      )
+                    ],
+                  )
+                  
+                ],
+              ),
+              Positioned(
+                bottom: 0,
+                width: ScreenAdaper.width(750),
+                height: ScreenAdaper.height(80),
+                child: Row(
+                  children: <Widget>[
+                    Container(
+                      width: ScreenAdaper.width(750),
+                      height: ScreenAdaper.height(80),
+                      child: Text('底部'),
+                      color: Colors.pink,
+                    )
+                  ],
+                ),
+              )
+            ],
+          )
         );
       }
     );
