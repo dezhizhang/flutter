@@ -15,7 +15,7 @@ class _ProductPageState extends State<ProductPage> {
       appBar: AppBar(
         title: Text('商品详情'),
       ),
-      body: Text('商品详情'),
+      body: Text('商品详情${widget.arguments['id']}'),
     );
   }
 }

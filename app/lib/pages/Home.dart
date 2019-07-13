@@ -128,8 +128,14 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
             spacing: 10,
             children: this.hotData.map((value) {
                 var sImage = value.sPic;
-                return Container(
-                  width: width,
+                return InkWell(
+                  onTap: () {
+                    Navigator.of(context).pushNamed('/product',arguments: {
+                      "id":value.sId
+                    });
+                  },
+                  child:Container(
+                  width:width,
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     border: Border.all(
@@ -181,7 +187,8 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
                       
                     ],
                   ),
-                );
+                ),
+              );
             }).toList()
           ),
         );
