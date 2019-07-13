@@ -68,10 +68,33 @@ class _TabProductState extends State<TabProduct> {
                         ))
                       ],
                     ),
-                  )
+                  ),
+                 
                 ],
               ),
-            )
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 10),
+              height: ScreenAdaper.height(60),
+              child: Row(
+                children: <Widget>[
+                    Text('已选：',style: TextStyle(fontWeight: FontWeight.bold)),
+                    Text('15黑色,XL,1件')
+                  ],
+                ),
+            ),
+            Divider(),
+            Container(
+              margin: EdgeInsets.only(top: 10),
+              height: ScreenAdaper.height(60),
+              child: Row(
+                children: <Widget>[
+                    Text('运费：',style: TextStyle(fontWeight: FontWeight.bold)),
+                    Text('免运费')
+                  ],
+                ),
+            ),
+            Divider(),
           ],
         )
     );
