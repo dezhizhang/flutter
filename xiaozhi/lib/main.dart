@@ -26,23 +26,26 @@ class HomeContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300,
-      height: 300,
       decoration: BoxDecoration(
-        color: Colors.red,
+        // color: Colors.red,
         border: Border.all(
           color: Colors.pink,
-          width: 2,
-        ),
-        borderRadius: BorderRadius.circular(150),
-        image: DecorationImage(
-          image: NetworkImage('http://pic.baike.soso.com/p/20130828/20130828161137-1346445960.jpg'),
-          fit: BoxFit.cover
+          width: 2
         )
+      ),
+      child: ClipOval(
+        child: Image.network(
+          'http://pic.baike.soso.com/p/20130828/20130828161137-1346445960.jpg',
+          width: 100,
+          height: 100,
+          fit: BoxFit.cover,
+        ),
       ),
     );
   }
 }
+
+
 
 
 
