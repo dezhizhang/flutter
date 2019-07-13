@@ -9,6 +9,22 @@ class TabProduct extends StatefulWidget {
 }
 
 class _TabProductState extends State<TabProduct> {
+  showModalSheet() {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return GestureDetector(
+          onTap: () {
+            return false;
+          },
+          child:Container(
+          height: ScreenAdaper.height(400),
+          child: Text('底部弹出框'),
+        ),
+        );
+      }
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -76,12 +92,17 @@ class _TabProductState extends State<TabProduct> {
             Container(
               margin: EdgeInsets.only(top: 10),
               height: ScreenAdaper.height(60),
-              child: Row(
+              child: InkWell(
+                onTap: () {
+                  this.showModalSheet();
+                },
+                child: Row(
                 children: <Widget>[
                     Text('已选：',style: TextStyle(fontWeight: FontWeight.bold)),
                     Text('15黑色,XL,1件')
                   ],
                 ),
+              ),
             ),
             Divider(),
             Container(
