@@ -4,16 +4,13 @@ import './TabProduct.dart';
 import './TabDetail.dart';
 import './TabEvaluation.dart';
 
-
 class ProductPage extends StatefulWidget {
   final arguments;
   ProductPage({Key key,this.arguments}) : super(key: key);
 
   _ProductPageState createState() => _ProductPageState();
 }
-
 class _ProductPageState extends State<ProductPage> {
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -84,11 +81,69 @@ class _ProductPageState extends State<ProductPage> {
             ),
             Positioned(
               width: ScreenAdaper.width(750),
-              height: ScreenAdaper.height(80),
+              height: ScreenAdaper.height(100),
               bottom: 0,
               child: Container(
-                color: Colors.pink,
-                child: Text('浮动导航'),
+                decoration: BoxDecoration(
+                  border: Border(
+                    top: BorderSide(
+                      color: Colors.pink,
+                      width: 1
+                    )
+                  ),
+                  color: Colors.white
+                ),
+                child: Row(
+                  children: <Widget>[
+                    Container(
+                      padding: EdgeInsets.only(top: ScreenAdaper.height(10)),
+                      width: 100,
+                      height: ScreenAdaper.height(100),
+                      child: Column(
+                        children: <Widget>[
+                          Icon(Icons.shopping_cart),
+                          Text('购物车')
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        margin: EdgeInsets.all(10),
+                        padding: EdgeInsets.all(10),
+                        height: ScreenAdaper.height(80),
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.pink,
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                        child: Center(
+                          child: Text('加入购物车',style: TextStyle(
+                            color: Colors.white
+                          )),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        margin: EdgeInsets.all(10),
+                        padding: EdgeInsets.all(10),
+                        height: ScreenAdaper.height(80),
+                        width:  double.infinity,
+                        decoration: BoxDecoration(
+                          color: Colors.redAccent,
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                        child: Center(
+                          child: Text('立即购买',style: TextStyle(
+                            color: Colors.white
+                          )),
+                        ),
+                      ),
+                    )
+                  ],
+                )
               ),
             )
           ],
