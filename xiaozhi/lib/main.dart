@@ -12,7 +12,11 @@ class MyApp extends StatelessWidget {
           title: Text('Flutter Demo'),
         ),
         body: HomeContent(),
+       
       ),
+      theme:ThemeData(
+        primaryColor: Colors.pink
+      )
     );
   }
 }
