@@ -20,24 +20,23 @@ class MyApp extends StatelessWidget {
 }
 
 class HomeContent extends StatelessWidget {
+  const HomeContent({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text(
-          'flutterflutterflutterflutterflutter',
-          overflow: TextOverflow.ellipsis,
-          maxLines: 1,
-          textScaleFactor: 2,
-          style: TextStyle(
-            fontSize: 16,
-            color: Colors.pink,
-            fontWeight: FontWeight.w800,
-            fontStyle: FontStyle.italic,
-            decorationColor: Colors.white,
-            decorationStyle: TextDecorationStyle.dashed,
-            letterSpacing: 5
-          ),
-        )
+      width: 300,
+      height: 300,
+      decoration: BoxDecoration(
+        color: Colors.yellow,
+        border: Border.all(
+          color: Colors.red,
+          width: 2
+        ),
+        borderRadius: BorderRadius.circular(10)
+      ),
+      child: Text('容器组件'),
     );
   }
 }
+
