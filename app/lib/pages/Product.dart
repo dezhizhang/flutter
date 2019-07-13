@@ -73,13 +73,26 @@ class _ProductPageState extends State<ProductPage> {
             ) 
           ],
         ),
-        body: TabBarView(
+        body: Stack(
           children: <Widget>[
-            TabProduct(),
-            TabDetail(),
-            TabEvaluation()
+             TabBarView(
+              children: <Widget>[
+                TabProduct(),
+                TabDetail(),
+                TabEvaluation()
+              ],
+            ),
+            Positioned(
+              width: ScreenAdaper.width(750),
+              height: ScreenAdaper.height(80),
+              bottom: 0,
+              child: Container(
+                color: Colors.pink,
+                child: Text('浮动导航'),
+              ),
+            )
           ],
-        )
+        ),
       ),
     );
   }
