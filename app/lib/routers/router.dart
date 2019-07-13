@@ -1,13 +1,16 @@
+import 'package:app/pages/Product.dart';
 import 'package:flutter/material.dart';
 import '../tabs/Tabs.dart';
 import '../pages/Detail.dart';
 import '../pages/Search.dart';
+import '../pages/People.dart';
 
 //配置路由
 final routes = {
   '/':(context) => Tabs(),
   '/detail':(context,{arguments}) => DetailPage(arguments:arguments),
-  '/search':(context) => SearchPage()
+  '/search':(context) => SearchPage(),
+  '/product':(context,{arguments}) => ProductPage(arguments:arguments)
 };
 
 var onGenerateRoute = (RouteSettings settings) {
