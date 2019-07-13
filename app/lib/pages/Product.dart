@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import '../utils/ScreenAdaper.dart';
+import './TabProduct.dart';
+import './TabDetail.dart';
+import './TabEvaluation.dart';
+
 
 class ProductPage extends StatefulWidget {
   final arguments;
@@ -15,25 +20,64 @@ class _ProductPageState extends State<ProductPage> {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: TabBar(
-            tabs: <Widget>[
-              Tab(
-                child: Text('商品'),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Container(
+              width: ScreenAdaper.width(400),
+              child: TabBar(
+                indicatorColor: Colors.pink,
+                indicatorSize: TabBarIndicatorSize.label,
+                tabs: <Widget>[
+                    Tab(
+                        child: Text('商品'),
+                      ),
+                    Tab(
+                      child: Text('详情'),
+                    ),
+                    Tab(
+                      child: Text('评价'),
+                    )
+                ],
               ),
-              Tab(
-                child: Text('详情'),
-              ),
-              Tab(
-                child: Text('评价'),
-              )
+            ),
             ],
           ),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.more_horiz),
+              onPressed: () {
+                showMenu(
+                  context: context,
+                  items: [
+                    PopupMenuItem(
+                      child: Row(
+                        children: <Widget>[
+                          Icon(Icons.home),
+                          Text('首页')
+                        ],
+                      ),
+                    ),
+                    PopupMenuItem(
+                      child: Row(
+                        children: <Widget>[
+                          Icon(Icons.search),
+                          Text('搜索')
+                        ],
+                      ),
+                    )
+                  ],
+                  position: RelativeRect.fromLTRB(ScreenAdaper.width(600), 80, 10, 0)
+                );
+              },
+            ) 
+          ],
         ),
         body: TabBarView(
           children: <Widget>[
-            Text('商口1111'),
-            Text('评价'),
-            Text('详情')
+            TabProduct(),
+            TabDetail(),
+            TabEvaluation()
           ],
         )
       ),
