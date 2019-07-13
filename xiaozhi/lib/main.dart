@@ -19,25 +19,30 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomeContent extends StatelessWidget{
+
+class HomeContent extends StatelessWidget {
+  const HomeContent({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Image.network(
-        'http://pic.baike.soso.com/p/20130828/20130828161137-1346445960.jpg',
-        alignment: Alignment.topLeft,
-        fit: BoxFit.fill,
-      ),
       width: 300,
       height: 300,
       decoration: BoxDecoration(
         color: Colors.red,
         border: Border.all(
-          color: Colors.red,
-          width: 2
+          color: Colors.pink,
+          width: 2,
+        ),
+        borderRadius: BorderRadius.circular(150),
+        image: DecorationImage(
+          image: NetworkImage('http://pic.baike.soso.com/p/20130828/20130828161137-1346445960.jpg'),
+          fit: BoxFit.cover
         )
       ),
     );
   }
 }
+
+
 
