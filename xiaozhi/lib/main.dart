@@ -25,26 +25,18 @@ class HomeContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        // color: Colors.red,
-        border: Border.all(
-          color: Colors.pink,
-          width: 2
+    return ListView(
+      children: <Widget>[
+        ListTile(
+          leading: Icon(Icons.home,color: Colors.yellow),
+          title: Text('哈哈哈呢呢呢呢呀呀呀呀'),
+          subtitle: Text('我的天呀我的地呀'),
         )
-      ),
-      child: ClipOval(
-        child: Image.network(
-          'http://pic.baike.soso.com/p/20130828/20130828161137-1346445960.jpg',
-          width: 100,
-          height: 100,
-          fit: BoxFit.cover,
-        ),
-      ),
+      ],
     );
   }
 }
-
+   
 
 
 
