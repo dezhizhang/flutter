@@ -11,11 +11,32 @@ class _ProductPageState extends State<ProductPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('商品详情'),
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          title: TabBar(
+            tabs: <Widget>[
+              Tab(
+                child: Text('商品'),
+              ),
+              Tab(
+                child: Text('详情'),
+              ),
+              Tab(
+                child: Text('评价'),
+              )
+            ],
+          ),
+        ),
+        body: TabBarView(
+          children: <Widget>[
+            Text('商口1111'),
+            Text('评价'),
+            Text('详情')
+          ],
+        )
       ),
-      body: Text('商品详情${widget.arguments['id']}'),
     );
   }
 }
