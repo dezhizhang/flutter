@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import './data.dart';
-
 
 void main() => runApp(MyApp());
 
@@ -8,12 +6,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('flutter'),
-        ),
-      body: HomeContent(),
-      ),
+      home: Tabs(),
       theme: ThemeData(
         primaryColor: Colors.pink
       ),
@@ -21,36 +14,44 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomeContent extends StatefulWidget {
-  HomeContent({Key key}) : super(key: key);
+class Tabs extends StatefulWidget {
+  Tabs({Key key}) : super(key: key);
 
-  _HomeContentState createState() => _HomeContentState();
+  _TabsState createState() => _TabsState();
 }
 
-class _HomeContentState extends State<HomeContent> {
-  List list = [];
+class _TabsState extends State<Tabs> {
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: <Widget>[
-        Column(
-          children: this.list.map((value) {
-            return ListTile(
-              title: Text(value),
-            );
-          }).toList(),
-        ),
-        RaisedButton(
-          child: Text('新增数据'),
-          textColor: Colors.white,
-          color: Colors.pink,
-          onPressed: () {
-            setState(() {
-              this.list.add('新增一条数据'); 
-            });
-          },
-        )
-      ],
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('底部导航'),
+      ),
+      body: Text('底部导航'),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: this.currentIndex,
+        onTap: (int index) {
+          setState(() {
+           this.currentIndex = index; 
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            title: Text('首页')
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            title: Text('搜索')
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.edit),
+            title: Text('编辑')
+          ),
+         
+        ],
+      ),
     );
   }
 }
