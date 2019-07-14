@@ -9,6 +9,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Tabs(),
+      routes: {
+        '/search':(context) => SearchPage()
+      },
       theme: ThemeData(
         primaryColor: Colors.pink
       ),
@@ -75,12 +78,7 @@ class _HomePageState extends State<HomePage> {
           color: Colors.pink,
           textColor: Colors.white,
           onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder:(context) => SearchPage()
-
-              )
-            );
+            Navigator.of(context).pushNamed('/search');
           },
         )
       ],
