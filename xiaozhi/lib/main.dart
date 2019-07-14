@@ -21,34 +21,50 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 class HomeContent extends StatelessWidget {
   const HomeContent({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        children: <Widget>[
-          Container(
-            width: 100,
-            height: 100,
-            color: Colors.pink,
-            child: Text('左边'),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              height: 100,
-              color: Colors.green,
-              child: Text('右边'),
+    return Column(
+      children: <Widget>[
+        Container(
+          height: 180,
+          width: 750,
+          color: Colors.yellow,
+          child: Text('你好flutter'),
+        ),
+        Row(
+          children: <Widget>[
+            Expanded(
+              flex: 2,
+              child: Container(
+                height: 180,
+                child: Image.network('https://www.itying.com/images/flutter/7.png',fit: BoxFit.cover),
+              ),
             ),
-          )
-        ],
-      ),
+            Expanded(
+              flex: 1,
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    height: 90,
+                    child: Image.network('https://www.itying.com/images/flutter/6.png',fit: BoxFit.cover),
+                  ),
+                  Container(
+                    height: 90,
+                    child: Image.network('https://www.itying.com/images/flutter/5.png',fit: BoxFit.cover),
+                  )
+                ],
+              ),
+            )
+          ],
+        )
+      ],
     );
   }
 }
+
 
 
 
