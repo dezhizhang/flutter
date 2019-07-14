@@ -29,7 +29,11 @@ class HomeContent extends StatelessWidget {
     return ListView.builder(
       itemCount: listData.length,
       itemBuilder: (context,index) {
-        return Text('${listData[index]['title']}');
+        return ListTile(
+          leading: Image.network('${listData[index]['imageUrl']}'),
+          title: Text('${listData[index]['title']}'),
+          subtitle: Text('${listData[index]['author']}'),
+        );
       },
     );
   }
