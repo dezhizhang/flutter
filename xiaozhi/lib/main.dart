@@ -26,44 +26,29 @@ class HomeContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
       children: <Widget>[
-        Container(
-          height: 180,
-          width: 750,
-          color: Colors.yellow,
-          child: Text('你好flutter'),
-        ),
-        Row(
-          children: <Widget>[
-            Expanded(
-              flex: 2,
-              child: Container(
-                height: 180,
-                child: Image.network('https://www.itying.com/images/flutter/7.png',fit: BoxFit.cover),
+        Card(
+          margin: EdgeInsets.all(10),
+          child: Column(
+            children: <Widget>[
+              ListTile(
+                title: Text('张三',style: TextStyle(fontSize: 28)),
+                subtitle: Text('高级软件工程师'),
               ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    height: 90,
-                    child: Image.network('https://www.itying.com/images/flutter/6.png',fit: BoxFit.cover),
-                  ),
-                  Container(
-                    height: 90,
-                    child: Image.network('https://www.itying.com/images/flutter/5.png',fit: BoxFit.cover),
-                  )
-                ],
+              ListTile(
+                title: Text('电话:15083356190'),
+                subtitle: Text('地址：广州'),
               ),
-            )
-          ],
+            ],
+          ),
         )
       ],
     );
   }
 }
+
+
 
 
 
