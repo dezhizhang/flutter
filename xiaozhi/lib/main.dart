@@ -26,14 +26,20 @@ class HomeContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Container(
+      width: 600,
+      height: 600,
+      color: Colors.pink,
+      child:Row(
       mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         IconContainer(Icons.home,color: Colors.yellow),
         IconContainer(Icons.search,color: Colors.green),
         IconContainer(Icons.delete,color: Colors.red),
       ],
-    );
+      ),
+    ); 
   }
 }
 
