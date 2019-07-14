@@ -21,31 +21,27 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
-
 // class HomeContent extends StatelessWidget {
 //   const HomeContent({Key key}) : super(key: key);
 
 //   @override
 //   Widget build(BuildContext context) {
-//     return GridView.count(
-//       crossAxisCount: 2,
-//       children:listData.map((value) {
+//     return GridView.builder(
+//       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+//         crossAxisCount: 2,
+//         crossAxisSpacing: 10
+//       ),
+//       itemCount: listData.length,
+//       itemBuilder: (context,index) {
 //         return Container(
-//           decoration: BoxDecoration(
-//             border: Border.all(
-//               color: Colors.pink,
-//               width: 2
-//             )
-//           ),
 //           child: Column(
 //             children: <Widget>[
-//               Image.network('${value['imageUrl']}'),
-//               Text('${value['title']}')
+//               Image.network('${listData[index]['imageUrl']}'),
+//               Text('${listData[index]['title']}')
 //             ],
 //           ),
 //         );
-//       }).toList(),
+//       },
 //     );
 //   }
 // }
@@ -55,23 +51,35 @@ class HomeContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 10
+    return Padding(
+      padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
+      child: GridView.count(
+      crossAxisCount: 2,
+      children: <Widget>[
+        Padding(
+          padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+          child: Image.network('https://www.itying.com/images/flutter/7.png',fit: BoxFit.cover),
+        ),
+         Padding(
+          padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+          child: Image.network('https://www.itying.com/images/flutter/7.png',fit: BoxFit.cover),
+        ),
+         Padding(
+          padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+          child: Image.network('https://www.itying.com/images/flutter/7.png',fit: BoxFit.cover),
+        ),
+         Padding(
+          padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+          child: Image.network('https://www.itying.com/images/flutter/7.png',fit: BoxFit.cover),
+        ),
+         Padding(
+          padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+          child: Image.network('https://www.itying.com/images/flutter/7.png',fit: BoxFit.cover),
+        )
+      ],
       ),
-      itemCount: listData.length,
-      itemBuilder: (context,index) {
-        return Container(
-          child: Column(
-            children: <Widget>[
-              Image.network('${listData[index]['imageUrl']}'),
-              Text('${listData[index]['title']}')
-            ],
-          ),
-        );
-      },
     );
+    
   }
 }
 
