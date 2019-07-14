@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import './Search.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -28,7 +30,7 @@ class _TabsState extends State<Tabs> {
       appBar: AppBar(
         title: Text('底部导航'),
       ),
-      body: Text('底部导航'),
+      body:HomePage(),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: this.currentIndex,
         onTap: (int index) {
@@ -51,6 +53,37 @@ class _TabsState extends State<Tabs> {
           ),
         ],
       ),
+    );
+  }
+}
+
+class HomePage extends StatefulWidget {
+  HomePage({Key key}) : super(key: key);
+
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return  Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        RaisedButton(
+          child: Text('跨转到搜索页面'),
+          color: Colors.pink,
+          textColor: Colors.white,
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder:(context) => SearchPage()
+
+              )
+            );
+          },
+        )
+      ],
     );
   }
 }
