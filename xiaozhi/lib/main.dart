@@ -26,31 +26,46 @@ class HomeContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: listData.map((value){
-        return Card(
-          margin: EdgeInsets.all(10),
-          child: Column(
-            children: <Widget>[
-              AspectRatio(
-                aspectRatio: 16/9,
-                child: Image.network('${value['imageUrl']}',fit: BoxFit.cover),
-              ),
-              ListTile(
-                leading: CircleAvatar(
-                  backgroundImage: NetworkImage('${value['imageUrl']}'),
-                ),
-                title: Text('${value['title']}'),
-                subtitle: Text('${value['author']}'),
-              )
-            ],
-          )
-        );
-      }).toList()
-     
+    return Wrap(
+      spacing: 10,
+      children: <Widget>[
+        MyButton('第一季'),
+        MyButton('第二季'),
+        MyButton('第三季'),
+        MyButton('第一季'),
+        MyButton('第二季'),
+        MyButton('第三季'),
+        MyButton('第一季'),
+        MyButton('第二季'),
+        MyButton('第三季'),
+        MyButton('第一季'),
+        MyButton('第二季'),
+        MyButton('第三季'),
+
+      ],
     );
   }
 }
+
+
+
+class MyButton extends StatelessWidget {
+  final String text;
+  const MyButton(this.text,{Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return RaisedButton(
+      child: Text(this.text),
+      textColor: Theme.of(context).accentColor,
+      onPressed: () {
+
+      },
+    );
+  }
+}
+
+
 
 
 
