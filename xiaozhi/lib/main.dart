@@ -23,32 +23,59 @@ class MyApp extends StatelessWidget {
 
 
 
+// class HomeContent extends StatelessWidget {
+//   const HomeContent({Key key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return GridView.count(
+//       crossAxisCount: 2,
+//       children:listData.map((value) {
+//         return Container(
+//           decoration: BoxDecoration(
+//             border: Border.all(
+//               color: Colors.pink,
+//               width: 2
+//             )
+//           ),
+//           child: Column(
+//             children: <Widget>[
+//               Image.network('${value['imageUrl']}'),
+//               Text('${value['title']}')
+//             ],
+//           ),
+//         );
+//       }).toList(),
+//     );
+//   }
+// }
+
 class HomeContent extends StatelessWidget {
   const HomeContent({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
-      crossAxisCount: 2,
-      children:listData.map((value) {
+    return GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        crossAxisSpacing: 10
+      ),
+      itemCount: listData.length,
+      itemBuilder: (context,index) {
         return Container(
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: Colors.pink,
-              width: 2
-            )
-          ),
           child: Column(
             children: <Widget>[
-              Image.network('${value['imageUrl']}'),
-              Text('${value['title']}')
+              Image.network('${listData[index]['imageUrl']}'),
+              Text('${listData[index]['title']}')
             ],
           ),
         );
-      }).toList(),
+      },
     );
   }
 }
+
+
 
 
    
