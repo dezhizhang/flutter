@@ -21,46 +21,30 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomeContent extends StatelessWidget {
-  const HomeContent({Key key}) : super(key: key);
+class HomeContent extends StatefulWidget {
+  HomeContent({Key key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Wrap(
-      spacing: 10,
-      children: <Widget>[
-        MyButton('第一季'),
-        MyButton('第二季'),
-        MyButton('第三季'),
-        MyButton('第一季'),
-        MyButton('第二季'),
-        MyButton('第三季'),
-        MyButton('第一季'),
-        MyButton('第二季'),
-        MyButton('第三季'),
-        MyButton('第一季'),
-        MyButton('第二季'),
-        MyButton('第三季'),
-
-      ],
-    );
-  }
+  _HomeContentState createState() => _HomeContentState();
 }
 
-
-
-class MyButton extends StatelessWidget {
-  final String text;
-  const MyButton(this.text,{Key key}) : super(key: key);
-
+class _HomeContentState extends State<HomeContent> {
+  int countNum = 0;
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
-      child: Text(this.text),
-      textColor: Theme.of(context).accentColor,
-      onPressed: () {
-
-      },
+    return Column(
+      children: <Widget>[
+        SizedBox(height: 200),
+        Text('${this.countNum}'),
+        SizedBox(height: 20),
+        RaisedButton(
+          child: Text('按钮'),
+          onPressed: () {
+            setState(() {
+             this.countNum++; 
+            });
+          },
+        )
+      ],
     );
   }
 }
