@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
+
 class HomeContent extends StatelessWidget {
   const HomeContent({Key key}) : super(key: key);
 
@@ -29,19 +30,17 @@ class HomeContent extends StatelessWidget {
     return Container(
       child: Row(
         children: <Widget>[
+          Container(
+            width: 100,
+            height: 100,
+            color: Colors.pink,
+            child: Text('左边'),
+          ),
           Expanded(
             flex: 1,
             child: Container(
-              color: Colors.pink,
-              height: 80,
-              child: Text('左边'),
-            ),
-          ),
-          Expanded(
-            flex: 2,
-            child: Container(
-              color: Colors.yellow,
-              height: 80,
+              height: 100,
+              color: Colors.green,
               child: Text('右边'),
             ),
           )
