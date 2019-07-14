@@ -27,26 +27,27 @@ class HomeContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: <Widget>[
-        Card(
+      children: listData.map((value){
+        return Card(
           margin: EdgeInsets.all(10),
           child: Column(
             children: <Widget>[
               AspectRatio(
                 aspectRatio: 16/9,
-                child: Image.network('https://www.itying.com/images/flutter/7.png',fit: BoxFit.cover),
+                child: Image.network('${value['imageUrl']}',fit: BoxFit.cover),
               ),
               ListTile(
                 leading: CircleAvatar(
-                  backgroundImage: NetworkImage('https://www.itying.com/images/flutter/7.png'),
+                  backgroundImage: NetworkImage('${value['imageUrl']}'),
                 ),
-                title: Text('张三'),
-                subtitle: Text('高级软件工程师'),
+                title: Text('${value['title']}'),
+                subtitle: Text('${value['author']}'),
               )
             ],
-          ),
-        )
-      ],
+          )
+        );
+      }).toList()
+     
     );
   }
 }
