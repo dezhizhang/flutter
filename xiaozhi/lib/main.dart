@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import './data.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -24,39 +26,16 @@ class HomeContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-        children: <Widget>[
-          Container(
-            width: 180,
-            height: 180,
-            color: Colors.red,
-          ),
-          Container(
-            width: 180,
-            height: 180,
-            color: Colors.pink,
-          ),
-          Container(
-            width: 180,
-            height: 180,
-            color: Colors.green,
-          ),
-          Container(
-            width: 180,
-            height: 180,
-            color: Colors.orange,
-          ),
-          Container(
-            width: 180,
-            height: 180,
-            color: Colors.blue,
-          )
-
-        ],
-      
+    return ListView.builder(
+      itemCount: listData.length,
+      itemBuilder: (context,index) {
+        return Text('${listData[index]['title']}');
+      },
     );
   }
 }
+
+
    
 
 
