@@ -27,35 +27,25 @@ class HomeContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 600,
-      height: 600,
-      color: Colors.pink,
-      child:Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        IconContainer(Icons.home,color: Colors.yellow),
-        IconContainer(Icons.search,color: Colors.green),
-        IconContainer(Icons.delete,color: Colors.red),
-      ],
-      ),
-    ); 
-  }
-}
-
-class IconContainer extends StatelessWidget {
-  double size= 32;
-  Color color = Colors.pink;
-  IconData icon;
-  IconContainer(this.icon,{this.size,this.color});
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 100,
-      height: 100,
-      color: this.color,
-      child: Center(
-        child: Icon(this.icon,size: this.size,color: Colors.white),
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            flex: 1,
+            child: Container(
+              color: Colors.pink,
+              height: 80,
+              child: Text('左边'),
+            ),
+          ),
+          Expanded(
+            flex: 2,
+            child: Container(
+              color: Colors.yellow,
+              height: 80,
+              child: Text('右边'),
+            ),
+          )
+        ],
       ),
     );
   }
