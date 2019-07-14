@@ -49,7 +49,6 @@ class _TabsState extends State<Tabs> {
             icon: Icon(Icons.edit),
             title: Text('编辑')
           ),
-         
         ],
       ),
     );
