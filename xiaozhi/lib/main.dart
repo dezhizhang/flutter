@@ -28,19 +28,25 @@ class HomeContent extends StatefulWidget {
 }
 
 class _HomeContentState extends State<HomeContent> {
-  int countNum = 0;
+  List list = [];
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
       children: <Widget>[
-        SizedBox(height: 200),
-        Text('${this.countNum}'),
-        SizedBox(height: 20),
+        Column(
+          children: this.list.map((value) {
+            return ListTile(
+              title: Text(value),
+            );
+          }).toList(),
+        ),
         RaisedButton(
-          child: Text('按钮'),
+          child: Text('新增数据'),
+          textColor: Colors.white,
+          color: Colors.pink,
           onPressed: () {
             setState(() {
-             this.countNum++; 
+              this.list.add('新增一条数据'); 
             });
           },
         )
