@@ -32,14 +32,17 @@ class HomeContent extends StatelessWidget {
           margin: EdgeInsets.all(10),
           child: Column(
             children: <Widget>[
+              AspectRatio(
+                aspectRatio: 16/9,
+                child: Image.network('https://www.itying.com/images/flutter/7.png',fit: BoxFit.cover),
+              ),
               ListTile(
-                title: Text('张三',style: TextStyle(fontSize: 28)),
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage('https://www.itying.com/images/flutter/7.png'),
+                ),
+                title: Text('张三'),
                 subtitle: Text('高级软件工程师'),
-              ),
-              ListTile(
-                title: Text('电话:15083356190'),
-                subtitle: Text('地址：广州'),
-              ),
+              )
             ],
           ),
         )
@@ -47,6 +50,8 @@ class HomeContent extends StatelessWidget {
     );
   }
 }
+
+
 
 
 
