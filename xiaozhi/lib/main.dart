@@ -21,67 +21,41 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// class HomeContent extends StatelessWidget {
-//   const HomeContent({Key key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return GridView.builder(
-//       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-//         crossAxisCount: 2,
-//         crossAxisSpacing: 10
-//       ),
-//       itemCount: listData.length,
-//       itemBuilder: (context,index) {
-//         return Container(
-//           child: Column(
-//             children: <Widget>[
-//               Image.network('${listData[index]['imageUrl']}'),
-//               Text('${listData[index]['title']}')
-//             ],
-//           ),
-//         );
-//       },
-//     );
-//   }
-// }
-
 class HomeContent extends StatelessWidget {
   const HomeContent({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
-      child: GridView.count(
-      crossAxisCount: 2,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Padding(
-          padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
-          child: Image.network('https://www.itying.com/images/flutter/7.png',fit: BoxFit.cover),
-        ),
-         Padding(
-          padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
-          child: Image.network('https://www.itying.com/images/flutter/7.png',fit: BoxFit.cover),
-        ),
-         Padding(
-          padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
-          child: Image.network('https://www.itying.com/images/flutter/7.png',fit: BoxFit.cover),
-        ),
-         Padding(
-          padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
-          child: Image.network('https://www.itying.com/images/flutter/7.png',fit: BoxFit.cover),
-        ),
-         Padding(
-          padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
-          child: Image.network('https://www.itying.com/images/flutter/7.png',fit: BoxFit.cover),
-        )
+        IconContainer(Icons.home,color: Colors.yellow),
+        IconContainer(Icons.search,color: Colors.green),
+        IconContainer(Icons.delete,color: Colors.red),
       ],
-      ),
     );
-    
   }
 }
+
+class IconContainer extends StatelessWidget {
+  double size= 32;
+  Color color = Colors.pink;
+  IconData icon;
+  IconContainer(this.icon,{this.size,this.color});
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 100,
+      height: 100,
+      color: this.color,
+      child: Center(
+        child: Icon(this.icon,size: this.size,color: Colors.white),
+      ),
+    );
+  }
+}
+
+
 
 
 
