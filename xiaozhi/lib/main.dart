@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Tabs(),
+      // initialRoute: '/',
       onGenerateRoute: onGenerateRoute,
       theme: ThemeData(
         primaryColor: Colors.pink
@@ -79,6 +80,14 @@ class _HomePageState extends State<HomePage> {
           textColor: Colors.white,
           onPressed: () {
             Navigator.of(context).pushNamed('/search',arguments: {'id':'123'});
+          },
+        ),
+        RaisedButton(
+          child: Text('跳转到info'),
+          color: Colors.yellow,
+          textColor: Colors.white,
+          onPressed: () {
+            Navigator.of(context).pushNamed('/info',arguments:{'pid':'456'});
           },
         )
       ],

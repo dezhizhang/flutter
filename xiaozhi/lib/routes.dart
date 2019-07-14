@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import './Search.dart';
+import './Info.dart';
 
 final routes = {
-  '/search':(context,{arguments}) => SearchPage(arguments: arguments)
+  '/search':(context,{arguments}) => SearchPage(arguments: arguments),
+  '/info':(context,{arguments}) => InfoPage(arguments:arguments),
 };
 
 var onGenerateRoute = (RouteSettings settings) {
