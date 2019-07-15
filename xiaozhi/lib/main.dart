@@ -89,6 +89,14 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {
             Navigator.of(context).pushNamed('/info',arguments:{'pid':'456'});
           },
+        ),
+        RaisedButton(
+          child: Text('跳到自定义导航'),
+          color: Colors.pink,
+          textColor: Colors.white,
+          onPressed: () {
+            Navigator.of(context).pushNamed('/change');
+          },
         )
       ],
     );
