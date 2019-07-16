@@ -5,9 +5,19 @@ class ChaangePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('自定义顶部导航'),
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('你好'),
+          bottom: TabBar(
+            tabs: <Widget>[
+              Tab(text: '热销'),
+              Tab(text: '推销')
+            ],
+          ),
+        ),
+        body: Text('你好')
       ),
     );
 

@@ -12,11 +12,31 @@ class _InfoPageState extends State<InfoPage> {
   _InfoPageState({this.arguments});
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      appBar: AppBar(
-        title: Text('info页面'),
+    return  DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('关部'),
+          centerTitle: true,
+          bottom: TabBar(
+            tabs: <Widget>[
+              Tab(text: '热门'),
+              Tab(text:'哈哈'),
+              Tab(text: '呢呢')
+            ],
+          ),
+
+        ),body: TabBarView(
+          children: <Widget>[
+            Container(
+              child: Text('11'),
+            ),
+            Container(
+              child: Text('哈哈'),
+            )
+          ],
+        ),
       ),
-      body: Text('${arguments['pid']}'),
     );
   }
 }
