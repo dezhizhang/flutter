@@ -34,6 +34,9 @@ class _TabsState extends State<Tabs> {
       appBar: AppBar(
         title: Text('底部导航'),
       ),
+      drawer: Drawer(
+        child: Text('左边'),
+      ),
       body:HomePage(),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: this.currentIndex,
