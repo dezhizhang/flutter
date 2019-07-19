@@ -14,7 +14,12 @@ class _TextPageState extends State<TextPage> {
         title: Text('表单页面'),
       ),
       body: Container(
-        child: Text('GE'),
+        child: TextField(
+          decoration: InputDecoration(
+            hintText: '请输入搜索的内容',
+            border: OutlineInputBorder()
+          ),
+        )
       ),
     );
   }
