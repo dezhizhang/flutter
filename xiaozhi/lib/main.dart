@@ -58,6 +58,7 @@ class _TabsState extends State<Tabs> {
             icon: Icon(Icons.edit),
             title: Text('编辑')
           ),
+          
         ],
       ),
     );
@@ -100,6 +101,15 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {
             Navigator.of(context).pushNamed('/change');
           },
+        ),
+        RaisedButton(
+          child: Text('跳到text'),
+          color: Colors.pink,
+          textColor: Colors.white,
+          onPressed: () {
+            Navigator.of(context).pushNamed('/text');
+          },
+
         )
       ],
     );
