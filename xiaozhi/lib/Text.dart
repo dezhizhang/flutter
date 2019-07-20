@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 
 class TextPage extends StatefulWidget {
   TextPage({Key key}) : super(key: key);
@@ -8,50 +7,34 @@ class TextPage extends StatefulWidget {
 }
 
 class _TextPageState extends State<TextPage> {
-  var userName = new TextEditingController();
-  void initState() {
-    super.initState();
-    this.userName.text = '初始值';
-  }
+  var flag = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('表单页面'),
-        ),
-        body: Container(
-          child: Column(
-            children: <Widget>[
-              TextField(
-                controller: userName,
-                decoration: InputDecoration(
-                  icon: Icon(Icons.home),
-                  labelStyle: TextStyle(color: Colors.yellow),
-                  hintText: '请输入',
-                  border: OutlineInputBorder()
-                ),
-                onChanged: (value) {
-                  setState(() {
-                   this.userName.text = value; 
-                  });
-                },
-              ),
-              Container(
-                width: double.infinity,
-                padding: EdgeInsets.only(left: 10,right: 10),
-                child: RaisedButton(
-                  child: Text('登录'),
-                  color: Colors.pink,
-                  textColor: Colors.white,
-                  onPressed: () {
-                    print(this.userName.text);
-                  },
-                ),
-              )
-            ],
+      appBar: AppBar(
+        title: Text('表单页面'),
+      ),
+      body:  Column(
+        children: <Widget>[
+          Checkbox(
+            
+            value: this.flag,
+            onChanged: (value) {
+              setState(() {
+               this.flag = value; 
+              });
+            },
           ),
-        ),
+          RaisedButton(
+            child: Text('登录'),
+            color: Colors.pink,
+            textColor: Colors.white,
+            onPressed: () {
+              print(this.flag);
+            },
+          )
+        ],
+      )
     );
   }
 }
-
