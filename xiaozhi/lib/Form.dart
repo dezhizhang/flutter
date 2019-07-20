@@ -8,6 +8,7 @@ class FormPage extends StatefulWidget {
 
 class _FormPageState extends State<FormPage> {
   var sex = 1;
+  bool flag = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,6 +37,14 @@ class _FormPageState extends State<FormPage> {
                 });
               },
               groupValue: this.sex,
+            ),
+            Switch(
+              value: this.flag,
+              onChanged: (value) {
+                setState(() {
+                 this.flag = value; 
+                });
+              },
             )
           ],
         ),
