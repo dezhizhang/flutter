@@ -176,6 +176,14 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {
             Navigator.of(context).pushNamed('/luncher');
           },
+        ),
+        RaisedButton(
+          child: Text('支付宝支付'),
+          color: Colors.pink,
+          textColor: Colors.white,
+          onPressed: () {
+            Navigator.of(context).pushNamed('/applay');
+          },
         )
       ],
     );

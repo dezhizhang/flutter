@@ -31,6 +31,8 @@ dependencies:
   fluttertoast: ^3.1.0
   device_info: ^0.4.0+2
   url_launcher: ^5.1.0
+  sy_flutter_alipay: ^0.2.1
+  dio: ^2.1.13
 
 
 dev_dependencies:

@@ -10,6 +10,7 @@ import './Dialog.dart';
 import './Custom.dart';
 import './Equipment.dart';
 import './Lanucher.dart';
+import './Applay.dart';
 
 
 final routes = {
@@ -23,7 +24,8 @@ final routes = {
   '/dialog':(context) => DialogPage(),
   '/custom':(context) => CustomPage(),
   '/equip':(context) => EquipmentPage(),
-  '/luncher':(context) => LancherPage()
+  '/luncher':(context) => LancherPage(),
+  '/applay':(context) => ApplayPage()
 
 };
 
