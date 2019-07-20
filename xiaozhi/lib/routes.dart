@@ -8,6 +8,7 @@ import './Date.dart';
 import './NewDate.dart';
 import './Dialog.dart';
 import './Custom.dart';
+import './Equipment.dart';
 
 
 final routes = {
@@ -20,6 +21,7 @@ final routes = {
   '/newdate':(context) => MewDatePage(),
   '/dialog':(context) => DialogPage(),
   '/custom':(context) => CustomPage(),
+  '/equip':(context) => EquipmentPage()
 
 };
 
