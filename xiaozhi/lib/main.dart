@@ -168,6 +168,14 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {
             Navigator.of(context).pushNamed('/equip');
           },
+        ),
+        RaisedButton(
+          child: Text('打开外部链接'),
+          color: Colors.blue,
+          textColor: Colors.white,
+          onPressed: () {
+            Navigator.of(context).pushNamed('/luncher');
+          },
         )
       ],
     );
