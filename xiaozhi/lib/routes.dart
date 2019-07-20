@@ -5,6 +5,7 @@ import './Change.dart';
 import './Text.dart';
 import './Form.dart';
 import './Date.dart';
+import './NewDate.dart';
 
 final routes = {
   '/search':(context,{arguments}) => SearchPage(arguments: arguments),
@@ -13,6 +14,7 @@ final routes = {
   '/text':(context) => TextPage(),
   '/form':(context) => FormPage(),
   '/date':(context) => DatePage(),
+  '/newdate':(context) => MewDatePage(),
 };
 
 var onGenerateRoute = (RouteSettings settings) {
