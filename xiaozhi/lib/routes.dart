@@ -7,6 +7,8 @@ import './Form.dart';
 import './Date.dart';
 import './NewDate.dart';
 import './Dialog.dart';
+import './Custom.dart';
+
 
 final routes = {
   '/search':(context,{arguments}) => SearchPage(arguments: arguments),
@@ -16,7 +18,8 @@ final routes = {
   '/form':(context) => FormPage(),
   '/date':(context) => DatePage(),
   '/newdate':(context) => MewDatePage(),
-  '/dialog':(context) => DialogPage()
+  '/dialog':(context) => DialogPage(),
+  '/custom':(context) => CustomPage(),
 
 };
 
