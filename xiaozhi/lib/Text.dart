@@ -7,6 +7,11 @@ class TextPage extends StatefulWidget {
 }
 
 class _TextPageState extends State<TextPage> {
+  var userName = new TextEditingController();
+  void initState() {
+    super.initState();
+    this.userName.text = '初始值';
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,12 +19,38 @@ class _TextPageState extends State<TextPage> {
         title: Text('表单页面'),
       ),
       body: Container(
-        child: TextField(
-          decoration: InputDecoration(
-            hintText: '请输入搜索的内容',
-            border: OutlineInputBorder()
-          ),
-        )
+       
+        child: Column(
+          children: <Widget>[
+            TextField(
+              controller: userName,
+              onChanged: (value) {
+                setState(() {
+                 this.userName.text = value;
+                });
+              },
+              decoration: InputDecoration(
+                icon: Icon(Icons.home),
+                labelText: '密码',
+                hintText: '请输入内容',
+                border: OutlineInputBorder(),
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.only(left: 10,right: 10),
+              child: RaisedButton(
+                child: Text('登录'),
+                color: Colors.pink,
+                textColor: Colors.white,
+                onPressed: () {
+                  print(this.userName.text);
+                },
+              )
+            )
+          ],
+        ),
+
       ),
     );
   }
