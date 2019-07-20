@@ -117,6 +117,14 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {
             Navigator.of(context).pushNamed('/form');
           },
+        ),
+        RaisedButton(
+          child: Text('日期组件'),
+          color: Colors.green,
+          textColor: Colors.white,
+          onPressed: () {
+            Navigator.of(context).pushNamed('/date');
+          },
         )
       ],
     );

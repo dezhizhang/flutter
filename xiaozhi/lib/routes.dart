@@ -4,13 +4,15 @@ import './Info.dart';
 import './Change.dart';
 import './Text.dart';
 import './Form.dart';
+import './Date.dart';
 
 final routes = {
   '/search':(context,{arguments}) => SearchPage(arguments: arguments),
   '/info':(context,{arguments}) => InfoPage(arguments:arguments),
   '/change':(context) => ChaangePage(),
   '/text':(context) => TextPage(),
-  '/form':(context) => FormPage()
+  '/form':(context) => FormPage(),
+  '/date':(context) => DatePage(),
 };
 
 var onGenerateRoute = (RouteSettings settings) {
