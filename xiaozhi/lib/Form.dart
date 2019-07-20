@@ -7,13 +7,39 @@ class FormPage extends StatefulWidget {
 }
 
 class _FormPageState extends State<FormPage> {
+  var sex = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('表单页面'),
       ),
-      body: Text('表单'),
+      body: Container(
+        child: Row(
+          children: <Widget>[
+            Text('男'),
+            Radio(
+              value: 1,
+              onChanged: (value) {
+                setState(() {
+                 this.sex = value; 
+                });
+              },
+              groupValue: this.sex
+            ),
+            Text('女'),
+            Radio(
+              value: 2,
+              onChanged: (value) {
+                setState(() {
+                 this.sex = value; 
+                });
+              },
+              groupValue: this.sex,
+            )
+          ],
+        ),
+      )
     );
   }
 }
