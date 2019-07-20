@@ -16,9 +16,10 @@ class _TextPageState extends State<TextPage> {
       ),
       body:  Column(
         children: <Widget>[
-          Checkbox(
-            
+          CheckboxListTile(
             value: this.flag,
+            title: Text('标题'),
+            secondary: Icon(Icons.home),
             onChanged: (value) {
               setState(() {
                this.flag = value; 
