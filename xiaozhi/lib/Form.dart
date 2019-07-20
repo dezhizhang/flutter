@@ -7,44 +7,107 @@ class FormPage extends StatefulWidget {
 }
 
 class _FormPageState extends State<FormPage> {
-  var sex = 1;
-  bool flag = true;
+  String userName;
+  int sex = 1;
+  List list = [
+    {
+      'checked':false,
+      'title':'吃饭'
+    },
+    {
+      'checked':true,
+      'title':'睡觉'
+    }
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('表单页面'),
       ),
-      body: Container(
-        child: Row(
+      body: Padding(
+        padding: EdgeInsets.all(20),
+        child: Column(
           children: <Widget>[
-            Text('男'),
-            Radio(
-              value: 1,
+            TextField(
+              maxLength: 1,
+              decoration: InputDecoration(
+                hintText: '请输入用户信息',
+                border: OutlineInputBorder(),
+              ),
               onChanged: (value) {
                 setState(() {
-                 this.sex = value; 
+                 this.userName = value; 
                 });
               },
-              groupValue: this.sex
             ),
-            Text('女'),
-            Radio(
-              value: 2,
-              onChanged: (value) {
-                setState(() {
-                 this.sex = value; 
-                });
-              },
-              groupValue: this.sex,
+            Row(
+              children: <Widget>[
+                Text('男'),
+                Radio(
+                  value: 1,
+                  onChanged: (value) {
+                    setState(() {
+                     this.sex = value; 
+                    });
+                  },
+                  groupValue: this.sex,
+                ),
+                Text('女'),
+                Radio(
+                  value: 2,
+                  onChanged: (value) {
+                    setState(() {
+                     this.sex = value; 
+                    });
+                  },
+                  groupValue: this.sex,
+                )
+              ],
             ),
-            Switch(
-              value: this.flag,
+            Row(
+              children: this.list.map((item){
+               
+                return Column(
+                  children: <Widget>[
+                    Text(item['title']),
+                    Checkbox(
+                    value: item['checked'],
+                    onChanged: (value) {
+                        setState(() {
+                        item['checked'] = value;
+                        });
+                      },
+                    )
+                  ],
+                );
+                
+              }).toList()
+            ),
+            TextField(
+              maxLength: 3,
+              decoration: InputDecoration(
+                hintText: '请输入信息',
+                border: OutlineInputBorder(),
+
+              ),
               onChanged: (value) {
-                setState(() {
-                 this.flag = value; 
-                });
+
               },
+            ),
+            Container(
+              width: double.infinity,
+              child: RaisedButton(
+                color: Colors.pink,
+                textColor: Colors.white,
+                child: Text('登录'),
+                onPressed: () {
+                  print(this.userName);
+                  print(this.sex);
+
+                },
+            )
+           
             )
           ],
         ),
