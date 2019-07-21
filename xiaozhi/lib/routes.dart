@@ -11,6 +11,7 @@ import './Custom.dart';
 import './Equipment.dart';
 import './Lanucher.dart';
 import './Applay.dart';
+import './WxPay.dart';
 
 
 final routes = {
@@ -25,7 +26,8 @@ final routes = {
   '/custom':(context) => CustomPage(),
   '/equip':(context) => EquipmentPage(),
   '/luncher':(context) => LancherPage(),
-  '/applay':(context) => ApplayPage()
+  '/applay':(context) => ApplayPage(),
+  '/wxplay':(context) => WxPage()
 
 };
 

@@ -184,6 +184,14 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {
             Navigator.of(context).pushNamed('/applay');
           },
+        ),
+        RaisedButton(
+          child: Text('微信支付'),
+          color: Colors.blue,
+          textColor: Colors.white,
+          onPressed: () {
+            Navigator.of(context).pushNamed('/wxplay');
+          },
         )
       ],
     );
