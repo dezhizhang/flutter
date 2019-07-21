@@ -89,23 +89,6 @@ class _HomePageState extends State<HomePage> {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-      
-        RaisedButton(
-          child: Text('跳转到info'),
-          color: Colors.yellow,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/info',arguments:{'pid':'456'});
-          },
-        ),
-        RaisedButton(
-          child: Text('跳到自定义导航'),
-          color: Colors.pink,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/change');
-          },
-        ),
         RaisedButton(
           child: Text('跳到text'),
           color: Colors.pink,
@@ -200,6 +183,14 @@ class _HomePageState extends State<HomePage> {
           textColor: Colors.white,
           onPressed: () {
             Navigator.of(context).pushNamed('/video');
+          },
+        ),
+        RaisedButton(
+          child: Text('本地存储'),
+          color: Colors.blue,
+          textColor: Colors.white,
+          onPressed: () {
+            Navigator.of(context).pushNamed('/storage');
           },
         )
       ],

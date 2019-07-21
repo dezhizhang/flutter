@@ -36,6 +36,7 @@ dependencies:
   flutter_inappbrowser: ^1.2.1
   chewie: ^0.9.7
   video_player: ^0.10.1+5
+  shared_preferences: ^0.5.3+4
 
 
 
