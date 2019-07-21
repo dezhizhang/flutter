@@ -192,6 +192,14 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {
             Navigator.of(context).pushNamed('/wxplay');
           },
+        ),
+        RaisedButton(
+          child: Text('加载外部数据'),
+          color: Colors.pink,
+          textColor: Colors.white,
+          onPressed: () {
+            Navigator.of(context).pushNamed('/webview');
+          },
         )
       ],
     );
