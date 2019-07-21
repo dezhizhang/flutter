@@ -18,6 +18,10 @@ class _StroagePageState extends State<StroagePage> {
      var userName = prefs.getString('userName');
      print(userName);
   }
+  _removeDate() async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.remove('userName');
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,6 +41,12 @@ class _StroagePageState extends State<StroagePage> {
             color: Colors.green,
             textColor: Colors.white,
             onPressed: _getData,
+          ),
+          RaisedButton(
+            child: Text('请除数据'),
+            color: Colors.blue,
+            textColor: Colors.white,
+            onPressed: _removeDate,
           )
         ],
       )
