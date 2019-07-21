@@ -13,6 +13,7 @@ import './Lanucher.dart';
 import './Applay.dart';
 import './WxPay.dart';
 import './Webview.dart';
+import './Video.dart';
 
 
 final routes = {
@@ -29,7 +30,8 @@ final routes = {
   '/luncher':(context) => LancherPage(),
   '/applay':(context) => ApplayPage(),
   '/wxplay':(context) => WxPage(),
-  '/webview':(context) => WebView()
+  '/webview':(context) => WebView(),
+  '/video':(context) => VidoPage(),
 
 };
 

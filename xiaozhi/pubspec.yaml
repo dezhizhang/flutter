@@ -34,6 +34,8 @@ dependencies:
   sy_flutter_alipay: ^0.2.1
   dio: ^2.1.13
   flutter_inappbrowser: ^1.2.1
+  chewie: ^0.9.7
+  video_player: ^0.10.1+5
 
 
 

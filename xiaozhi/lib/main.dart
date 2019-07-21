@@ -89,14 +89,7 @@ class _HomePageState extends State<HomePage> {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        RaisedButton(
-          child: Text('跨转到搜索页面'),
-          color: Colors.pink,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/search',arguments: {'id':'123'});
-          },
-        ),
+      
         RaisedButton(
           child: Text('跳转到info'),
           color: Colors.yellow,
@@ -199,6 +192,14 @@ class _HomePageState extends State<HomePage> {
           textColor: Colors.white,
           onPressed: () {
             Navigator.of(context).pushNamed('/webview');
+          },
+        ),
+        RaisedButton(
+          child: Text('视频播放'),
+          color: Colors.green,
+          textColor: Colors.white,
+          onPressed: () {
+            Navigator.of(context).pushNamed('/video');
           },
         )
       ],
