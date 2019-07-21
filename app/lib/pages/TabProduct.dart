@@ -21,139 +21,167 @@ class _TabProductState extends State<TabProduct> {
             children: <Widget>[
               ListView(
                 children: <Widget>[
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  Wrap(
                     children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.only(top:25,left: 10),
+                        child: Text('颜色:',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.pink)),
+                      ),
+                      
                       Wrap(
                         children: <Widget>[
-                          Container(
-                            margin: EdgeInsets.only(top: 26),
-                            child: Text('颜色：',style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.pink
-                          )),
-                          ),
-                          Wrap(
-                            children: <Widget>[
-                              Container(
-                                  margin: EdgeInsets.all(10),
-                                  child: Chip(
-                                    label: Text('粉色',style: TextStyle(color: Colors.white)),
-                                    padding: EdgeInsets.all(10),
-                                    backgroundColor: Colors.pink,
-                                ),
+                            Container(
+                              margin: EdgeInsets.all(10),
+                              child: Chip(
+                                label: Text('白色',style: TextStyle(color: Colors.white)),  
+                                padding: EdgeInsets.all(10),
                               ),
-                              Container(
-                                  margin: EdgeInsets.all(10),
-                                  child: Chip(
-                                    label: Text('红色',style: TextStyle(color: Colors.white)),
-                                    padding: EdgeInsets.all(10),
-                                    backgroundColor: Colors.red,
-                                ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.all(10),
+                              child: Chip(
+                                label: Text('粉色',style: TextStyle(color: Colors.white)),
+                                backgroundColor: Colors.pink,
+                                padding: EdgeInsets.all(10),
                               ),
-                                Container(
-                                  margin: EdgeInsets.all(10),
-                                  child: Chip(
-                                    label: Text('黄色',style: TextStyle(color: Colors.white)),
-                                    padding: EdgeInsets.all(10),
-                                    backgroundColor: Colors.yellow,
-                                ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.all(10),
+                              child: Chip(
+                                label: Text('蓝色',style: TextStyle(color: Colors.white)),
+                                backgroundColor: Colors.blue,
+                                padding: EdgeInsets.all(10),
                               ),
-                                Container(
-                                  margin: EdgeInsets.all(10),
-                                  child: Chip(
-                                    label: Text('绿色',style: TextStyle(color: Colors.white)),
-                                    padding: EdgeInsets.all(10),
-                                    backgroundColor: Colors.green,
-                                ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.all(10),
+                              child: Chip(
+                                label: Text('绿色',style: TextStyle(color: Colors.white)),
+                                backgroundColor: Colors.green,
+                                padding: EdgeInsets.all(10),
                               ),
-                                Container(
-                                  margin: EdgeInsets.all(10),
-                                  child: Chip(
-                                    label: Text('紫色',style: TextStyle(color: Colors.white)),
-                                    padding: EdgeInsets.all(10),
-                                    backgroundColor: Colors.purple,
-                                ),
+                            ),
+                             Container(
+                              margin: EdgeInsets.all(10),
+                              child: Chip(
+                                label: Text('黄色',style: TextStyle(color: Colors.white)),
+                                backgroundColor: Colors.yellow,
+                                padding: EdgeInsets.all(10),
                               ),
-                              
-                            ],
-                            
-                          )
-                        ],
-                      ),
-                       Wrap(
-                        children: <Widget>[
-                          Container(
-                            margin: EdgeInsets.only(top: 26),
-                            child: Text('尺寸：',style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.pink
-                          )),
-                          ),
-                          Wrap(
-                            children: <Widget>[
-                              Container(
-                                  margin: EdgeInsets.all(10),
-                                  child: Chip(
-                                    label: Text('XS',style: TextStyle(color: Colors.white)),
-                                    padding: EdgeInsets.all(10),
-                                    backgroundColor: Colors.black54,
-                                ),
+                            ),
+                             Container(
+                              margin: EdgeInsets.all(10),
+                              child: Chip(
+                                label: Text('紫色',style: TextStyle(color: Colors.white)),
+                                backgroundColor: Colors.purple,
+                                padding: EdgeInsets.all(10),
                               ),
-                              Container(
-                                  margin: EdgeInsets.all(10),
-                                  child: Chip(
-                                    label: Text('SL',style: TextStyle(color: Colors.white)),
-                                    padding: EdgeInsets.all(10),
-                                    backgroundColor: Colors.black54,
-                                ),
+                            ),
+                             Container(
+                              margin: EdgeInsets.all(10),
+                              child: Chip(
+                                label: Text('青色',style: TextStyle(color: Colors.white)),
+                                backgroundColor: Colors.cyan,
+                                padding: EdgeInsets.all(10),
                               ),
-                               Container(
-                                  margin: EdgeInsets.all(10),
-                                  child: Chip(
-                                    label: Text('SM',style: TextStyle(color: Colors.white)),
-                                    padding: EdgeInsets.all(10),
-                                    backgroundColor: Colors.black54,
-                                ),
-                              ),
-                               Container(
-                                  margin: EdgeInsets.all(10),
-                                  child: Chip(
-                                    label: Text('LS',style: TextStyle(color: Colors.white)),
-                                    padding: EdgeInsets.all(10),
-                                    backgroundColor: Colors.black54,
-                                ),
-                              ),
-                               Container(
-                                  margin: EdgeInsets.all(10),
-                                  child: Chip(
-                                    label: Text('LL',style: TextStyle(color: Colors.white)),
-                                    padding: EdgeInsets.all(10),
-                                    backgroundColor: Colors.black54,
-                                ),
-                              ),
-                          
-                            ],
-                          )
+                            )
                         ],
                       )
                     ],
-                  )
+                  ),
+                   Wrap(
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.only(top:25,left: 10),
+                        child: Text('颜色:',style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.pink
+                        )),
+                      ),
+                      Wrap(
+                        children: <Widget>[
+                            Container(
+                              margin: EdgeInsets.all(10),
+                              child: Chip(
+                                label: Text('SX',style: TextStyle(color: Colors.white)),
+                                padding: EdgeInsets.all(10),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.all(10),
+                              child: Chip(
+                                label: Text('SM',style:TextStyle(color: Colors.white)),
+                                backgroundColor: Colors.pink,
+                                padding: EdgeInsets.all(10),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.all(10),
+                              child: Chip(
+                                label: Text('LS',style: TextStyle(color: Colors.white)),
+                                backgroundColor: Colors.blue,
+                                padding: EdgeInsets.all(10),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.all(10),
+                              child: Chip(
+                                label: Text('LX',style: TextStyle(color: Colors.white)),
+                                backgroundColor: Colors.green,
+                                padding: EdgeInsets.all(10),
+                              ),
+                            )
+                        ],
+                      )
+                    ],
+                  ),
                   
                 ],
               ),
+              // Divider(color: Colors.pink),
               Positioned(
                 bottom: 0,
                 width: ScreenAdaper.width(750),
                 height: ScreenAdaper.height(80),
                 child: Row(
                   children: <Widget>[
-                    Container(
-                      width: ScreenAdaper.width(750),
-                      height: ScreenAdaper.height(80),
-                      child: Text('底部'),
-                      color: Colors.pink,
-                    )
+                     Expanded(
+                        flex: 1,
+                      
+                        child: Container(
+                          height: ScreenAdaper.height(80),
+                          margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10)
+                          ),
+                          child: RaisedButton(
+                           child: Text('加入购物车',style: TextStyle(color: Colors.white)),
+                           color: Colors.pink,
+                           textColor: Colors.white,
+                           onPressed: () {
+
+                           },
+                         ),
+                       ),
+                     ),
+                     Expanded(
+                       flex: 1,
+                       child: Container(
+                          height: ScreenAdaper.height(80),
+                          margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10)
+                            ),
+                          child: RaisedButton(
+                            child: Text('立即购买',style: TextStyle(color: Colors.white)),
+                            color: Colors.red,
+                            textColor: Colors.white,
+                            onPressed: () {
+
+                            },
+                          ),
+                       ),
+                     )
                   ],
                 ),
               )
