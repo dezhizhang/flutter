@@ -131,7 +131,6 @@ class _CategoryPageState extends State<CategoryPage> with AutomaticKeepAliveClie
                 ),
                 itemCount: this.cateProductData.length,
                 itemBuilder: (context,index) {
-                 
                   if(this.cateProductData.length > 0) {
                      var pic = this.cateProductData[index].pic;
                      return InkWell(
