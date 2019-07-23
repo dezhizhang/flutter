@@ -63,11 +63,16 @@ class _CartPageState extends State<CartPage> {
                           width: ScreenAdaper.width(170),
                           child: Row(
                               children: <Widget>[
-                                Container(
-                                  alignment: Alignment.center,
-                                  width: ScreenAdaper.width(45),
-                                  height: ScreenAdaper.height(45),
-                                  child: Text('-'),
+                                InkWell(
+                                    onTap: () {
+
+                                    },
+                                    child:Container(
+                                    alignment: Alignment.center,
+                                    width: ScreenAdaper.width(45),
+                                    height: ScreenAdaper.height(45),
+                                      child: Text('-'),
+                                  ),
                                 ),
                                 Container(
                                   alignment: Alignment.center,
@@ -87,11 +92,16 @@ class _CartPageState extends State<CartPage> {
                                     )
                                   ),
                                 ),
-                                Container(
-                                  alignment:Alignment.center,
-                                  width: ScreenAdaper.width(45),
-                                  height: ScreenAdaper.height(45),
-                                  child: Text('+'),
+                                InkWell(
+                                    onTap: () {
+
+                                    },
+                                    child: Container(
+                                    alignment:Alignment.center,
+                                    width: ScreenAdaper.width(45),
+                                    height: ScreenAdaper.height(45),
+                                    child: Text('+'),
+                                  ) ,
                                 )
                               ],
                           ),
