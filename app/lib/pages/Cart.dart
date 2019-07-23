@@ -140,10 +140,20 @@ class _CartPageState extends State<CartPage> {
           Positioned(
             bottom: 0,
             width: ScreenAdaper.width(750),
-            height: ScreenAdaper.height(88),
+            height: ScreenAdaper.height(69),
             child: Container(
               width: ScreenAdaper.width(750),
-              height: ScreenAdaper.height(88),
+              height: ScreenAdaper.height(68),
+      
+              decoration: BoxDecoration(
+                border: Border(
+                  top: BorderSide(
+                    width: 1,
+                    color: Colors.black12
+                  )
+                ),
+                color: Colors.white
+              ),
               child: Stack(
                 children: <Widget>[
                   Align(
@@ -167,6 +177,7 @@ class _CartPageState extends State<CartPage> {
                   Align(
                     alignment: Alignment.centerRight,
                     child: RaisedButton(
+                      padding: EdgeInsets.fromLTRB(0, 13, 0, 13),
                       child: Text('结算',style: TextStyle(color: Colors.white)),
                       color: Colors.pink,
                       textColor: Colors.white,
@@ -178,7 +189,7 @@ class _CartPageState extends State<CartPage> {
                   )
                 ],
               ),
-              color: Colors.white,
+              
             ),
 
           )
