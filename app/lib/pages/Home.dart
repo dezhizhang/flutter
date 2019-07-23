@@ -196,7 +196,45 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
   @override
   Widget build(BuildContext context) {
     ScreenAdaper.init(context);
-    return ListView(
+     return Scaffold(
+        appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.center_focus_weak,size: 28, color: Colors.white),
+          onPressed: () {
+
+          },
+        ),
+        title: InkWell(
+          child: Container(
+            height: ScreenAdaper.height(68),
+            decoration: BoxDecoration(
+              color: Color.fromRGBO(233, 233, 233, 0.8),
+              borderRadius: BorderRadius.circular(30)
+            ),
+            padding: EdgeInsets.only(left:10),
+            child: Row(
+              children: <Widget>[
+                Icon(Icons.search),
+                Text('笔记本',style: TextStyle(
+                  fontSize: ScreenAdaper.fontSize(28)
+                ))
+              ],
+            ),
+          ),
+          onTap: () {
+            Navigator.of(context).pushNamed('/search');
+          },
+        ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.message,size: 28,color: Colors.white),
+            onPressed: () {
+
+            },
+          )
+        ],
+      ),
+      body:ListView(
       children: <Widget>[
         swiperWidget(),
         SizedBox(height: ScreenAdaper.height(20)),
@@ -206,6 +244,7 @@ class _HomePageState extends State<HomePage> with AutomaticKeepAliveClientMixin 
         titleWidget('热门推荐'),
         hotListWidget(),
       ],
-    );
+      ) ,
+     );
   }
 }

@@ -9,8 +9,11 @@ class CartPage extends StatefulWidget {
 class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-       child: Text('我是购物车'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('购物车'),
+      ),
+      body: Text('你好'),
     );
   }
 }
