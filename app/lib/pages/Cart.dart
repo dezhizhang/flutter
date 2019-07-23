@@ -140,12 +140,45 @@ class _CartPageState extends State<CartPage> {
           Positioned(
             bottom: 0,
             width: ScreenAdaper.width(750),
-            height: ScreenAdaper.height(68),
+            height: ScreenAdaper.height(88),
             child: Container(
               width: ScreenAdaper.width(750),
-              height: ScreenAdaper.height(68),
-              child: Text('底部'),
-              color: Colors.pink,
+              height: ScreenAdaper.height(88),
+              child: Stack(
+                children: <Widget>[
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          width: ScreenAdaper.width(60),
+                          child:Checkbox(
+                          value: true,
+                          activeColor: Colors.pink,
+                          onChanged: (value) {
+
+                          },
+                        ),
+                        ),
+                        Text('全选')
+                      ],
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: RaisedButton(
+                      child: Text('结算',style: TextStyle(color: Colors.white)),
+                      color: Colors.pink,
+                      textColor: Colors.white,
+                      onPressed: () {
+
+                      },
+                    ),
+
+                  )
+                ],
+              ),
+              color: Colors.white,
             ),
 
           )
