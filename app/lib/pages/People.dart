@@ -9,8 +9,11 @@ class PeoplePage extends StatefulWidget {
 class _PeoplePageState extends State<PeoplePage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-       child: Text('我的'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('我的'),
+      ),
+      body: Text('我'),
     );
   }
 }
