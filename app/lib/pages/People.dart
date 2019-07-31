@@ -19,9 +19,16 @@ class _PeoplePageState extends State<PeoplePage> {
           Container(
             width: double.infinity,
             height: ScreenAdaper.height(220),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('images/user_bg.jpg'),
+                fit: BoxFit.cover
+              )
+            ),
             child: Row(
               children: <Widget>[
                 Container(
+                  margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
                   child: ClipOval(
                     child: Image.asset(
                       'images/user.png',
@@ -33,7 +40,14 @@ class _PeoplePageState extends State<PeoplePage> {
                 ),
                 Expanded(
                   flex: 1,
-                  child: Text('登录/注册'),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text('用户名:123456',style: TextStyle(color: Colors.white,fontSize: ScreenAdaper.fontSize(26))),
+                      Text('普通会员',style: TextStyle(color: Colors.white))
+                    ],
+                  )
                 )
               ],
             ),
