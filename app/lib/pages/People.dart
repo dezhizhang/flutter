@@ -13,7 +13,18 @@ class _PeoplePageState extends State<PeoplePage> {
       appBar: AppBar(
         title: Text('我的'),
       ),
-      body: Text('我'),
+      body: ListView(
+        children: <Widget>[
+          ListTile(
+            leading: Icon(Icons.home),
+            title: Text('订单列表'),
+          ),
+          ListTile(
+            leading: Icon(Icons.search),
+            title: Text('搜索列表'),
+          )
+        ],
+      )
     );
   }
 }
