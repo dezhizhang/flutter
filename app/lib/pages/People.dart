@@ -40,15 +40,24 @@ class _PeoplePageState extends State<PeoplePage> {
                 ),
                 Expanded(
                   flex: 1,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text('用户名:123456',style: TextStyle(color: Colors.white,fontSize: ScreenAdaper.fontSize(26))),
-                      Text('普通会员',style: TextStyle(color: Colors.white))
-                    ],
-                  )
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.of(context).pushNamed('/login');
+                    },
+                    child: Text('登录/注册',style: TextStyle(color: Colors.white)),
+                  ),
                 )
+                // Expanded(
+                //   flex: 1,
+                //   child: Column(
+                //     mainAxisAlignment: MainAxisAlignment.center,
+                //     crossAxisAlignment: CrossAxisAlignment.start,
+                //     children: <Widget>[
+                //       Text('用户名:123456',style: TextStyle(color: Colors.white,fontSize: ScreenAdaper.fontSize(26))),
+                //       Text('普通会员',style: TextStyle(color: Colors.white))
+                //     ],
+                //   )
+                // )
               ],
             ),
 
