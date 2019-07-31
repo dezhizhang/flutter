@@ -16,13 +16,34 @@ class _PeoplePageState extends State<PeoplePage> {
       body: ListView(
         children: <Widget>[
           ListTile(
-            leading: Icon(Icons.home),
-            title: Text('订单列表'),
+            leading: Icon(Icons.home,color: Colors.pink),
+            title: Text('全部订单'),
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.search,color: Colors.green),
+            title: Text('待付款'),
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.search,color: Colors.green),
+            title: Text('待收货'),
+          ),
+          Container(
+            width: double.infinity,
+            height: 20,
+            color: Colors.black12,
           ),
           ListTile(
-            leading: Icon(Icons.search),
-            title: Text('搜索列表'),
-          )
+            leading: Icon(Icons.favorite,color: Colors.lightGreen),
+            title: Text('我的收藏'),
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.people,color: Colors.black54),
+            title: Text('在线客服'),
+          ),
+          Divider(),
         ],
       )
     );
