@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../utils/ScreenAdaper.dart';
 
 class PeoplePage extends StatefulWidget {
   PeoplePage({Key key}) : super(key: key);
@@ -11,10 +12,33 @@ class _PeoplePageState extends State<PeoplePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('我的'),
+        // title: Text('我的'),
       ),
       body: ListView(
         children: <Widget>[
+          Container(
+            width: double.infinity,
+            height: ScreenAdaper.height(220),
+            child: Row(
+              children: <Widget>[
+                Container(
+                  child: ClipOval(
+                    child: Image.asset(
+                      'images/user.png',
+                      fit: BoxFit.cover,
+                      width: ScreenAdaper.width(100),
+                      height: ScreenAdaper.height(100),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Text('登录/注册'),
+                )
+              ],
+            ),
+
+          ),
           ListTile(
             leading: Icon(Icons.home,color: Colors.pink),
             title: Text('全部订单'),
