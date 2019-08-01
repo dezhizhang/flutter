@@ -20,7 +20,7 @@ class _LoginPageState extends State<LoginPage> {
        ),
        actions: <Widget>[
          FlatButton(
-           child: Text('客服'),
+           child: Text('客服',style: TextStyle(color: Colors.white)),
            onPressed: () {
              
            },
@@ -94,7 +94,12 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Align(
                   alignment: Alignment.centerRight,
-                  child: Text('新用户注册'),
+                  child: InkWell(
+                    child: Text('新用户注册'),
+                    onTap: () {
+                      Navigator.of(context).pushNamed('/registerone');
+                    },
+                  )
 
                 )
               ],

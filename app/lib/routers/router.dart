@@ -4,6 +4,9 @@ import '../tabs/Tabs.dart';
 import '../pages/Detail.dart';
 import '../pages/Search.dart';
 import '../pages/Login.dart';
+import '../pages/RegisterOne.dart';
+import '../pages/RegisterTwo.dart';
+import '../pages/RegisterThree.dart';
 
 //配置路由
 final routes = {
@@ -12,6 +15,11 @@ final routes = {
   '/search':(context) => SearchPage(),
   '/product':(context,{arguments}) => ProductPage(arguments:arguments),
   '/login':(context) => LoginPage(),
+  '/registerone':(context) => RegisterOne(),
+  '/registertwo':(context) => RegisterTwo(),
+  '/registerthree':(context) => RegisterThree()
+
+
 };
 
 var onGenerateRoute = (RouteSettings settings) {
