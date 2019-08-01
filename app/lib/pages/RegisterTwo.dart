@@ -48,7 +48,7 @@ class _RegisterTwoState extends State<RegisterTwo> {
                   child: RaisedButton(
                     color: Colors.pink,
                     textColor: Colors.white,
-                    child: Text('发送验证码'),
+                    child: Text('重新获取验证码'),
                     onPressed: () {
 
                     },
