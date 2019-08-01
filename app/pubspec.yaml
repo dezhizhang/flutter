@@ -53,6 +53,10 @@ flutter:
   - images/user.png
   - images/2.0x/user.png
   - images/3.0x/user.png
+  - images/login.png
+  - images/2.0x/login.png
+  - images/3.0x/login.png
+  
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

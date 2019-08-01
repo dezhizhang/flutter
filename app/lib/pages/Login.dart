@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../utils/ScreenAdaper.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key key}) : super(key: key);
@@ -26,7 +27,39 @@ class _LoginPageState extends State<LoginPage> {
          )
        ],
       ),
-      body: Text('登录'),
+      body: ListView(
+        children: <Widget>[
+          Center(
+            child: Container(
+              margin: EdgeInsets.only(top:30),
+              height: ScreenAdaper.height(160),
+              width: ScreenAdaper.width(160),
+              child: Image.asset('images/login.png',fit: BoxFit.cover),
+            ),
+          ),
+          SizedBox(height: 20),
+          Container(
+            width: double.infinity,
+            height: ScreenAdaper.height(68),
+            decoration: BoxDecoration(
+              border: Border(
+                bottom: BorderSide(
+                  width: 1,
+                  color: Colors.black12
+                )
+              )
+            ),
+            child: TextField(
+              decoration: InputDecoration(
+                hintText: '用户名',
+              ),
+              onChanged: (value) {
+
+              },
+            ),
+          )
+        ],
+      )
     );
   }
 }
