@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../utils/ScreenAdaper.dart';
+import 'dart:async';
 
 class RegisterTwo extends StatefulWidget {
   Map arguments;
@@ -10,11 +11,28 @@ class RegisterTwo extends StatefulWidget {
 
 class _RegisterTwoState extends State<RegisterTwo> {
   String mobile;
+  bool isShowButton = false;
+  int seconds = 10;
+  showTimer() {
+    Timer timer;
+    timer = Timer.periodic(Duration(microseconds: 1000), (timer) {
+      setState(() {
+       this.seconds--; 
+      });
+      if(this.seconds == 0) {
+        timer.cancel();
+        setState(() {
+          this.isShowButton = true;
+        });
+      }
+    });
+  }
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     this.mobile = widget.arguments['mobile'];
+    this.showTimer();
   }
   @override
   Widget build(BuildContext context) {
@@ -53,14 +71,19 @@ class _RegisterTwoState extends State<RegisterTwo> {
                 Positioned(
                   right: 0,
                   top: 0,
-                  child: RaisedButton(
+                  child: this.isShowButton ? RaisedButton(
                     color: Colors.pink,
                     textColor: Colors.white,
                     child: Text('重新获取验证码'),
                     onPressed: () {
 
                     },
-                  ),
+                  ):RaisedButton(
+                    child: Text('${this.seconds}'),
+                    color: Colors.pink,
+                    textColor: Colors.white,
+                    onPressed: null,
+                  )
                 )
                 
               ],
