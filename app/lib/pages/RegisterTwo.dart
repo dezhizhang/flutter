@@ -2,12 +2,20 @@ import 'package:flutter/material.dart';
 import '../utils/ScreenAdaper.dart';
 
 class RegisterTwo extends StatefulWidget {
-  RegisterTwo({Key key}) : super(key: key);
+  Map arguments;
+  RegisterTwo({Key key,this.arguments}) : super(key: key);
 
   _RegisterTwoState createState() => _RegisterTwoState();
 }
 
 class _RegisterTwoState extends State<RegisterTwo> {
+  String mobile;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    this.mobile = widget.arguments['mobile'];
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +27,7 @@ class _RegisterTwoState extends State<RegisterTwo> {
         child: ListView(
           children: <Widget>[
             Container(
-              child: Text('请输入15083356190手机收到的验证码'),
+              child: Text('请输入${this.mobile}手机收到的验证码'),
             ),
             SizedBox(height: 10),
             Stack(

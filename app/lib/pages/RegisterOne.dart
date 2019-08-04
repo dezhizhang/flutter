@@ -19,7 +19,7 @@ class _RegisterOneState extends State<RegisterOne> {
        var url = '${Config.baseURL}/api/sendCode';
        var response = await Dio().post(url,data:{"tel":this.mobile});
        if(response.data['success']) {
-          Navigator.of(context).pushNamed('/registertwo');
+          Navigator.of(context).pushNamed('/registertwo',arguments:{'mobile':this.mobile});
        } else {
         Fluttertoast.showToast(
           msg: "${response.data['message']}",

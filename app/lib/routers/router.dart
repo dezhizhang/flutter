@@ -16,10 +16,8 @@ final routes = {
   '/product':(context,{arguments}) => ProductPage(arguments:arguments),
   '/login':(context) => LoginPage(),
   '/registerone':(context) => RegisterOne(),
-  '/registertwo':(context) => RegisterTwo(),
+  '/registertwo':(context,{arguments}) => RegisterTwo(arguments:arguments),
   '/registerthree':(context) => RegisterThree()
-
-
 };
 
 var onGenerateRoute = (RouteSettings settings) {
