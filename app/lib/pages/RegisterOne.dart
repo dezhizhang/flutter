@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:dio/dio.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import '../utils/ScreenAdaper.dart';
+import '../config/Config.dart';
+
 
 class RegisterOne extends StatefulWidget {
   RegisterOne({Key key}) : super(key: key);
@@ -9,12 +13,34 @@ class RegisterOne extends StatefulWidget {
 
 class _RegisterOneState extends State<RegisterOne> {
   String mobile;
-  sendCode() {
+  sendCode() async{
     RegExp reg = new RegExp(r'^[1][3,4,5,7,8][0-9]{9}$');
     if( reg.hasMatch(this.mobile)) {
-      print('正确');
+       var url = '${Config.baseURL}/api/sendCode';
+       var response = await Dio().post(url,data:{"tel":this.mobile});
+       if(response.data['success']) {
+          Navigator.of(context).pushNamed('/registertwo');
+       } else {
+        Fluttertoast.showToast(
+          msg: "${response.data['message']}",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIos: 1,
+          backgroundColor: Colors.pink,
+          textColor: Colors.white,
+          fontSize: 16.0
+        );
+       }
     } else {
-      print('错误');
+       Fluttertoast.showToast(
+          msg: "您输入的手机号不合法",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIos: 1,
+          backgroundColor: Colors.pink,
+          textColor: Colors.white,
+          fontSize: 16.0
+        );
     }
   }
   @override
@@ -42,6 +68,9 @@ class _RegisterOneState extends State<RegisterOne> {
                 decoration: InputDecoration(
                   hintText: '请输入手机号'
                 ),
+                onChanged: (value) {
+                  this.mobile = value;
+                },
               ),
             ),
             SizedBox(height: 100),
@@ -52,9 +81,10 @@ class _RegisterOneState extends State<RegisterOne> {
                 child: Text('下一步'),
                 color: Colors.pink,
                 textColor: Colors.white,
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/registertwo');
-                },
+                onPressed: this.sendCode,
+                // onPressed: () {
+                //   Navigator.of(context).pushNamed('/registertwo');
+                // },
               ),
             )
 

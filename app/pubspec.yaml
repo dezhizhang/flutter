@@ -23,6 +23,7 @@ dependencies:
   flutter_screenutil: ^0.5.3
   dio: ^2.1.10
   flutter_inappbrowser: ^1.2.1
+  fluttertoast: ^3.1.0
 
   
 
