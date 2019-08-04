@@ -8,6 +8,15 @@ class RegisterOne extends StatefulWidget {
 }
 
 class _RegisterOneState extends State<RegisterOne> {
+  String mobile;
+  sendCode() {
+    RegExp reg = new RegExp(r'^[1][3,4,5,7,8][0-9]{9}$');
+    if( reg.hasMatch(this.mobile)) {
+      print('正确');
+    } else {
+      print('错误');
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
