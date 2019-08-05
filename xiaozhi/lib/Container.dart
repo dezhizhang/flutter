@@ -22,16 +22,20 @@ class _ContainerPageState extends State<ContainerPage> {
           fontWeight: FontWeight.w800,
           fontStyle: FontStyle.italic,
           decoration: TextDecoration.lineThrough,
-          
+
         ),
         ),
         width: 300,
         height: 300,
+        alignment: Alignment.center,
         decoration: BoxDecoration(
           color: Colors.pink,
           border: Border.all(
             color: Colors.yellow,
-            width: 10
+            width: 1
+          ),
+          borderRadius: BorderRadius.all(
+            Radius.circular(10),
           )
         ),
       )
