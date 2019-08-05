@@ -14,8 +14,8 @@ class RegisterThree extends StatefulWidget {
 class _RegisterThreeState extends State<RegisterThree> {
   String mobile;
   String code;
-  String password;
-  String rpassword;
+  String password = '';
+  String rpassword = '';
   @override
   void initState() {
     // TODO: implement initState
@@ -27,6 +27,8 @@ class _RegisterThreeState extends State<RegisterThree> {
    var api = '${Config.baseURL}/api/register';
    var response = await Dio().post(api,data:{'tel':this.mobile,'code':this.code,'password':this.password});
    if(response.data['success']) {
+
+      Navigator.of(context).pushNamed('/login');
 
    } else {
        Fluttertoast.showToast(
