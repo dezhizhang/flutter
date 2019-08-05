@@ -97,6 +97,14 @@ class _HomePageState extends State<HomePage> {
             Navigator.of(context).pushNamed('/text');
           },
         ),
+        RaisedButton(
+          child: Text('跳到容器 '),
+          color: Colors.yellow,
+          textColor: Colors.white,
+          onPressed: () {
+            Navigator.of(context).pushNamed('/container');
+          },
+        )
       
       ],
     );

@@ -15,6 +15,7 @@ import './WxPay.dart';
 import './Webview.dart';
 import './Video.dart';
 import './Storage.dart';
+import './Container.dart';
 
 
 final routes = {
@@ -34,6 +35,7 @@ final routes = {
   '/webview':(context) => WebView(),
   '/video':(context) => VidoPage(),
   '/storage':(context) => StroagePage(),
+  '/container':(context) => ContainerPage()
 
 };
 
