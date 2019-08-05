@@ -12,7 +12,7 @@ class RegisterTwo extends StatefulWidget {
 class _RegisterTwoState extends State<RegisterTwo> {
   String mobile;
   bool isShowButton = false;
-  int seconds = 10;
+  int seconds = 60;
   //到计时
   showTimer() {
     Timer timer;
@@ -26,6 +26,12 @@ class _RegisterTwoState extends State<RegisterTwo> {
           this.isShowButton = true;
         });
       }
+    });
+  }
+  sendCode() {
+    setState(() {
+     this.isShowButton = false;
+     this.seconds = 60; 
     });
   }
   @override
@@ -76,7 +82,7 @@ class _RegisterTwoState extends State<RegisterTwo> {
                     color: Colors.pink,
                     textColor: Colors.white,
                     child: Text('重新获取验证码'),
-                    onPressed: this.showTimer,
+                    onPressed: this.sendCode,
                   ):RaisedButton(
                     child: Text('${this.seconds}秒'),
                     color: Colors.yellow,
