@@ -14,7 +14,17 @@ class _ContainerPageState extends State<ContainerPage> {
         title: Text('容器组件'),
       ),
       body: Container(
-        child: Text('我是一个容器组件'),
+        child: Text('我是一个容器组件',
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontSize: 16,
+          color: Colors.red,
+          fontWeight: FontWeight.w800,
+          fontStyle: FontStyle.italic,
+          decoration: TextDecoration.lineThrough,
+          
+        ),
+        ),
         width: 300,
         height: 300,
         decoration: BoxDecoration(
