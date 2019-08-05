@@ -11,6 +11,7 @@ class RegisterTwo extends StatefulWidget {
 
 class _RegisterTwoState extends State<RegisterTwo> {
   String mobile;
+  String code;
   bool isShowButton = false;
   int seconds = 60;
   //到计时
@@ -71,7 +72,9 @@ class _RegisterTwoState extends State<RegisterTwo> {
                     hintText: '请输入验证码'
                   ),
                   onChanged: (value) {
-
+                     setState(() {
+                      this.code = value; 
+                     });
                   },
                   ),
                 ),
@@ -102,7 +105,10 @@ class _RegisterTwoState extends State<RegisterTwo> {
                 color: Colors.pink,
                 textColor: Colors.white,
                 onPressed: () {
-                  Navigator.of(context).pushNamed('/registerthree');
+                  Navigator.of(context).pushNamed('/registerthree',arguments:{
+                    'mobile':this.mobile,
+                    'code':this.code
+                  });
                 },
               ),
             )

@@ -12,12 +12,14 @@ class RegisterOne extends StatefulWidget {
 }
 
 class _RegisterOneState extends State<RegisterOne> {
-  String mobile;
+  String mobile = '';
   sendCode() async{
     RegExp reg = new RegExp(r'^[1][3,4,5,7,8][0-9]{9}$');
     if( reg.hasMatch(this.mobile)) {
        var url = '${Config.baseURL}/api/sendCode';
        var response = await Dio().post(url,data:{"tel":this.mobile});
+       print(response);
+       
        if(response.data['success']) {
           Navigator.of(context).pushNamed('/registertwo',arguments:{'mobile':this.mobile});
        } else {

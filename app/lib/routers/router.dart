@@ -17,7 +17,7 @@ final routes = {
   '/login':(context) => LoginPage(),
   '/registerone':(context) => RegisterOne(),
   '/registertwo':(context,{arguments}) => RegisterTwo(arguments:arguments),
-  '/registerthree':(context) => RegisterThree()
+  '/registerthree':(context,{arguments}) => RegisterThree(arguments:arguments)
 };
 
 var onGenerateRoute = (RouteSettings settings) {
