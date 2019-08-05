@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return  Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.center,
+      // mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         RaisedButton(
           child: Text('跳到text'),
@@ -97,102 +97,7 @@ class _HomePageState extends State<HomePage> {
             Navigator.of(context).pushNamed('/text');
           },
         ),
-        RaisedButton(
-          child: Text('跑转到form'),
-          color: Colors.pink,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/form');
-          },
-        ),
-        RaisedButton(
-          child: Text('日期组件'),
-          color: Colors.green,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/date');
-          },
-        ),
-        RaisedButton(
-          child: Text('第三方组件'),
-          color: Colors.yellow,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/newdate');
-          },
-        ),
-        RaisedButton(
-          child: Text('弹框组件'),
-          color: Colors.pink,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/dialog');
-          },
-        ),
-        RaisedButton(
-          child: Text('自定义弹框'),
-          color: Colors.blue,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/custom');
-          },
-        ),
-        RaisedButton(
-          child: Text('获陬设置信息'),
-          color: Colors.pink,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/equip');
-          },
-        ),
-        RaisedButton(
-          child: Text('打开外部链接'),
-          color: Colors.blue,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/luncher');
-          },
-        ),
-        RaisedButton(
-          child: Text('支付宝支付'),
-          color: Colors.pink,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/applay');
-          },
-        ),
-        RaisedButton(
-          child: Text('微信支付'),
-          color: Colors.blue,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/wxplay');
-          },
-        ),
-        RaisedButton(
-          child: Text('加载外部数据'),
-          color: Colors.pink,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/webview');
-          },
-        ),
-        RaisedButton(
-          child: Text('视频播放'),
-          color: Colors.green,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/video');
-          },
-        ),
-        RaisedButton(
-          child: Text('本地存储'),
-          color: Colors.blue,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/storage');
-          },
-        )
+      
       ],
     );
   }
