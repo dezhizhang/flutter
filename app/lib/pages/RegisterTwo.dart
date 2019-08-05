@@ -13,9 +13,10 @@ class _RegisterTwoState extends State<RegisterTwo> {
   String mobile;
   bool isShowButton = false;
   int seconds = 10;
+  //到计时
   showTimer() {
     Timer timer;
-    timer = Timer.periodic(Duration(microseconds: 1000), (timer) {
+    timer = Timer.periodic(Duration(milliseconds:1000), (timer) {
       setState(() {
        this.seconds--; 
       });
@@ -75,12 +76,10 @@ class _RegisterTwoState extends State<RegisterTwo> {
                     color: Colors.pink,
                     textColor: Colors.white,
                     child: Text('重新获取验证码'),
-                    onPressed: () {
-
-                    },
+                    onPressed: this.showTimer,
                   ):RaisedButton(
-                    child: Text('${this.seconds}'),
-                    color: Colors.pink,
+                    child: Text('${this.seconds}秒'),
+                    color: Colors.yellow,
                     textColor: Colors.white,
                     onPressed: null,
                   )
