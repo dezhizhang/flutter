@@ -18,6 +18,7 @@ import './Storage.dart';
 import './Container.dart';
 import './Image.dart';
 import './ListView.dart';
+import './GraidView.dart';
 
 
 final routes = {
@@ -39,7 +40,8 @@ final routes = {
   '/storage':(context) => StroagePage(),
   '/container':(context) => ContainerPage(),
   '/image':(context) => ImagePage(),
-  '/listview':(context) => ListViewPage()
+  '/listview':(context) => ListViewPage(),
+  '/graidview':(context) => GraidViewPage(),
 
 };
 

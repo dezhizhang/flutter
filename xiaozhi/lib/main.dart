@@ -120,6 +120,14 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {
             Navigator.of(context).pushNamed('/listview');
           },
+        ),
+        RaisedButton(
+          child: Text('网格布局'),
+          color: Colors.green,
+          textColor: Colors.white,
+          onPressed: () {
+            Navigator.of(context).pushNamed('/graidview');
+          },
         )
       
       ],
