@@ -104,6 +104,22 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {
             Navigator.of(context).pushNamed('/container');
           },
+        ),
+        RaisedButton(
+          child: Text('图片组件 '),
+          color: Colors.green,
+          textColor: Colors.white,
+          onPressed: () {
+            Navigator.of(context).pushNamed('/image');
+          },
+        ),
+        RaisedButton(
+          child: Text('列表组件'),
+          color: Colors.pink,
+          textColor: Colors.white,
+          onPressed: () {
+            Navigator.of(context).pushNamed('/listview');
+          },
         )
       
       ],
