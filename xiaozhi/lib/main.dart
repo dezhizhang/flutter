@@ -136,6 +136,14 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {
             Navigator.of(context).pushNamed('/padding');
           },
+        ),
+        RaisedButton(
+          child: Text('strack'),
+          color: Colors.green,
+          textColor: Colors.white,
+          onPressed: () {
+            Navigator.of(context).pushNamed('/strack');
+          },
         )
       
       ],
