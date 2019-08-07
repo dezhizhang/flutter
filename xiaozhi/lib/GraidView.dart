@@ -13,6 +13,18 @@ class _GraidViewPageState extends State<GraidViewPage> {
       appBar: AppBar(
         title: Text('网格布局'),
       ),
+      body: GridView.count(
+        crossAxisCount: 2,
+        children: <Widget>[
+            Text('这是一个文本'),
+            Text('这是一个文本'),
+            Text('这是一个文本'),
+            Text('这是一个文本'),
+            Text('这是一个文本'),
+            Text('这是一个文本'),
+            Text('这是一个文本'),
+        ],
+      )
     );
   }
 }
