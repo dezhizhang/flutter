@@ -128,6 +128,14 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {
             Navigator.of(context).pushNamed('/graidview');
           },
+        ),
+        RaisedButton(
+          child: Text('padding'),
+          color: Colors.pink,
+          textColor: Colors.white,
+          onPressed: () {
+            Navigator.of(context).pushNamed('/padding');
+          },
         )
       
       ],

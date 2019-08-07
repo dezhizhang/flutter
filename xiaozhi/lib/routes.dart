@@ -19,6 +19,7 @@ import './Container.dart';
 import './Image.dart';
 import './ListView.dart';
 import './GraidView.dart';
+import './Padding.dart';
 
 
 final routes = {
@@ -42,6 +43,7 @@ final routes = {
   '/image':(context) => ImagePage(),
   '/listview':(context) => ListViewPage(),
   '/graidview':(context) => GraidViewPage(),
+  '/padding':(context) => PaddingPage()
 
 };
 
