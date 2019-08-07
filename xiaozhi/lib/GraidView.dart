@@ -14,6 +14,8 @@ class _GraidViewPageState extends State<GraidViewPage> {
         title: Text('网格布局'),
       ),
       body: GridView.count(
+        crossAxisSpacing: 20,
+        mainAxisSpacing: 20,
         crossAxisCount: 2,
         children: <Widget>[
             Text('这是一个文本'),
