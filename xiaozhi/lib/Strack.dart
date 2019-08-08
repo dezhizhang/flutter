@@ -17,15 +17,22 @@ class StrackPage extends StatelessWidget {
       //     child: FlutterLogo(size: 60),
       //   ),
       // ),
-      body: Container(
-        width: 120,
-        height: 120,
-        color: Colors.blue[50],
-        child: Align(
-          alignment: FractionalOffset(0.5, 0.5),
-          child: FlutterLogo(
-            size: 60,
-          ),
+      // body: Container(
+      //   width: 120,
+      //   height: 120,
+      //   color: Colors.blue[50],
+      //   child: Align(
+      //     alignment: FractionalOffset(0.5, 0.5),
+      //     child: FlutterLogo(
+      //       size: 60,
+      //     ),
+      //   ),
+      // ),
+      body: AspectRatio(
+        aspectRatio: 3 / 1,
+        child: Container(
+          color: Colors.red,
+          
         ),
       ),
     );
