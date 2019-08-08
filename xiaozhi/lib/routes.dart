@@ -23,6 +23,7 @@ import './Padding.dart';
 import './Strack.dart';
 import './Card.dart';
 import './Colum.dart';
+import './Flex.dart';
 
 
 final routes = {
@@ -50,6 +51,7 @@ final routes = {
   '/strack':(context) => StrackPage(),
   '/card':(context) => CardPage(),
   '/colum':(context) => ColumPage(),
+  '/flex':(context) => FlexPage()
 
 };
 
