@@ -22,6 +22,7 @@ import './GraidView.dart';
 import './Padding.dart';
 import './Strack.dart';
 import './Card.dart';
+import './Colum.dart';
 
 
 final routes = {
@@ -47,7 +48,8 @@ final routes = {
   '/graidview':(context) => GraidViewPage(),
   '/padding':(context) => PaddingPage(),
   '/strack':(context) => StrackPage(),
-  '/card':(context) => CardPage()
+  '/card':(context) => CardPage(),
+  '/colum':(context) => ColumPage(),
 
 };
 
