@@ -9,37 +9,66 @@ class FlexPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('flex布局'),
       ),
-      body: Wrap(
-        spacing: 8.0,
-        runSpacing: 4.0,
-        alignment: WrapAlignment.center,
+      // body: Wrap(
+      //   spacing: 8.0,
+      //   runSpacing: 4.0,
+      //   alignment: WrapAlignment.center,
+      //   children: <Widget>[
+      //     Chip(
+      //       avatar: CircleAvatar(backgroundColor: Colors.blue,child: Text('A')),
+      //       label: Text('武器'),
+      //     ),
+      //     Chip(
+      //       avatar: CircleAvatar(backgroundColor: Colors.blue,child: Text('M')),
+      //       label: Text('你好'),
+      //     ),
+      //     Chip(
+      //       avatar: CircleAvatar(backgroundColor: Colors.pink,child: Text('C')),
+      //       label: Text('华人'),
+      //     ),
+      //     Chip(
+      //       avatar: CircleAvatar(backgroundColor: Colors.blue,child: Text('A')),
+      //       label: Text('武器'),
+      //     ),
+      //     Chip(
+      //       avatar: CircleAvatar(backgroundColor: Colors.blue,child: Text('M')),
+      //       label: Text('你好'),
+      //     ),
+      //     Chip(
+      //       avatar: CircleAvatar(backgroundColor: Colors.pink,child: Text('C')),
+      //       label: Text('华人'),
+      //     )
+      //   ],
+      // )
+      body: Flow(
         children: <Widget>[
-          Chip(
-            avatar: CircleAvatar(backgroundColor: Colors.blue,child: Text('A')),
-            label: Text('武器'),
+          Container(
+            width: 80,
+            height: 80,
+            color: Colors.red,
           ),
-          Chip(
-            avatar: CircleAvatar(backgroundColor: Colors.blue,child: Text('M')),
-            label: Text('你好'),
+          Container(
+            width: 80,
+            height: 80,
+            color: Colors.green,
           ),
-          Chip(
-            avatar: CircleAvatar(backgroundColor: Colors.pink,child: Text('C')),
-            label: Text('华人'),
+          Container(
+            width: 80,
+            height: 80,
+            color: Colors.yellow,
           ),
-          Chip(
-            avatar: CircleAvatar(backgroundColor: Colors.blue,child: Text('A')),
-            label: Text('武器'),
+          Container(
+            width: 80,
+            height: 80,
+            color: Colors.brown,
           ),
-          Chip(
-            avatar: CircleAvatar(backgroundColor: Colors.blue,child: Text('M')),
-            label: Text('你好'),
-          ),
-          Chip(
-            avatar: CircleAvatar(backgroundColor: Colors.pink,child: Text('C')),
-            label: Text('华人'),
+          Container(
+            width: 80,
+            height: 80,
+            color: Colors.purple,
           )
         ],
-      )
+      ),
     );
   }
 }

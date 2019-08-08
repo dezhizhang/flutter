@@ -24,6 +24,7 @@ import './Strack.dart';
 import './Card.dart';
 import './Colum.dart';
 import './Flex.dart';
+import './Box.dart';
 
 
 final routes = {
@@ -51,7 +52,8 @@ final routes = {
   '/strack':(context) => StrackPage(),
   '/card':(context) => CardPage(),
   '/colum':(context) => ColumPage(),
-  '/flex':(context) => FlexPage()
+  '/flex':(context) => FlexPage(),
+  '/box':(context) => BoxPage()
 
 };
 

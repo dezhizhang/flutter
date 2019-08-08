@@ -168,6 +168,14 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {
             Navigator.of(context).pushNamed('/flex');
           },
+        ),
+        RaisedButton(
+          child: Text('限定'),
+          color: Colors.pink,
+          textColor: Colors.white,
+          onPressed: () {
+            Navigator.of(context).pushNamed('/box');
+          },
         )
       
       ],
