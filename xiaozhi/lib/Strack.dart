@@ -9,7 +9,17 @@ class StrackPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('层叠组件'),
       ),
-      body: Text('组件'),
+      body: Stack(
+        alignment: Alignment.center,
+        children: <Widget>[
+          Container(
+            width: 400,
+            height: 400,
+            color: Colors.pink,
+          ),
+          Text('我是一个文本',style: TextStyle(color: Colors.white))
+        ],
+      )
     );
   }
 }
