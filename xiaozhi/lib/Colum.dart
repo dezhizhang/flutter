@@ -9,14 +9,26 @@ class ColumPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('colum组件'),
       ),
-      body: ConstrainedBox(
-        constraints: BoxConstraints(minWidth: double.infinity),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Text('你好'),
-            Text('中国')
-          ],
+      body: Container(
+        color: Colors.green,
+        child: Padding(
+          padding: EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+             mainAxisSize: MainAxisSize.max,
+             children: <Widget>[
+               Container(
+                 color: Colors.red,
+                 child: Column(
+                   mainAxisSize: MainAxisSize.max,
+                   children: <Widget>[
+                     Text('你好中国')
+                   ],
+                 ),
+               )
+             ],
+
+          ),
         ),
       ),
     );
