@@ -9,27 +9,51 @@ class StrackPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('层叠组件'),
       ),
+      // body: Container(
+      //   width: 400,
+      //   height: 400,
+      //   color: Colors.pink,
+      //   child: Stack(
+      //     children: <Widget>[
+      //       Align(
+      //         alignment: Alignment.centerLeft,
+      //         child: Icon(Icons.home,color: Colors.white),
+      //       ),
+      //       Align(
+      //         alignment: Alignment.center,
+      //         child: Icon(Icons.search,color: Colors.yellow),
+      //       ),
+      //       Align(
+      //         alignment: Alignment.centerRight,
+      //         child: Icon(Icons.send,color: Colors.white),
+      //       )
+      //     ],
+      //   ),
+      // )
       body: Container(
         width: 400,
         height: 400,
         color: Colors.pink,
         child: Stack(
           children: <Widget>[
-            Align(
-              alignment: Alignment.centerLeft,
+            Positioned(
+              left: 10,
+              top: 100,
               child: Icon(Icons.home,color: Colors.white),
             ),
-            Align(
-              alignment: Alignment.center,
-              child: Icon(Icons.search,color: Colors.yellow),
+            Positioned(
+              left: 100,
+              top: 100,
+              child: Icon(Icons.search,color: Colors.white),
             ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: Icon(Icons.send,color: Colors.white),
+            Positioned(
+              left: 200,
+              top: 100,
+              child: Icon(Icons.security,color: Colors.white),
             )
           ],
         ),
-      )
+      ),
     );
   }
 }
