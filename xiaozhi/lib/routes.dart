@@ -21,6 +21,7 @@ import './ListView.dart';
 import './GraidView.dart';
 import './Padding.dart';
 import './Strack.dart';
+import './Card.dart';
 
 
 final routes = {
@@ -45,7 +46,8 @@ final routes = {
   '/listview':(context) => ListViewPage(),
   '/graidview':(context) => GraidViewPage(),
   '/padding':(context) => PaddingPage(),
-  '/strack':(context) => StrackPage()
+  '/strack':(context) => StrackPage(),
+  '/card':(context) => CardPage()
 
 };
 
