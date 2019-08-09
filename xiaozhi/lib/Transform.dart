@@ -9,18 +9,27 @@ class TransPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('transform'),
       ),
-      body: Container(
+      // body: Container(
+      //   width: 750,
+      //   height: 100,
+      //   color: Colors.yellow,
+      //   child: Transform(
+      //     alignment: Alignment.topRight,
+      //     transform: Matrix4.skewY(0.3),
+      //     child: Container(
+      //       padding: EdgeInsets.all(8),
+      //       color: Colors.orange,
+      //       child: Text('广州智数信息科'),
+      //     ),
+      //   ),
+      // ),
+      body:Container(
         width: 750,
-        height: 100,
+        height: 30,
         color: Colors.yellow,
-        child: Transform(
-          alignment: Alignment.topRight,
-          transform: Matrix4.skewY(0.3),
-          child: Container(
-            padding: EdgeInsets.all(8),
-            color: Colors.orange,
-            child: Text('广州智数信息科'),
-          ),
+        child: Transform.translate(
+          offset: Offset(20,10),
+          child: Text('你好广州智数',style: TextStyle(color: Colors.white)),
         ),
       ),
     );
