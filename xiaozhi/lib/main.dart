@@ -86,7 +86,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return  Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       // mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         RaisedButton(
@@ -98,85 +98,14 @@ class _HomePageState extends State<HomePage> {
           },
         ),
         RaisedButton(
-          child: Text('跳到容器 '),
-          color: Colors.yellow,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/container');
-          },
-        ),
-        RaisedButton(
-          child: Text('图片组件 '),
+          child: Text('transform'),
           color: Colors.green,
           textColor: Colors.white,
           onPressed: () {
-            Navigator.of(context).pushNamed('/image');
-          },
-        ),
-        RaisedButton(
-          child: Text('列表组件'),
-          color: Colors.pink,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/listview');
-          },
-        ),
-        RaisedButton(
-          child: Text('网格布局'),
-          color: Colors.green,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/graidview');
-          },
-        ),
-        RaisedButton(
-          child: Text('padding'),
-          color: Colors.pink,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/padding');
-          },
-        ),
-        RaisedButton(
-          child: Text('strack'),
-          color: Colors.green,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/strack');
-          },
-        ),
-        RaisedButton(
-          child: Text('card组件'),
-          color: Colors.green,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/card');
-          },
-        ),
-        RaisedButton(
-          child: Text('colum'),
-          color: Colors.pink,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/colum');
-          },
-        ),
-        RaisedButton(
-          child: Text('flex'),
-          color: Colors.green,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/flex');
-          },
-        ),
-        RaisedButton(
-          child: Text('限定'),
-          color: Colors.pink,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/box');
+            Navigator.of(context).pushNamed('/transform');
           },
         )
+       
       
       ],
     );
