@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import './provider/Counter.dart';
+import './cart/CartItem.dart';
+import './cart/CardNum.dart';
 
 class TextPage extends StatefulWidget {
   TextPage({Key key}) : super(key: key);
@@ -18,19 +20,17 @@ class _TextPageState extends State<TextPage> {
       appBar: AppBar(
         title: Text('表单页面'),
       ),
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            Text('${count.count}'),
-            RaisedButton(
-              child: Text('增加'),
-              onPressed: (){
-                count.increment();
-              },
-            )
-          ],
-        ),
-        // child: Text('${count.count}')
+      body:Column(
+        children: <Widget>[
+          Container(
+            child:Text('${count.count}')
+          ),
+          Divider(),
+          CartItem(),
+          CartNum(),
+          
+
+        ],
       )
     );
   }

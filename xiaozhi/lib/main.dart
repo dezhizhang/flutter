@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart'; 
 import './routes.dart';
 import './provider/Counter.dart';
+import './provider/Card.dart';
 
 
 void main() => runApp(MyApp());
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers:[
-        ChangeNotifierProvider(builder: (_) => Counter())
+        ChangeNotifierProvider(builder: (_) => Counter()),
+        ChangeNotifierProvider(builder: (_) => Cart())
       ],
       child: MaterialApp(
       localizationsDelegates: [
