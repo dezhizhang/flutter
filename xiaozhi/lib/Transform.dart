@@ -32,6 +32,37 @@ class TransPage extends StatelessWidget {
       //     child: Text('你好广州智数',style: TextStyle(color: Colors.white)),
       //   ),
       // ),
+      // body: Container(
+      //   width: 750,
+      //   height: 100,
+      //   color: Colors.pink,
+      //   child: Transform.scale(
+      //     scale: 1.5,
+      //     child: Text('你好',style: TextStyle(color: Colors.white)),
+      //   ),
+      // ),
+      body: Container(
+        alignment: Alignment.center,
+        transform:Matrix4.rotationZ(0.2),
+        margin: EdgeInsets.only(top:50,left:120),
+        width: 200,
+        height: 150,
+        decoration: BoxDecoration(
+          gradient: RadialGradient(
+            colors: [Colors.red,Colors.orange],
+            center: Alignment.topLeft,
+            radius: 0.98
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black54,
+              offset: Offset(2,2),
+              blurRadius: 4
+            )
+          ]
+        ),
+        child: Text('4314',style: TextStyle(color: Colors.white,fontSize: 40)),
+      ),
     );
   }
 }
