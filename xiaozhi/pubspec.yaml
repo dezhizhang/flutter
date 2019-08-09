@@ -37,6 +37,7 @@ dependencies:
   chewie: ^0.9.7
   video_player: ^0.10.1+5
   shared_preferences: ^0.5.3+4
+  provider: ^3.0.0+1
 
 
 

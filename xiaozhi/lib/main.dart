@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart'; 
 import './routes.dart';
+import './provider/Count.dart';
 
 
 void main() => runApp(MyApp());
@@ -10,23 +12,28 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-     localizationsDelegates: [
-        //此处
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
+    return MultiProvider(
+      providers:[
+        ChangeNotifierProvider(builder: (_) => Count())
       ],
-      supportedLocales: [
-        //此处
-        const Locale('zh', 'CH'),
-        const Locale('en', 'US'),
-      ],
-      home: Tabs(),
-      // initialRoute: '/',
-      onGenerateRoute: onGenerateRoute,
-      theme: ThemeData(
-        primaryColor: Colors.pink
-      ),
+      child: MaterialApp(
+      localizationsDelegates: [
+          //此处
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        supportedLocales: [
+          //此处
+          const Locale('zh', 'CH'),
+          const Locale('en', 'US'),
+        ],
+        home: Tabs(),
+        // initialRoute: '/',
+        onGenerateRoute: onGenerateRoute,
+        theme: ThemeData(
+          primaryColor: Colors.pink
+        ),
+        )
     );
   }
 }
@@ -105,46 +112,6 @@ class _HomePageState extends State<HomePage> {
             Navigator.of(context).pushNamed('/transform');
           },
         ),
-        RaisedButton(
-          child: Text('导航'),
-          color: Colors.pink,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/scaffd');
-          },
-        ),
-        RaisedButton(
-          child: Text('剪切'),
-          color: Colors.orange,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/clip');
-          },
-        ),
-        RaisedButton(
-          child: Text('对话框'),
-          color: Colors.pink,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/dialog');
-          },
-        ),
-        RaisedButton(
-          child: Text('动画'),
-          color: Colors.blue,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/animate');
-          },
-        ),
-        RaisedButton(
-          child: Text('事件'),
-          color: Colors.red,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/event');
-          },
-        )
       ],
     );
   }
