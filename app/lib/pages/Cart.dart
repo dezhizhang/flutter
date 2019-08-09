@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../utils/ScreenAdaper.dart';
+import '../provder/Counter.dart';
 
 class CartPage extends StatefulWidget {
   CartPage({Key key}) : super(key: key);
@@ -119,6 +121,7 @@ class _CartPageState extends State<CartPage> {
   }
   @override
   Widget build(BuildContext context) {
+    var counterProvider = Provider.of<Counter>(context);
     ScreenAdaper.init(context);
     return Scaffold(
       appBar: AppBar(
