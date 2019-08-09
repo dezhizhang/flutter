@@ -112,6 +112,14 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {
             Navigator.of(context).pushNamed('/scaffd');
           },
+        ),
+        RaisedButton(
+          child: Text('剪切'),
+          color: Colors.orange,
+          textColor: Colors.white,
+          onPressed: () {
+            Navigator.of(context).pushNamed('/clip');
+          },
         )
        
       
