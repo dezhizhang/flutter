@@ -128,12 +128,20 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {
             Navigator.of(context).pushNamed('/dialog');
           },
+        ),
+        RaisedButton(
+          child: Text('动画'),
+          color: Colors.blue,
+          textColor: Colors.white,
+          onPressed: () {
+            Navigator.of(context).pushNamed('/animate');
+          },
         )
       ],
     );
   }
 }
-
+ 
 
 
 

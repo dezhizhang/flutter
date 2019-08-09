@@ -28,6 +28,7 @@ import './Box.dart';
 import './Transform.dart';
 import './Scaffd.dart';
 import './Clipe.dart';
+import './Animate.dart';
 
 
 final routes = {
@@ -59,7 +60,8 @@ final routes = {
   '/box':(context) => BoxPage(),
   '/transform':(context) => TransPage(),
   '/scaffd':(context) => ScaffoldPage(),
-  '/clip':(context) => ClipPage()
+  '/clip':(context) => ClipPage(),
+  '/animate':(context) => AnimatePage()
 
 };
 
