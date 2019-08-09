@@ -26,6 +26,7 @@ import './Colum.dart';
 import './Flex.dart';
 import './Box.dart';
 import './Transform.dart';
+import './Scaffd.dart';
 
 
 final routes = {
@@ -55,7 +56,8 @@ final routes = {
   '/colum':(context) => ColumPage(),
   '/flex':(context) => FlexPage(),
   '/box':(context) => BoxPage(),
-  '/transform':(context) => TransPage()
+  '/transform':(context) => TransPage(),
+  '/scaffd':(context) => ScaffoldPage(),
 
 };
 
