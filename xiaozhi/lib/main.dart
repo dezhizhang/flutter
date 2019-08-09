@@ -120,9 +120,15 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {
             Navigator.of(context).pushNamed('/clip');
           },
+        ),
+        RaisedButton(
+          child: Text('对话框'),
+          color: Colors.pink,
+          textColor: Colors.white,
+          onPressed: () {
+            Navigator.of(context).pushNamed('/dialog');
+          },
         )
-       
-      
       ],
     );
   }
