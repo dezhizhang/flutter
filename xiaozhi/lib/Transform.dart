@@ -23,16 +23,15 @@ class TransPage extends StatelessWidget {
       //     ),
       //   ),
       // ),
-      body:Container(
-        width: 750,
-        height: 30,
-        color: Colors.yellow,
-        child: Transform.translate(
-          offset: Offset(20,10),
-          child: Text('你好广州智数',style: TextStyle(color: Colors.white)),
-        ),
-      ),
+      // body:Container(
+      //   width: 750,
+      //   height: 30,
+      //   color: Colors.yellow,
+      //   child: Transform.translate(
+      //     offset: Offset(20,10),
+      //     child: Text('你好广州智数',style: TextStyle(color: Colors.white)),
+      //   ),
+      // ),
     );
-
   }
 }
