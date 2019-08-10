@@ -61,16 +61,58 @@ main() {
   // print(sum);
 
 
-  List list = [1,2,3,4,5,6];
-  for(int i=0;i<list.length;i++) {
-    print(list[i]);
-    
-  }
+  // List list = [1,2,3,4,5,6];
+  // for(int i=0;i<list.length;i++) {
+  //   print(list[i]);
 
+  // }
 
+  // List list = ['red','yellow','pink'];
+  // print(list.reversed.toList());
+  // List list = ['red','yellow','pink'];
+  // print(list.reversed.toList());
+  // List list = ['red','yellow','pink'];
+  // list.addAll(['green','blue']);
+  // print(list);
 
+  // List list = ['red','yellow','pink'];
+  // print(list.indexOf('pink'));
 
-  
+  // List list = ['red','yellow','pink'];
+  // print(list.remove('pink'));
+  // print(list);
+
+  // List list = ['red','yellow','pink'];
+  // print(list.join(','));
+
+  // String str = 'a,b,c,d';
+  // List list = str.split(',');
+  // print(list);
+
+  // String str = 'a,b,c,d';
+  // List list = str.split(',');
+  // print(list);
+
+  // String str = 'a,b,c,d';
+  // List list = str.split(',');
+  // print(list);
+
+  // var list = new Set();
+  // list.add('red');
+  // list.add('yellow');
+  // print(list.toList());
+
+  // var list = new Set();
+  // list.add('red');
+  // list.add('red');
+  // list.add('pink');
+  // print(list);
+
+  List list = ['red','yellow','pink','red'];
+  Set set = new Set();
+  set.add(list);
+  print(set.toList());
+
 
 
 
