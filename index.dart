@@ -108,10 +108,22 @@ main() {
   // list.add('pink');
   // print(list);
 
-  List list = ['red','yellow','pink','red'];
-  Set set = new Set();
-  set.add(list);
-  print(set.toList());
+  // List list = ['red','yellow','pink','red'];
+  // Set set = new Set();
+  // set.add(list);
+  // print(set.toList());
+
+  // List list = ['red','yellow','pink'];
+  // for(var item in list){
+  //   print(item);
+  // }
+
+  List list = [1,2,3,4,5];
+  var newList = list.map((value) {
+    return value * 2;
+  });
+
+  print(newList.toList());
 
 
 
