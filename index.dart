@@ -32,10 +32,40 @@ main() {
   // int b = a ?? 10;
   // print(b);
 
-  String str = '123';
-  int number = int.parse(str);
-  print(number);
-  
+  // String str = '123';
+  // int number = int.parse(str);
+  // print(number);
+
+  // for(int i=0;i<100000000000;i++) {
+  //   print(i);
+
+  // }
+
+  // for(int i=0;i<50;i++) {
+  //   if(i%2 == 0) {
+  //     print(i);
+  //   }
+  // }
+  // int sum = 0;
+
+  // for(int i=0; i <=100; i++) {
+  //   sum+=i;
+   
+  // }
+  // print(sum);
+
+  // int sum = 1;
+  // for(int i=1;i<=5;i++) {
+  //   sum*=i;
+  // }
+  // print(sum);
+
+
+  List list = [1,2,3,4,5,6];
+  for(int i=0;i<list.length;i++) {
+    print(list[i]);
+    
+  }
 
 
 
