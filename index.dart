@@ -1,16 +1,12 @@
+class Person{
+  int age;
+  static String name = '123';
+  Person(this.age);
 
-class Rect{
-  num height;
-  num width;
-  Rect(this.width,this.height);
-  get area{
-    return this.width * this.height;
-  }
-  
+
 }
 
 main() {
-  Rect r = new Rect(10, 10);
-  print(r.area);
-  
+  Person p = new Person(22);
+  print(Person.name);
 }
