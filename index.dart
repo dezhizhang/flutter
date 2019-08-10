@@ -28,10 +28,15 @@ main() {
   // int b = a ?? 10;
   // print(b);
 
-  int a = 22;
-  int b = a ?? 10;
-  print(b);
+  // int a = 22;
+  // int b = a ?? 10;
+  // print(b);
+
+  String str = '123';
+  int number = int.parse(str);
+  print(number);
   
+
 
 
 
