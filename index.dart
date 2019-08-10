@@ -118,12 +118,29 @@ main() {
   //   print(item);
   // }
 
-  List list = [1,2,3,4,5];
-  var newList = list.map((value) {
-    return value * 2;
-  });
+  // List list = [1,2,3,4,5];
+  // var newList = list.map((value) {
+  //   return value * 2;
+  // });
 
-  print(newList.toList());
+  // print(newList.toList());
+
+  // String printUserInfo(String username,[int age]) {
+  //   return '${username}${age}';
+  // }
+
+  // print(printUserInfo('张三',21));
+
+  String printUserInfo(String userName,[int age]) {
+     return age!=null ? '${userName}${age}':'${userName}';
+  }
+
+  print(printUserInfo('张三',22));
+
+
+
+
+
 
 
 
