@@ -149,11 +149,70 @@ main() {
 
   // print(printUserInfo('张三',age:20,sex:'女'));
 
-  String userInfo(String userName,{int age,String sex='男'}) {
-    return age!=null ? '${userName}${age}${sex}':'${userName}${sex}';
+  // String userInfo(String userName,{int age,String sex='男'}) {
+  //   return age!=null ? '${userName}${age}${sex}':'${userName}${sex}';
 
-  }
-  print(userInfo('张三',age:22,sex:'未知'));
+  // }
+  // print(userInfo('张三',age:22,sex:'未知'));
+
+  // List list = ['red','yellow','pink'];
+  // list.forEach((value) => print(value));
+
+  // int sum = 1;
+  // fn(n) {
+  //   sum*=n;
+  //   if(n==1) {
+  //     return;
+  //   }
+  //   fn(n-1);
+  // }
+
+  // fn(100);
+
+  // print(sum);
+
+  // var sum = 1;
+  // fn(n) {
+  //   sum*=n;
+  //   if(n==1) {
+  //     return;
+  //   }
+  //   fn(n-1);
+  // }
+
+  // fn(10);
+  // print(sum);
+
+  // int sum = 1;
+  // fn(n) {
+  //   sum*=n;
+  //   if(n==1) {
+  //     return;
+  //   }
+  //   fn(n-1);
+  // }
+
+  // fn(5);
+  // print(sum);
+
+  // int sum = 1;
+  // fn(n) {
+  //   sum *=n;
+  //   if(n==1) {
+  //     return;
+  //   }
+  //   fn(n-1);
+  // }
+  // fn(5);
+  // print(sum);
+
+
+
+
+
+
+
+
 
 
 
