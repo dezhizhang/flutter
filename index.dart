@@ -1,20 +1,44 @@
 main() {
-  // print('你好dart');
-  // String str = '你好';
-  // print(str);
-  // int mynum = 10;
-  // print(mynum);
-  // String str = '123';
+  // String str = 'hello world';
   // print(str);
 
-  // const PI = 3.1415192547;
-  // print(PI);
+  // int number = 123;
+  // print(number);
 
-  // final PI = 3.1415925;
-  // print(PI);
+  // double number = 12.00;
+  // print(number);
 
-  // final a = new DateTime.now();
-  // print(a);
+  // bool flag = true;
+  // print(flag);
+  //  List list = [1,2,3,4,5];
+  //  print(list);
+
+  // var person = {
+  //   "name":"张三",
+  //   "age":20
+  // };
+
+  // print(person['age']);
+
+  // int a = 13;
+  // int b = 5;
+  // print(a~/b);
+
+  // int a = 22;
+  // int b = a ?? 10;
+  // print(b);
+
+  int a = 22;
+  int b = a ?? 10;
+  print(b);
+  
+
+
+
+  
+
+
+
 
 
 
