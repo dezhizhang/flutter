@@ -1,16 +1,16 @@
-class Person{
-  String name;
-  int age;
-  Person(String name,int age) {
-    this.name = name;
-    this.age = age;
+
+class Rect{
+  num height;
+  num width;
+  Rect(this.width,this.height);
+  get area{
+    return this.width * this.height;
   }
-  void printInfo() {
-    print('${this.name} -----${this.age}');
-  }
+  
 }
 
 main() {
-  Person p1 = new Person('张三',22);
-  p1.printInfo();
+  Rect r = new Rect(10, 10);
+  print(r.area);
+  
 }
