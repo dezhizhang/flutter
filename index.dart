@@ -137,11 +137,25 @@ main() {
 
   // print(printUserInfo('张三',22));
 
-  String printUserInfo(String userName,[int age,String sex='男']) {
-    return age!=null ? '${userName}${age}${sex}':'${userName}${sex}';
-  }
+  // String printUserInfo(String userName,[int age,String sex='男']) {
+  //   return age!=null ? '${userName}${age}${sex}':'${userName}${sex}';
+  // }
 
-  print(printUserInfo('张三',22,'女'));
+  // print(printUserInfo('张三',22,'女'));
+
+  // String printUserInfo(String userName,{int age,String sex='男'}) {
+  //   return age!=null ? '${userName}${age}${sex}':'${userName}${sex}';
+  // }
+
+  // print(printUserInfo('张三',age:20,sex:'女'));
+
+  String userInfo(String userName,{int age,String sex='男'}) {
+    return age!=null ? '${userName}${age}${sex}':'${userName}${sex}';
+
+  }
+  print(userInfo('张三',age:22,sex:'未知'));
+
+
 
 
 
