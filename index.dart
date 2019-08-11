@@ -1,17 +1,31 @@
-abstract class Animal{
-  eat();
+
+
+abstract class Db{
+  add();
+  save();
+  delete();
+
 }
 
-class Dog extends Animal{
+class MySql implements Db{
   @override
-  eat() {
-    // TODO: implement eat
-    return '小狗在吃东西';
+  add() {
+    // TODO: implement add
+    return 'this is a add';
+  }
+  @override
+  save() {
+    // TODO: implement save
+    return 'this is a save';
+  }
+  @override
+  delete() {
+    // TODO: implement delete
+    return 'this is a delete';
   }
 }
 
 main() {
- Dog d = new Dog();
- print(d.eat());
- 
+  MySql sql = new MySql();
+  print(sql.add());
 }
