@@ -1,12 +1,17 @@
-class Person{
-  int age;
-  static String name = '123';
-  Person(this.age);
+abstract class Animal{
+  eat();
+}
 
-
+class Dog extends Animal{
+  @override
+  eat() {
+    // TODO: implement eat
+    return '小狗在吃东西';
+  }
 }
 
 main() {
-  Person p = new Person(22);
-  print(Person.name);
+ Dog d = new Dog();
+ print(d.eat());
+ 
 }
