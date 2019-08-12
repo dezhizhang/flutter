@@ -121,6 +121,14 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {
             Navigator.of(context).pushNamed('/process');
           },
+        ),
+        RaisedButton(
+          child: Text('point'),
+          color: Colors.pink,
+          textColor: Colors.white,
+          onPressed: () {
+            Navigator.of(context).pushNamed('/point');
+          },
         )
       ],
     );

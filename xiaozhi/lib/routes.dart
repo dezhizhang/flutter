@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import './Login.dart';
 import './Form.dart';
 import './Process.dart';
+import './Point.dart';
 
 
 final routes = {
   '/login':(context) => LoginPage(),
   '/form':(context) => FormPage(),
   '/process':(context) => ProcessPage(),
+  '/point':(context) => PointPage(),
   
 };
 
