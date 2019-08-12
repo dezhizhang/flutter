@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import './Login.dart';
+import './Form.dart';
 
 
 final routes = {
-  '/login':(context) => LoginPage()
+  '/login':(context) => LoginPage(),
+  '/form':(context) => FormPage()
 };
 
 var onGenerateRoute = (RouteSettings settings) {

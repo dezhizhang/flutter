@@ -105,6 +105,14 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {
             Navigator.of(context).pushNamed('/login');
           },
+        ),
+        RaisedButton(
+          child: Text('form'),
+          color: Colors.blue,
+          textColor: Colors.white,
+          onPressed: () {
+            Navigator.of(context).pushNamed('/form');
+          },
         )
       ],
     );
