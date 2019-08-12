@@ -99,19 +99,11 @@ class _HomePageState extends State<HomePage> {
       // mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         RaisedButton(
-          child: Text('跳到text'),
+          child: Text('login'),
           color: Colors.pink,
           textColor: Colors.white,
           onPressed: () {
-            Navigator.of(context).pushNamed('/text');
-          },
-        ),
-        RaisedButton(
-          child: Text('dio'),
-          color: Colors.blue,
-          textColor: Colors.white,
-          onPressed: () {
-            Navigator.of(context).pushNamed('/dio');
+            Navigator.of(context).pushNamed('/login');
           },
         )
       ],

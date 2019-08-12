@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
-import './Text.dart';
-import './Transform.dart';
-import './Dio.dart';
-
+import './Login.dart';
 
 
 final routes = {
-  '/text':(context) => TextPage(),
-  '/transform':(context) => TransformPage(),
-  '/dio':(context) => DioPage()
-
+  '/login':(context) => LoginPage()
 };
 
 var onGenerateRoute = (RouteSettings settings) {
