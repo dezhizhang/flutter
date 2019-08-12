@@ -1,13 +1,10 @@
-
-
 abstract class Db{
   add();
   save();
   delete();
-
 }
 
-class MySql implements Db{
+class Mysql implements Db{
   @override
   add() {
     // TODO: implement add
@@ -26,6 +23,7 @@ class MySql implements Db{
 }
 
 main() {
-  MySql sql = new MySql();
-  print(sql.add());
+  Mysql sql = new Mysql();
+  print(sql.save());
+
 }

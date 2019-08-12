@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import './Text.dart';
 import './Transform.dart';
+import './Dio.dart';
 
 
 
 final routes = {
   '/text':(context) => TextPage(),
   '/transform':(context) => TransformPage(),
+  '/dio':(context) => DioPage()
 
 };
 
