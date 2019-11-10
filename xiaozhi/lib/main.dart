@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import './pages/tabs/Tabs.dart';
+import './routers/route.dart';
 
 
 
@@ -18,6 +19,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Tabs(),
+      onGenerateRoute:onGenerateRoute,
+      initialRoute: '/',
       theme: ThemeData(
         primaryColor: Color.fromRGBO(115,95,247,1)
       ),

@@ -11,7 +11,12 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Container(
-       child: Text('home')
+       child: RaisedButton(
+         child: Text('search'),
+         onPressed: (){
+           Navigator.pushNamed(context, '/search');
+         },
+       )
     );
   }
 }
