@@ -34,6 +34,7 @@ class _TabsState extends State<Tabs> {
           });
         },
         type: BottomNavigationBarType.fixed,
+        fixedColor:Color.fromRGBO(81,123,251,1),
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
