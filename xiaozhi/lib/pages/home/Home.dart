@@ -49,11 +49,11 @@ class _HomeState extends State<Home> {
             SizedBox(height: 14),
             Container(
               width: double.infinity,
-              height: 64,
+              height: 185,
               child: Text('hello'),
               decoration: BoxDecoration(
-                color: Colors.pink,
-                borderRadius: BorderRadius.circular(32)
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(5)
               ),
             )
 
