@@ -39,12 +39,24 @@ class _HomeState extends State<Home> {
               // color: Colors.red,
               child: SwiperList(),
             ),
+            SizedBox(height: 10),
             Container(
               width: double.infinity,
               height: 83,
               color: Colors.white,
               child: Text('111'),
+            ),
+            SizedBox(height: 14),
+            Container(
+              width: double.infinity,
+              height: 64,
+              child: Text('hello'),
+              decoration: BoxDecoration(
+                color: Colors.pink,
+                borderRadius: BorderRadius.circular(32)
+              ),
             )
+
           ],
         ),
       )
