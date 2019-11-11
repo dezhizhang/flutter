@@ -39,6 +39,7 @@ dependencies:
   shared_preferences: ^0.5.3+4
   provider: ^3.0.0+1
   flutter_swiper: ^1.1.5
+  flutter_screenutil: ^0.5.2
 
 
 
