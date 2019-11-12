@@ -32,9 +32,12 @@ class ListItem extends StatelessWidget{
       child: Column(
         children: <Widget>[
           Container(
-            height: 156,
+            child: AspectRatio(
+              aspectRatio: 1 / 1,
+              child:  Image.network('https://www.itying.com/images/flutter/7.png',fit:BoxFit.cover),
+            ),
             color: Colors.white,
-            child: Image.network('https://www.itying.com/images/flutter/7.png',fit:BoxFit.cover),
+            // child:
           ),
           SizedBox(height: 10),
           Padding(
