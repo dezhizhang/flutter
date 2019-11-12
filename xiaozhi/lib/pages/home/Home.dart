@@ -55,7 +55,26 @@ class _HomeState extends State<Home> {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(5)
               ),
+            ),
+            SizedBox(height: 10),
+            Container(
+              width: double.infinity,
+              height: 35,
+              color: Colors.white,
+              child: Text('主打产品'),
+            ),
+            SizedBox(height: 10),
+            Container(
+              color: Colors.white,
+              child: Wrap(
+                runSpacing: 10,
+                spacing: 10,
+                children: <Widget>[
+               
+                ],
+              ),
             )
+            
 
           ],
         ),

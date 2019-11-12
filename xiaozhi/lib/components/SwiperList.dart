@@ -14,7 +14,7 @@ class _SwiperListState extends State<SwiperList> {
     return new Swiper(
       itemCount: 3,
       itemBuilder: (BuildContext context,int index){
-        return new Image.network("http://via.placeholder.com/350x150",fit: BoxFit.fill,);
+        return new Image.network("https://www.itying.com/images/flutter/1.png",fit: BoxFit.fill,);
       },
       pagination: new SwiperPagination(),
       autoplay:true,
