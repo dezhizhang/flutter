@@ -28,24 +28,45 @@ class ListItem extends StatelessWidget{
   Widget build(BuildContext context) {
     // TODO: implement build
     return Container(
+      width: 220,
       child: Column(
         children: <Widget>[
           Container(
-            height: 165,
+            height: 156,
             color: Colors.white,
             child: Image.network('https://www.itying.com/images/flutter/7.png',fit:BoxFit.cover),
           ),
-          SizedBox(height: 6),
-          Text(
-            '2019潮流韩版蝙蝠衫',maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(
-              color: Color.fromRGBO(51,51,51,1),
-              fontSize: 12
+          SizedBox(height: 10),
+          Padding(
+            padding: EdgeInsets.only(left: 10),
+            child: Stack(
+              children: <Widget>[
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text('2019潮流韩版蝙蝠衫',maxLines: 1,style: TextStyle(
+                    color: Color.fromRGBO(51,51,51,1),
+                    fontSize: 12
+                  )),
+                )
+              ],
             ),
           ),
-          SizedBox(height: 6),
-          Text('￥100')
+          SizedBox(height: 10),
+          Padding(
+            padding: EdgeInsets.only(left: 10),
+            child: Stack(
+              children: <Widget>[
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text('100')
+                ),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: Text('120'),
+                )
+              ],
+            ),
+          )
         ],
       ),
     );
