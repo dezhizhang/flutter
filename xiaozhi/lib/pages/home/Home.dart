@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../components/SwiperList.dart';
+import '../../components/ProductList.dart';
+import '../../utils/Utils.dart';
 
 
 class Home extends StatefulWidget {
@@ -66,13 +68,9 @@ class _HomeState extends State<Home> {
             SizedBox(height: 10),
             Container(
               color: Colors.white,
-              child: Wrap(
-                runSpacing: 10,
-                spacing: 10,
-                children: <Widget>[
-               
-                ],
-              ),
+              height: 219,
+              // height: Utils.height(219),
+              child:ProductList()
             )
             
 
