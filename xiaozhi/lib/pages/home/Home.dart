@@ -67,9 +67,11 @@ class _HomeState extends State<Home> {
             ),
             SizedBox(height: 10),
             Container(
-              color: Colors.white,
               height: 219,
-              // height: Utils.height(219),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                color: Colors.white
+              ),
               child:ProductList()
             )
             
