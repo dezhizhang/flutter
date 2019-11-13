@@ -16,6 +16,9 @@ class Utils{
   static getScreenWidth() {
     return ScreenUtil.screenWidthDp;
   }
+  static baseURL() {
+    return 'https://www.eureka.net.cn';
+  }
 
 
 }
