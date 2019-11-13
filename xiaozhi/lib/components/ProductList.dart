@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../utils/Utils.dart';
 
 class ProductList extends StatefulWidget {
   ProductList({Key key}) : super(key: key);
@@ -24,8 +25,11 @@ class _ProductListState extends State<ProductList> {
 }
 
 class ListItem extends StatelessWidget{
+  
   @override
   Widget build(BuildContext context) {
+    Utils.init(context);
+    // int width = 
     // TODO: implement build
     return Container(
       width: 220,

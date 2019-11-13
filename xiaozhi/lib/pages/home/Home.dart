@@ -14,6 +14,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    Utils.init(context);
     return Container(
       color: Color.fromRGBO(255, 255, 255, 0),
       child: Padding(
@@ -22,8 +23,9 @@ class _HomeState extends State<Home> {
           children: <Widget>[
             Container(
               width: double.infinity,
-              height: 30,
+              height: Utils.height(60),
               color: Colors.pink,
+              child: Text('search'),
             ),
             SizedBox(height:10),
             Container(
@@ -36,38 +38,37 @@ class _HomeState extends State<Home> {
                   )
                 ]
               ),
-              
-              height: 150,
+              height: Utils.height(300),
               // color: Colors.red,
               child: SwiperList(),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: Utils.height(10)),
             Container(
               width: double.infinity,
-              height: 83,
+              height: Utils.height(83),
               color: Colors.white,
               child: Text('111'),
             ),
             SizedBox(height: 14),
             Container(
               width: double.infinity,
-              height: 185,
+              height: Utils.height(370),
               child: Text('hello'),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(5)
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: Utils.height(20)),
             Container(
               width: double.infinity,
-              height: 35,
+              height: Utils.height(70),
               color: Colors.white,
               child: Text('主打产品'),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: Utils.height(20)),
             Container(
-              height: 219,
+              height: Utils.height(437),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
                 color: Colors.white
