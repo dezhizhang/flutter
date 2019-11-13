@@ -25,15 +25,17 @@ class _ProductListState extends State<ProductList> {
 }
 
 class ListItem extends StatelessWidget{
-  
+  double width;
   @override
   Widget build(BuildContext context) {
     Utils.init(context);
-    // int width = 
+    width = (Utils.getScreenWidth() - 40) / 2;
     // TODO: implement build
     return Container(
-      width: 220,
+      width: width,
+      color: Colors.white,
       child: Column(
+        
         children: <Widget>[
           Container(
             child: AspectRatio(
@@ -65,7 +67,10 @@ class ListItem extends StatelessWidget{
               children: <Widget>[
                 Align(
                   alignment: Alignment.centerLeft,
-                  child: Text('100')
+                  child: Text('￥100',style: TextStyle(
+                    color: Color.fromRGBO(246,58,0,0.6),
+                    fontSize: 23
+                  ))
                 ),
                 Align(
                   alignment: Alignment.centerRight,

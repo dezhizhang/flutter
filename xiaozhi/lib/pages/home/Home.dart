@@ -71,7 +71,7 @@ class _HomeState extends State<Home> {
               height: Utils.height(437),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
-                color: Colors.white
+                color: Color.fromRGBO(230,227,227,1)
               ),
               child:ProductList()
             )
