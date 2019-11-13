@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'dart:convert';
 import 'package:flutter_swiper/flutter_swiper.dart';
+import '../model/FocusModel.dart';
 
 class SwiperList extends StatefulWidget {
   SwiperList({Key key}) : super(key: key);
@@ -9,6 +11,16 @@ class SwiperList extends StatefulWidget {
 }
 
 class _SwiperListState extends State<SwiperList> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    var str = '{"status": 1,"add_time": 1572174380499,"sort": 1000}';
+    var focus = FocusModel.fromJson(json.decode(str));
+    print(focus.add_time);
+
+  }
+ 
   @override
   Widget build(BuildContext context) {
     return new Swiper(
