@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'dart:convert';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:xiaozhi/utils/Utils.dart';
-import '../model/FocusModel.dart';
 import 'package:dio/dio.dart';
+import '../model/FocusModel.dart';
+import '../config/Config.dart';
+
 
 class SwiperList extends StatefulWidget {
   SwiperList({Key key}) : super(key: key);
@@ -20,7 +21,7 @@ class _SwiperListState extends State<SwiperList> {
     this._getFocusData();
   }
   _getFocusData() async {
-    var url = Utils.baseURL() + '/api/focus/info';
+    var url = Config.baseURL + '/api/focus/info';
     var result= await Dio().get(url);
     var focusList = FocusModel.fromJson(result.data);
     setState(() {
@@ -33,7 +34,7 @@ class _SwiperListState extends State<SwiperList> {
     return new Swiper(
       itemCount: this._focusList.length,
       itemBuilder: (BuildContext context,int index){
-        return new Image.network("${Utils.baseURL()}${this._focusList[index].focusImg}",fit: BoxFit.fill,);
+        return new Image.network("${Config.baseURL}${this._focusList[index].focusImg}",fit: BoxFit.fill,);
       },
       pagination: new SwiperPagination(),
       autoplay:true,
