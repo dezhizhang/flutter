@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:xiaozhi/utils/Utils.dart';
 import 'package:dio/dio.dart';
 import '../model/FocusModel.dart';
 import '../config/Config.dart';
