@@ -1,5 +1,10 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import '../utils/Utils.dart';
+import '../config/Config.dart';
+import '../model/ProductModel.dart';
+
+
 
 class ProductList extends StatefulWidget {
   ProductList({Key key}) : super(key: key);
@@ -9,6 +14,22 @@ class ProductList extends StatefulWidget {
 }
 
 class _ProductListState extends State<ProductList> {
+  List _productList = [];
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    this.getProductData();
+  }
+  getProductData() async {
+    var url = Config.baseURL + '/api/product/list';
+    var result = await Dio().get(url);
+    var productList = ProductModel.fromJson(result.data);
+    setState(() {
+      this._productList = productList.data;
+    });
+  
+  }
   @override
   Widget build(BuildContext context) {
     return Wrap(

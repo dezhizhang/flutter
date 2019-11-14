@@ -43,15 +43,16 @@ class ProductItemModel {
   String description;
   int iV;
 
-  ProductItemModel(
-      {this.sort,
+  ProductItemModel({
+      this.sort,
       this.addTime,
       this.sId,
       this.productUrl,
       this.productType,
       this.price,
       this.description,
-      this.iV});
+      this.iV
+    });
 
   ProductItemModel.fromJson(Map<String, dynamic> json) {
     sort = json['sort'];
