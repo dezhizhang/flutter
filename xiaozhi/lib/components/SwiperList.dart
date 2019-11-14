@@ -13,35 +13,34 @@ class SwiperList extends StatefulWidget {
 }
 
 class _SwiperListState extends State<SwiperList> {
-  List _focusData = [];
+  List _focusList = [];
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    // var str = '{"status": 1,"add_time": 1572174380499,"sort": 1000}';
-    // var focus = FocusModel.fromJson(json.decode(str));
-    // print(focus.add_time);
     this._getFocusData();
-
   }
   _getFocusData() async {
     var url = Utils.baseURL() + '/api/focus/info';
     var result= await Dio().get(url);
     var focusList = FocusModel.fromJson(result.data);
-   
-
+    setState(() {
+      this._focusList = focusList.data;
+    });
   }
- 
   @override
   Widget build(BuildContext context) {
+    if(this._focusList.length > 0 ){
     return new Swiper(
-      itemCount: 3,
+      itemCount: this._focusList.length,
       itemBuilder: (BuildContext context,int index){
-        return new Image.network("https://www.itying.com/images/flutter/1.png",fit: BoxFit.fill,);
+        return new Image.network("${Utils.baseURL()}${this._focusList[index].focus_img}",fit: BoxFit.fill,);
       },
       pagination: new SwiperPagination(),
       autoplay:true,
       // control: new SwiperControl(),
     );
+    } else {
+      return Text('加载中...');
+    }
   }
 }
