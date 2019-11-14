@@ -33,7 +33,7 @@ class _SwiperListState extends State<SwiperList> {
     return new Swiper(
       itemCount: this._focusList.length,
       itemBuilder: (BuildContext context,int index){
-        return new Image.network("${Utils.baseURL()}${this._focusList[index].focus_img}",fit: BoxFit.fill,);
+        return new Image.network("${Utils.baseURL()}${this._focusList[index].focusImg}",fit: BoxFit.fill,);
       },
       pagination: new SwiperPagination(),
       autoplay:true,
