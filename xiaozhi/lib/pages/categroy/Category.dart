@@ -43,7 +43,7 @@ class _CategoryState extends State<Category> {
                       ))
                     ),
                   ),
-                  Divider(),
+                  Divider(height: 1),
                 ],
               );
             },
@@ -66,6 +66,7 @@ class _CategoryState extends State<Category> {
               itemBuilder: (context,index){
                 return Container(
                   height: double.infinity,
+                  color: Colors.white,
                   child: Column(
                     children: <Widget>[
                       AspectRatio(
