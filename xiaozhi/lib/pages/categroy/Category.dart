@@ -13,10 +13,11 @@ class _CategoryState extends State<Category> {
   @override
   Widget build(BuildContext context) {
     Utils.init(context);
+    var leftWidth = (Utils.getScreenWidth()) / 4;
     return Row(
       children: <Widget>[
         Container(
-          width: Utils.width(160),
+          width: leftWidth,
           height: double.infinity,
           color: Colors.white,
           child: ListView.builder(
@@ -51,9 +52,36 @@ class _CategoryState extends State<Category> {
         Expanded(
           flex: 1,
           child: Container(
+            padding: EdgeInsets.all(10),
             height: double.infinity,
-            color: Colors.blue,
-            child: Text('右侧'),
+            color: Color.fromRGBO(242,242,242,1),
+            child: GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                crossAxisSpacing: 10,
+                childAspectRatio: 1/1.2,
+                mainAxisSpacing: 10
+              ),
+              itemCount: 18,
+              itemBuilder: (context,index){
+                return Container(
+                  height: double.infinity,
+                  child: Column(
+                    children: <Widget>[
+                      AspectRatio(
+                        aspectRatio: 1 / 1,
+                        child: Image.network('https://www.itying.com/images/flutter/5.png',fit: BoxFit.cover),
+                      ),
+                      Container(
+                        alignment: Alignment.center,
+                        height: Utils.height(28),
+                        child: Text('男装'),
+                      )
+                    ],
+                  ),
+                );
+              },
+            )
           ),
         ),
       ],
