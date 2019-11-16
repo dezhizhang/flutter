@@ -39,6 +39,15 @@ class _CategoryState extends State<Category> {
       this._categoryDetail = categoryDetail.data;
     });
   }
+  handleClick(index) async{
+    var categoryList = this._categoryList;
+    var id = categoryList[index].sId;
+    this.getCategoryDetail(id);
+    setState(() {
+      this._selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     Utils.init(context);
@@ -56,11 +65,7 @@ class _CategoryState extends State<Category> {
               return Column(
                 children: <Widget>[
                   InkWell(
-                    onTap: () {
-                      setState(() {
-                        this._selectedIndex = index;
-                      });
-                    },
+                    onTap: () => this.handleClick(index),
                     child: Container(
                       alignment: Alignment.center,
                       color: this._selectedIndex == index ? Color.fromRGBO(242,242,242,1):Colors.white,
