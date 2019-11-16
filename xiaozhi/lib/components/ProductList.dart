@@ -77,7 +77,7 @@ class _ProductListState extends State<ProductList> {
                       alignment: Alignment.centerLeft,
                       child: Text("￥${value.price}",style: TextStyle(
                         color: Color.fromRGBO(246,58,0,0.6),
-                        fontSize: 23
+                        fontSize: 20
                       ))
                     ),
                   ],

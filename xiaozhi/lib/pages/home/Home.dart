@@ -68,10 +68,9 @@ class _HomeState extends State<Home> {
             ),
             SizedBox(height: Utils.height(20)),
             Container(
-              // height: Utils.height(437),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
-                color: Color.fromRGBO(230,227,227,1)
+                color: Color.fromRGBO(242,242,242,1)
               ),
               child:ProductList()
             )
