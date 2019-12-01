@@ -1,5 +1,5 @@
 
 main() {
-  String str = "hello dart";
-  print(str);
+  int num = 123;
+  print(num);
 }
