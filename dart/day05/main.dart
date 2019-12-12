@@ -74,13 +74,37 @@
 //   print(printUserInfo("周华建",44));
 // }
 
-String printUserInfo(String name,[int age]) {
-  if(age!=null) {
-    return "你的姓名是:${name},你的年龄是:${age}";
-  }
-  return "你的姓名是:${name},年龄:保密";
+// String printUserInfo(String name,[int age]) {
+//   if(age!=null) {
+//     return "你的姓名是:${name},你的年龄是:${age}";
+//   }
+//   return "你的姓名是:${name},年龄:保密";
+// }
+
+// main() {
+//   print(printUserInfo("周大大"));
+// }
+
+// String printUserInfo(String name,[int age]) {
+//   if(age!=null) {
+//     return "你的姓名是:${name},你的年龄是:${age}";
+//   }
+//   return "你的姓名是:${name},年龄：保密";
+// }
+
+// main() {
+//   print(printUserInfo("你好呀"));
+
+// }
+
+
+String printUserInfo(String name,{int age=22,String sex="男"}) {
+  return "姓名:${name}年龄:${age}性别:${sex}";
 }
 
 main() {
-  print(printUserInfo("周大大"));
+  print(printUserInfo("周华建",age:44,sex:"女"));
 }
+
+
+
