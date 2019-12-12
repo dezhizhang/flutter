@@ -40,6 +40,18 @@
 
 // }
 
+// int count(int n) {
+//   var sum = 0;
+//   for (var i=0;i < n;i++) {
+//     sum += i;
+//   }
+//   return sum;
+// }
+
+// main() {
+//   print(count(10));
+// }
+
 int count(int n) {
   var sum = 0;
   for (var i=0;i < n;i++) {
@@ -50,4 +62,5 @@ int count(int n) {
 
 main() {
   print(count(10));
+
 }
