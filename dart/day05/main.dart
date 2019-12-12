@@ -98,13 +98,24 @@
 // }
 
 
-String printUserInfo(String name,{int age=22,String sex="男"}) {
-  return "姓名:${name}年龄:${age}性别:${sex}";
-}
+// String printUserInfo(String name,{int age=22,String sex="男"}) {
+//   return "姓名:${name}年龄:${age}性别:${sex}";
+// }
 
-main() {
-  print(printUserInfo("周华建",age:44,sex:"女"));
-}
+// main() {
+//   print(printUserInfo("周华建",age:44,sex:"女"));
+// }
+
+
+// String printUserInfo(String name,{int age = 44,String sex = "男"}) {
+//   return "姓名:${name}年龄:${age}性名:${sex}";
+// }
+
+// main() {
+//   print(printUserInfo("周华建",age:44,sex:"女"));
+// }
+
+
 
 
 
